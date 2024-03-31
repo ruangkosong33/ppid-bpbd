@@ -4,16 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Post extends Model
+class Standar extends Model
 {
     use HasFactory, Sluggable;
 
-    protected $table='posts';
+    protected $table='standars';
 
-    protected $fillable=['title', 'slug', 'kategori_id', 'image', 'body', 'date', 'status'];
+    protected $fillable=['title', 'slug', 'body'];
 
     protected $hidden=[];
 
@@ -25,11 +24,5 @@ class Post extends Model
                 'source' => 'title'
             ]
         ];
-    }
-
-    //RELATION
-    public function kategoris(): BelongsTo
-    {
-        return $this->belongsTo(Kategori::class);
     }
 }
