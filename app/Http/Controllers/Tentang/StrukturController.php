@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Tentang;
 
-use App\Http\Controllers\Controller;
+use App\Models\Struktur;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class StrukturController extends Controller
 {
@@ -12,7 +15,9 @@ class StrukturController extends Controller
      */
     public function index()
     {
-        //
+        $struktur=Struktur::orderBy('id')->get();
+
+        return view('layouts.admin.pages.struktur.index-struktur', ['struktur'=>$struktur]);
     }
 
     /**
@@ -20,7 +25,7 @@ class StrukturController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.admin.pages.struktur.create-struktur');
     }
 
     /**
@@ -28,7 +33,25 @@ class StrukturController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'image'=>'mimes:jpg,jpeg,png|max:10000',
+        ]);
+
+        if($request->file('image'))
+        {
+            $manager = new ImageManager(new Driver());
+        }
+
+        $struktur=Struktur::create([
+            'title'=>$request->title,
+            'image'=>$images,
+            'body'=>$request->body,
+        ]);
+
+        flash('Data Berhasil Di Simpan');
+
+        return redirect()->route('struktur.index');
     }
 
     /**
@@ -42,15 +65,15 @@ class StrukturController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Struktur $struktur)
     {
-        //
+        return view('layouts.admin.pages.struktur.edit-struktur', ['struktur'=>$struktur]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Struktur $struktur)
     {
         //
     }
@@ -58,8 +81,12 @@ class StrukturController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Struktur $struktur)
     {
-        //
+        $struktur->delete();
+
+        flash('Data Berhasil Di Hapus');
+
+        return redirect()->route('struktur.index');
     }
 }

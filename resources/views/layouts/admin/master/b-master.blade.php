@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Admin Bapelkes - Kaltim</title>
+    <title>Admin PPID - BPBD KALTIM</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -51,7 +51,7 @@
                       <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             @section('breadcrumb')
-                            <li class="breadcrumb-item"><a href="{{route('home.admin')}}">Dashboard</a></li>
+                            {{-- <li class="breadcrumb-item"><a href="{{route('home.admin')}}">Dashboard</a></li> --}}
                             @show
                         </ol>
                       </div>

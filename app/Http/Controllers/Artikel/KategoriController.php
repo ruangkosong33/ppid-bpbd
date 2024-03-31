@@ -15,7 +15,7 @@ class KategoriController extends Controller
     {
         $kategori=Kategori::orderBy('id', 'DESC')->get();
 
-        return view('layouts.admin.pages.kategori.create-kategori', ['kategori'=>$kategori]);
+        return view('layouts.admin.pages.kategori.index-kategori', ['kategori'=>$kategori]);
     }
 
     /**
