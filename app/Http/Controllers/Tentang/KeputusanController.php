@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Tentang;
 
-use App\Http\Controllers\Controller;
+use App\Models\Keputusan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class KeputusanController extends Controller
 {
@@ -12,7 +13,9 @@ class KeputusanController extends Controller
      */
     public function index()
     {
-        //
+        $keputusan=Keputusan::orderBy('id')->get();
+
+        return view('layouts.admin.pages.keputusan.index-keputusan', ['keputusan'=>$keputusan]);
     }
 
     /**
@@ -20,7 +23,7 @@ class KeputusanController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.admin.pages.keputusan.create-keputusan');
     }
 
     /**
@@ -28,7 +31,31 @@ class KeputusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'file'=>'mimes:pdf|max:50000',
+        ]);
+
+        if($request->file('file'))
+        {
+            $file=$request->file('file');
+            $extension=$file->getClientOriginalName();
+            $files=$extension;
+            $file->storeAs('public/file-keputusan', $files);
+        }
+        else{
+            $files='';
+        }
+
+        $keputusan=Keputusan::create([
+            'title'=>$request->title,
+            'file'=>$files,
+            'body'=>$request->body,
+        ]);
+
+        flash('Data Berhasil Di Simpan');
+
+        return redirect()->route('keputusan.index');
     }
 
     /**
@@ -42,24 +69,52 @@ class KeputusanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Keputusan $keputusan)
     {
-        //
+        return view('layouts.admin.pages.keputusan.edit-keputusan', ['keputusan'=>$keputusan]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Keputusan $keputusan)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'file'=>'mimes:pdf|max:50000',
+        ]);
+
+        if($request->file('file'))
+        {
+            $file=$request->file('file');
+            $extension=$file->getClientOriginalName();
+            $files=$extension;
+            $file->storeAs('public/file-keputusan', $files);
+        }
+        else{
+            $files=$keputusan->file;
+        }
+
+        $keputusan->update([
+            'title'=>$request->title,
+            'file'=>$files,
+            'body'=>$request->body,
+        ]);
+
+        flash('Data Berhasil Di Update');
+
+        return redirect()->route('keputusan.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Keputusan $keputusan)
     {
-        //
+        $keputusan->delete();
+
+        flash('Data Berhasil Di Hapus');
+
+        return redirect()->route('keputusan.index');
     }
 }

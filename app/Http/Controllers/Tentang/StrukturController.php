@@ -41,6 +41,15 @@ class StrukturController extends Controller
         if($request->file('image'))
         {
             $manager = new ImageManager(new Driver());
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalName();
+            $images=time(). '.' .$extension;
+
+            $img=Image::make($file);
+            $img->resize(550,350);
+
+            $path='public/image-post/'.$images;
+            Storage::put($path, $img->encode());
         }
 
         $struktur=Struktur::create([
