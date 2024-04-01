@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Tentang;
 
-use App\Models\Waktu;
+use App\Models\Hak;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class WaktuController extends Controller
+class HakController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $waktu=Waktu::orderBy('id')->get();
+        $hak=Hak::orderBy('id')->get();
 
-        return view('layouts.admin.pages.waktu.index-waktu', ['waktu'=>$waktu]);
+        return view('layouts.admin.pages.hak.index-hak', ['hak'=>$hak]);
     }
 
     /**
@@ -23,7 +23,7 @@ class WaktuController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin.pages.waktu.create-waktu');
+        return view('layouts.admin.pages.hak.create-hak');
     }
 
     /**
@@ -35,14 +35,14 @@ class WaktuController extends Controller
             'title'=>'required',
         ]);
 
-        $waktu=Waktu::create([
+        $hak=Hak::create([
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Simpan');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('hak.index');
     }
 
     /**
@@ -56,39 +56,39 @@ class WaktuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Waktu $waktu)
+    public function edit(Hak $hak)
     {
-        return view('layouts.admin.pages.waktu.edit-waktu', ['waktu'=>$waktu]);
+        return view('layouts.admin.pages.hak.edit-hak', ['hak'=>$hak]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Waktu $waktu)
+    public function update(Request $request, Hak $hak)
     {
         $this->validate($request, [
             'title'=>'required',
         ]);
 
-        $waktu=Waktu::create([
+        $hak->update([
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Update');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('hak.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Waktu $waktu)
+    public function destroy(Hak $hak)
     {
-        $waktu->delete();
+        $hak->delete();
 
         flash('Data Berhasil Di Hapus');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('hak.index');
     }
 }

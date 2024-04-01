@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Tentang;
 
-use App\Models\Waktu;
+use App\Models\Definisi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class WaktuController extends Controller
+class DefinisiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $waktu=Waktu::orderBy('id')->get();
+        $definisi=Definisi::orderBy('id')->get();
 
-        return view('layouts.admin.pages.waktu.index-waktu', ['waktu'=>$waktu]);
+        return view('layouts.admin.pages.definisi.index-definisi', ['definisi'=>$definisi]);
     }
 
     /**
@@ -23,7 +23,7 @@ class WaktuController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin.pages.waktu.create-waktu');
+        return view('layouts.admin.pages.definisi.create-definisi');
     }
 
     /**
@@ -35,14 +35,14 @@ class WaktuController extends Controller
             'title'=>'required',
         ]);
 
-        $waktu=Waktu::create([
+        $definisi=Definisi::create($request, [
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Simpan');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('definisi.index');
     }
 
     /**
@@ -56,39 +56,39 @@ class WaktuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Waktu $waktu)
+    public function edit(Definisi $definisi)
     {
-        return view('layouts.admin.pages.waktu.edit-waktu', ['waktu'=>$waktu]);
+        return view('layouts.admin.pages.definisi.edit-definisi', ['definisi'=>$definisi]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Waktu $waktu)
+    public function update(Request $request, Definisi $definisi)
     {
         $this->validate($request, [
             'title'=>'required',
         ]);
 
-        $waktu=Waktu::create([
+        $definisi->update($request, [
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Update');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('definisi.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Waktu $waktu)
+    public function destroy(Definisi $definisi)
     {
-        $waktu->delete();
+        $definisi->delete();
 
         flash('Data Berhasil Di Hapus');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('definisi.index');
     }
 }

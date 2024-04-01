@@ -1,21 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Tentang;
+namespace App\Http\Controllers\Layanan;
 
-use App\Models\Waktu;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class WaktuController extends Controller
+class EtikController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $waktu=Waktu::orderBy('id')->get();
+        $etik=Etik::orderBy('id')->get();
 
-        return view('layouts.admin.pages.waktu.index-waktu', ['waktu'=>$waktu]);
+        return view('layouts.admin.pages.etik.index-etik', ['etik'=>$etik]);
     }
 
     /**
@@ -23,7 +22,7 @@ class WaktuController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin.pages.waktu.create-waktu');
+        return view('layouts.admin.pages.etik.create-etik');
     }
 
     /**
@@ -35,14 +34,14 @@ class WaktuController extends Controller
             'title'=>'required',
         ]);
 
-        $waktu=Waktu::create([
+        $etik=Etik::create([
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Simpan');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('etik.index');
     }
 
     /**
@@ -56,39 +55,39 @@ class WaktuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Waktu $waktu)
+    public function edit(Etik $etik)
     {
-        return view('layouts.admin.pages.waktu.edit-waktu', ['waktu'=>$waktu]);
+        return view('layouts.admin.pages.etik.edit-etik', ['etik'=>$etik]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Waktu $waktu)
+    public function update(Request $request, Etik $etik)
     {
         $this->validate($request, [
             'title'=>'required',
         ]);
 
-        $waktu=Waktu::create([
+        $etik->update([
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Update');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('etik.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Waktu $waktu)
+    public function destroy(Etik $etik)
     {
-        $waktu->delete();
+        $etik->delete();
 
         flash('Data Berhasil Di Hapus');
 
-        return redirect()->route('waktu.index');
+        return redirect()->route('etik.index');
     }
 }
