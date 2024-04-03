@@ -15,8 +15,11 @@ use App\Http\Controllers\Tentang\DefinisiController;
 use App\Http\Controllers\Tentang\MaklumatController;
 use App\Http\Controllers\Tentang\StrukturController;
 use App\Http\Controllers\Tentang\KeputusanController;
+use App\Http\Controllers\Informasi\SengketaController;
 use App\Http\Controllers\Informasi\PengajuanController;
 use App\Http\Controllers\Informasi\PermohonanController;
+use App\Http\Controllers\Informasi\FormPengajuanController;
+use App\Http\Controllers\Informasi\FormPermohonanController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -56,6 +59,9 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         //Informasi
         Route::resource('/permohonan', PermohonanController::class);
         Route::resource('/pengajuan', PengajuanController::class);
+        Route::resource('/sengketa', SengketaController::class);
+        Route::resource('/formpermohonan', FormPermohonanController::class);
+        Route::resource('/formpengajuan', FormPengajuanController::class);
 
         //LOGOUT
         Route::get('logout', function () {
