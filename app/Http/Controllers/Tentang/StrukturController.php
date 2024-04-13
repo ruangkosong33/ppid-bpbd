@@ -48,7 +48,7 @@ class StrukturController extends Controller
             $img=Image::make($file);
             $img->resize(550,350);
 
-            $path='public/image-post/'.$images;
+            $path='public/image-struktur/'.$images;
             Storage::put($path, $img->encode());
         }
 

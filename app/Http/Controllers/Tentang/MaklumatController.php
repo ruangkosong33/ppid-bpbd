@@ -23,7 +23,7 @@ class MaklumatController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin.pages.maklumant.create-maklumnat');
+        return view('layouts.admin.pages.maklumat.create-maklumat');
     }
 
     /**

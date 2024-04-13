@@ -27,7 +27,7 @@
                with font-awesome or any other icon font library -->
 
           <li class="nav-item">
-            <a href="{{route('home.admin')}}" class="nav-link {{request()->is('admin*') ? 'active' : ''}}">
+            <a href="{{route('home.admin')}}" class="nav-link {{request()->is('admin/home*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
@@ -38,34 +38,30 @@
           <li class="nav-header"><strong>Menu</strong></li>
 
           <li class="nav-item
-            {{-- {{request()->is('admin/sejarah*') ? 'menu-open' : ''}}
+            {{request()->is('admin/dasar*') ? 'menu-open' : ''}}
             {{request()->is('admin/visi*') ? 'menu-open' : ''}}
-            {{request()->is('admin/kepala*') ? 'menu-open' : ''}}
-            {{request()->is('admin/tertib*') ? 'menu-open' : ''}}
+            {{request()->is('admin/maklumat*') ? 'menu-open' : ''}}
             {{request()->is('admin/struktur*') ? 'menu-open' : ''}}
-            {{request()->is('admin/isu*') ? 'menu-open' : ''}}
-            {{request()->is('admin/fungsi*') ? 'menu-open' : ''}}
-            {{request()->is('admin/tujuan*') ? 'menu-open' : ''}}
-            {{request()->is('admin/arah*') ? 'menu-open' : ''}} --}}
+            
                                                                         ">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
-                Data Profil
+                Tentang Kami
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                {{-- <a href="{{route('sejarah.index')}}" class="nav-link {{request()->is('admin/sejarah*') ? 'active' : ''}}"> --}}
+                <a href="{{route('dasar.index')}}" class="nav-link {{request()->is('admin/dasar*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sejarah Dinas</p>
+                  <p>Dasar Hukum</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                {{-- <a href="{{route('visi.index')}}" class="nav-link {{request()->is('admin/visi*') ? 'active' : ''}}"> --}}
+                <a href="{{route('visi.index')}}" class="nav-link {{request()->is('admin/visi*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Visi & Misi</p>
                 </a>
@@ -73,57 +69,41 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                {{-- <a href="{{route('arah.index')}}" class="nav-link {{request()->is('admin/arah*') ? 'active' : ''}}"> --}}
+                <a href="{{route('maklumat.index')}}" class="nav-link {{request()->is('admin/maklumat*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Arah Kebijakan</p>
+                  <p>Maklumat Pelayanan</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  {{-- <a href="{{route('kepala.index')}}" class="nav-link {{request()->is('admin/kepala*') ? 'active' : ''}}"> --}}
+                  <a href="{{route('struktur.index')}}" class="nav-link {{request()->is('admin/struktur*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Kepala Dinas</p>
+                    <p>Struktur Organisasi</p>
                   </a>
                 </li>
               </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                {{-- <a href="{{route('struktur.index')}}" class="nav-link {{request()->is('admin/struktur*') ? 'active' : ''}}"> --}}
+                <a href="{{route('standar.index')}}" class="nav-link {{request()->is('admin/standar*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Struktur Organisasi</p>
+                  <p>Standar Biaya</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                {{-- <a href="{{route('fungsi.index')}}" class="nav-link {{request()->is('admin/fungsi*') ? 'active' : ''}}"> --}}
+                <a href="{{route('waktu.index')}}" class="nav-link {{request()->is('admin/waktu*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tugas Pokok & Fungsi</p>
+                  <p>Waktu Layanan</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                {{-- <a href="{{route('tertib.index')}}" class="nav-link {{request()->is('admin/tertib*') ? 'active' : ''}}"> --}}
+                <a href="{{route('keputusan.index')}}" class="nav-link {{request()->is('admin/keputusan*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tertib Pelayanan</p>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                {{-- <a href="{{route('tujuan.index')}}" class="nav-link {{request()->is('admin/tujuan*') ? 'active' : ''}}"> --}}
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tujuan & Sasaran</p>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                {{-- <a href="{{route('isu.index')}}" class="nav-link {{request()->is('admin/isu*') ? 'active' : ''}}"> --}}
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Isu Strategis</p>
+                  <p>Surat Keputusan</p>
                 </a>
               </li>
             </ul>
