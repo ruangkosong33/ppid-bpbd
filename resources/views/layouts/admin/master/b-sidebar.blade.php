@@ -111,7 +111,7 @@
           </li>
 
           <li class="nav-item
-            {{-- {{request()->is('admin/kategori*') ? 'menu-open' : ''}}
+            {{request()->is('admin/kategori*') ? 'menu-open' : ''}} --}}
             {{request()->is('admin/post*') ? 'menu-open' : ''}} --}}
                                                                       ">
             <a href="#" class="nav-link">
@@ -123,7 +123,7 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                {{-- <a href="{{route('kategori.index')}}" class="nav-link {{request()->is('admin/kategori*') ? 'active' : ''}}"> --}}
+                <a href="{{route('kategori.index')}}" class="nav-link {{request()->is('admin/kategori*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Data Kategori</p>
                 </a>
@@ -131,7 +131,7 @@
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                {{-- <a href="{{route('post.index')}}" class="nav-link {{request()->is('admin/post*') ? 'active' : ''}}"> --}}
+                <a href="{{route('post.index')}}" class="nav-link {{request()->is('admin/post*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Data Berita</p>
                 </a>
@@ -191,7 +191,7 @@
             {{request()->is('admin/pegawai*') ? 'menu-open' : ''}} --}}
                                                                     ">
             <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-warehouse"></i>
+                <i class="nav-icon fas fa-building"></i>
                 <p>
                 Data Organisasi
                 <i class="right fas fa-angle-left"></i>

@@ -12,7 +12,7 @@
         <div class="col-lg-12">
             <x-card>
                 <x-slot name="header">
-                    @if($maklumat->isEmpty())
+                    @if($standar->isEmpty())
                         <a href="{{route('standar.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
                     @else
                     @foreach ($standar as $standars)
