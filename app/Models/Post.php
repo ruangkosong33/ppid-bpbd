@@ -17,6 +17,24 @@ class Post extends Model
 
     protected $hidden=[];
 
+    //Status Color
+    public function statusColor()
+    {
+       $color = '';
+
+       switch ($this->status) {
+           case 'Publish':
+               $color = 'success';
+               break;
+           case 'Draft':
+               $color = 'danger';
+               break;
+           default:
+               break;
+       }
+       return $color;
+    }
+
     //SLUG
     public function sluggable(): array
     {
@@ -30,6 +48,6 @@ class Post extends Model
     //RELATION
     public function kategoris(): BelongsTo
     {
-        return $this->belongsTo(Kategori::class);
+        return $this->belongsTo(Kategori::class, 'kategori_id');
     }
 }

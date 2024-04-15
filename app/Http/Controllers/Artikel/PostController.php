@@ -7,6 +7,10 @@ use App\Models\User;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class PostController extends Controller
 {
@@ -15,7 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post=Post::with(['kategori'])->orderBy('id', 'DESC')->get();
+        $post=Post::with(['kategoris'])->orderBy('id', 'DESC')->get();
 
         return view('layouts.admin.pages.post.index-post', ['post'=>$post]);
     }
@@ -41,15 +45,18 @@ class PostController extends Controller
             'title'=>'required',
             'image'=>'nullable|mimes:jpeg,jpg,png|max:5000',
             'status'=>'required',
+            'kategori_id'=>'required',
         ]);
 
         if($request->file('image'))
         {
+            $manager= new ImageManager(new Driver());
+            
             $file=$request->file('image');
             $extension=$file->getClientOriginalName();
             $images=time(). '.' .$extension;
 
-            $img=Image::make($file);
+            $img=$manager->read($request->file('image'));
             $img->resize(550,350);
 
             $path='public/image-post/'.$images;
@@ -103,22 +110,27 @@ class PostController extends Controller
             'status'=>'required',
         ]);
 
-        if($request->file('image'))
-        {
-            $file=$request->file('image');
-            $extension=$file->getClientOriginalName();
-            $images=time(). '.' .$extension;
-
-            $img=Image::make($file);
-            $img->resize(550,350);
-
-            $path='public/image-post/'.$images;
+        if ($request->file('image')) {
+            if ($post->image) {
+                Storage::delete('public/image-post/' . $post->image);
+            }
+            
+            $manager = new ImageManager(new Driver());
+            
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $images = time(). '.' .$extension;
+        
+            $img = $manager->read($request->file('image'));
+            $img->resize(550, 350);
+        
+            $path = 'public/image-post/'.$images;
             Storage::put($path, $img->encode());
+            
+        } else {
+            $images = $post->image;
         }
-        else{
-            $images=$post->image;
-        }
-
+        
         $post->update([
             'title'=>$request->title,
             'kategori_id'=>$request->kategori_id,
@@ -138,6 +150,11 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if ($post->image && Storage::exists('public/image-post/' . $post->image)) 
+        {
+            Storage::delete('public/image-post/' . $post->image);
+        }
+
         $post->delete();
 
         flash('Data Berhasil Di Hapus');

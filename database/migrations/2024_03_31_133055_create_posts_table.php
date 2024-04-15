@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kategori_id')->nullable()->references('id')->on('kategoris');
+            $table->foreignId('kategori_id')->references('id')->on('kategoris');
             $table->string('title');
             $table->string('slug');
             $table->string('image')->nullable();

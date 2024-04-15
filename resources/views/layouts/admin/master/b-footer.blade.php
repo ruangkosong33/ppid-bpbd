@@ -6,5 +6,5 @@
         </span>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2024 Balai Pelatihan Kesehatan Provinsi Kalimantan Timur</strong>
+    <strong>Copyright &copy; 2024 PPID - BPBD PROVINSI KALIMANTAN TIMUR</strong>
 </footer>
