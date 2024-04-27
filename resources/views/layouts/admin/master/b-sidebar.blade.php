@@ -140,10 +140,10 @@
           </li>
 
           <li class="nav-item
-            {{-- {{request()->is('admin/banner*') ? 'menu-open' : ''}}
+            {{request()->is('admin/banner*') ? 'menu-open' : ''}}
             {{request()->is('admin/foto*') ? 'menu-open' : ''}}
             {{request()->is('admin/video*') ? 'menu-open' : ''}}
-            {{request()->is('admin/partner*') ? 'menu-open' : ''}} --}}
+            {{request()->is('admin/partner*') ? 'menu-open' : ''}}
                                                                         ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-video"></i>
@@ -154,7 +154,7 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                {{-- <a href="{{route('banner.index')}}" class="nav-link {{request()->is('admin/banner*') ? 'active' : ''}}"> --}}
+                <a href="{{route('banner.index')}}" class="nav-link {{request()->is('admin/banner*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Data Banner</p>
                 </a>
@@ -162,7 +162,7 @@
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                {{-- <a href="{{route('foto.index')}}" class="nav-link {{request()->is('admin/foto*') ? 'active' : ''}}"> --}}
+                <a href="{{route('foto.index')}}" class="nav-link {{request()->is('admin/foto*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Data Foto</p>
                 </a>
@@ -170,7 +170,7 @@
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                {{-- <a href="{{route('video.index')}}" class="nav-link {{request()->is('admin/video*') ? 'active' : ''}}"> --}}
+                <a href="{{route('video.index')}}" class="nav-link {{request()->is('admin/video*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Data Video</p>
                 </a>
@@ -178,40 +178,11 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              {{-- <a href="{{route('partner.index')}}" class="nav-link {{request()->is('admin/partner*') ? 'active' : ''}}"> --}}
+              <a href="{{route('partner.index')}}" class="nav-link {{request()->is('admin/partner*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Partner</p>
               </a>
               </li>
-          </ul>
-          </li>
-
-          <li class="nav-item
-            {{-- {{request()->is('admin/bidang*') ? 'menu-open' : ''}}
-            {{request()->is('admin/pegawai*') ? 'menu-open' : ''}} --}}
-                                                                    ">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-building"></i>
-                <p>
-                Data Organisasi
-                <i class="right fas fa-angle-left"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                {{-- <a href="{{route('bidang.index')}}" class="nav-link {{request()->is('admin/bidang*') ? 'active' : ''}}"> --}}
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Bidang</p>
-                </a>
-                </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                {{-- <a href="{{route('pegawai.index')}}" class="nav-link {{request()->is('admin/pegawai*') ? 'active' : ''}}"> --}}
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Pegawai</p>
-                </a>
-                </li>
             </ul>
           </li>
 
@@ -276,7 +247,7 @@
           <li class="nav-header"><strong>Setting</strong></li>
 
           <li class="nav-item">
-            {{-- <a href="{{route('setting.index')}}" class="nav-link {{request()->is('admin/setting*') ? 'active' : ''}}"> --}}
+            <a href="{{route('setting.index')}}" class="nav-link {{request()->is('admin/setting*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-snowflake"></i>
               <p>
                 Pengaturan

@@ -2,10 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Media\FotoController;
+use App\Http\Controllers\Media\VideoController;
 use App\Http\Controllers\Tentang\HakController;
 use App\Http\Controllers\Artikel\PostController;
 use App\Http\Controllers\Layanan\EtikController;
+use App\Http\Controllers\Media\BannerController;
 use App\Http\Controllers\Tentang\VisiController;
+use App\Http\Controllers\Media\PartnerController;
 use App\Http\Controllers\Tentang\DasarController;
 use App\Http\Controllers\Tentang\WaktuController;
 use App\Http\Controllers\Tentang\ProfilController;
@@ -63,6 +68,14 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::resource('/formpermohonan', FormPermohonanController::class);
         Route::resource('/formpengajuan', FormPengajuanController::class);
 
+        //Media
+        Route::resource('/banner', BannerController::class);
+        Route::resource('/foto', FotoController::class);
+        Route::resource('/video', VideoController::class);
+        Route::resource('/partner', PartnerController::class);
+
+        //Pengaturan
+        Route::resource('/setting', SettingController::class);
         //LOGOUT
         Route::get('logout', function () {
             Auth::logout();
