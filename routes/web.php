@@ -76,10 +76,13 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 
         //Pengaturan
         Route::resource('/setting', SettingController::class);
+
         //LOGOUT
         Route::get('logout', function () {
             Auth::logout();
         });
+        
     });
+
 });
 //--END BACKEND--//

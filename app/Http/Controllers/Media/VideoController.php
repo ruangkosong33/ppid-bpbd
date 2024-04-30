@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Media;
 
-use App\Http\Controllers\Controller;
+use App\Models\Video;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class VideoController extends Controller
 {
@@ -12,7 +16,9 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        $video=Video::orderBy('id')->get();
+
+        return view('layouts.admin.pages.video.index.video', ['video'=>$video]);
     }
 
     /**
@@ -20,7 +26,7 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.admin.pages.video.create-video');
     }
 
     /**
@@ -28,7 +34,37 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'image'=>'mimes:jpeg,jpg,png|max:5000',
+        ]);
+
+        if($request->file('image'))
+        {
+            $manager= new ImageManager(new Driver());
+
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalName();
+            $images=time(). '.' .$extension;
+
+            $img=$manager->read($request->file('image'));
+            $img->resize(550,350);
+
+            $path='public/image-video/'.$images;
+            Storage::put($path, $img->encode());
+        }
+        else{
+            $images='';
+        }
+
+        $video=Video::create([
+            'title'=>$request->title,
+            'image'=>$images,
+        ]);
+
+        flash('Data Berhasil Di Simpan');
+
+        return redirect()->route('video.index');
     }
 
     /**
@@ -42,24 +78,66 @@ class VideoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Video $video)
     {
-        //
+        return view('layouts.admin.pages.video.edit-video', ['video'=>$video]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Video $video)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'image'=>'mimes:jpeg,jpg,png|max:5000',
+        ]);
+
+        if ($request->file('image')) {
+            if ($video->image) {
+                Storage::delete('public/image-video/' . $video->image);
+            }
+
+            $manager = new ImageManager(new Driver());
+
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $images = time(). '.' .$extension;
+
+            $img = $manager->read($request->file('image'));
+            $img->resize(550, 350);
+
+            $path = 'public/image-video/'.$images;
+            Storage::put($path, $img->encode());
+
+        } else {
+            $images = $video->image;
+        }
+
+        $video->update([
+            'title'=>$request->title,
+            'image'=>$images,
+        ]);
+
+        flash('Data Berhasil Di Update');
+
+        return redirect()->route('video.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Video $video)
     {
-        //
+        if ($video->image && Storage::exists('public/image-video/' . $video->image))
+        {
+            Storage::delete('public/image-video/' . $video->image);
+        }
+
+        $video->delete();
+
+        flash('Data Berhasil Di Hapus');
+
+        return redirect()->route('video.index');
     }
 }
