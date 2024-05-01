@@ -14,6 +14,7 @@ use App\Http\Controllers\Media\PartnerController;
 use App\Http\Controllers\Tentang\DasarController;
 use App\Http\Controllers\Tentang\WaktuController;
 use App\Http\Controllers\Tentang\ProfilController;
+use App\Http\Controllers\Landing\BerandaController;
 use App\Http\Controllers\Tentang\StandarController;
 use App\Http\Controllers\Artikel\KategoriController;
 use App\Http\Controllers\Tentang\DefinisiController;
@@ -31,6 +32,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+//--FRONTEND--//
+Route::get('/beranda', [BerandaController::class, 'beranda'])->name('index.beranda');
+
+//--END FRONTEND--//
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
