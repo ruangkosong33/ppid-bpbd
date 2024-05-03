@@ -39,32 +39,32 @@
                 <div class="row brand-active">
                     <div class="col-lg-12">
                         <div class="brand-item">
-                            <img src="assets/img/brand/brand_img01.png" alt="">
+                            <img src="{{asset('fr/assets/img/brand/brand_img01.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="brand-item">
-                            <img src="assets/img/brand/brand_img02.png" alt="">
+                            <img src="{{asset('fr/assets/img/brand/brand_img02.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="brand-item">
-                            <img src="assets/img/brand/brand_img03.png" alt="">
+                            <img src="{{asset('fr/assets/img/brand/brand_img03.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="brand-item">
-                            <img src="assets/img/brand/brand_img04.png" alt="">
+                            <img src="{{asset('fr/assets/img/brand/brand_img04.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="brand-item">
-                            <img src="assets/img/brand/brand_img05.png" alt="">
+                            <img src="{{asset('fr/assets/img/brand/brand_img05.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="brand-item">
-                            <img src="assets/img/brand/brand_img03.png" alt="">
+                            <img src="{{asset('fr/assets/img/brand/brand_img03.png')}}" alt="">
                         </div>
                     </div>
                 </div>

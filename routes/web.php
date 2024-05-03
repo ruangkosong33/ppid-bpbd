@@ -10,11 +10,12 @@ use App\Http\Controllers\Artikel\PostController;
 use App\Http\Controllers\Layanan\EtikController;
 use App\Http\Controllers\Media\BannerController;
 use App\Http\Controllers\Tentang\VisiController;
+use App\Http\Controllers\Landing\MediaController;
 use App\Http\Controllers\Media\PartnerController;
 use App\Http\Controllers\Tentang\DasarController;
 use App\Http\Controllers\Tentang\WaktuController;
-use App\Http\Controllers\Tentang\ProfilController;
 use App\Http\Controllers\Landing\BerandaController;
+use App\Http\Controllers\Landing\TentangController;
 use App\Http\Controllers\Tentang\StandarController;
 use App\Http\Controllers\Artikel\KategoriController;
 use App\Http\Controllers\Tentang\DefinisiController;
@@ -34,7 +35,20 @@ Route::get('/', function () {
 Auth::routes();
 
 //--FRONTEND--//
-Route::get('/beranda', [BerandaController::class, 'beranda'])->name('index.beranda');
+Route::get('/beranda', [BerandaController::class, 'beranda'])->name('beranda');
+Route::get('/profil', [TentangController::class, 'profils'])->name('profil');
+Route::get('/visi-misi', [TentangController::class, 'visis'])->name('visi');
+Route::get('/dasar-hukum', [TentangController::class, 'dasars'])->name('dasar');
+Route::get('/definisi', [TentangController::class, 'definisi'])->name('definisi');
+Route::get('/maklumat-pelayanan', [TentangController::class, 'maklumats'])->name('maklumat');
+Route::get('/standar-pelayanan', [TentangController::class, 'standars'])->name('standar');
+Route::get('/hak-atas-informasi', [TentangController::class, 'haks'])->name('hak');
+Route::get('/waktu-pelayanan', [TentangController::class, 'waktus'])->name('waktu');
+Route::get('/struktur-organisasi', [TentangController::class, 'strukturs'])->name('struktur');
+Route::get('/keputusan', [TentangController::class, 'keputusans'])->name('keputusan');
+Route::get('/kode-etik', [TentangController ::class, 'etiks'])->name('etik');
+Route::get('/banner', [MediaController::class, 'banners'])->name('front.banner');
+
 
 //--END FRONTEND--//
 
