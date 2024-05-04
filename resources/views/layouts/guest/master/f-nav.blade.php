@@ -1,7 +1,7 @@
 <div class="menu-wrap">
     <nav class="menu-nav">
         <div class="logo">
-            <a href="index.html"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+            <a href="index.html"><img src="{{asset('fr/assets/img/logo/logo.png')}}" alt="Logo"></a>
         </div>
         <div class="navbar-wrap main-menu d-none d-lg-flex">
             <ul class="navigation">
@@ -26,7 +26,7 @@
                                 <li><a href="services-5.html">Business Services</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item-has-children"><a href="services-details.html">Services Details</a>
+                        <li class="menu-item-has-children"><a href="services-details.html">Layanan</a>
                             <ul class="sub-menu">
                                 <li><a href="services-details.html">Services Details One</a></li>
                                 <li><a href="services-details-2.html">Services Details Two</a></li>
@@ -40,13 +40,13 @@
                         <li><a href="error.html">404 Error</a></li>
                     </ul>
                 </li>
-                <li class="menu-item-has-children"><a href="#">Blog</a>
+                <li class="menu-item-has-children"><a href="#">Layanan</a>
                     <ul class="sub-menu">
                         <li><a href="blog.html">Our Blog</a></li>
                         <li><a href="blog-details.html">Blog Details</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">contacts</a></li>
+                <li><a href="contact.html">Dokumentasi</a></li>
             </ul>
         </div>
         <div class="header-action">
@@ -64,7 +64,7 @@
                         <i class="flaticon-phone-call"></i>
                     </div>
                     <div class="content">
-                        <span>Hot Line Number</span>
+                        <span>No. Kontak Kami</span>
                         <a href="tel:0123456789">+123 8989 444</a>
                     </div>
                 </li>

@@ -14,12 +14,9 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="banner-content-three">
-                        <h2 class="title" data-aos="fade-right" data-aos-delay="0">Need Business Consultation Today</h2>
-                        <p data-aos="fade-right" data-aos-delay="300">Agilos helps you to convert your data into a strategic asset and get top-notch business insights.</p>
-                        <form action="#" class="banner-form" data-aos="fade-right" data-aos-delay="600">
-                            <input type="text" placeholder="E-mail Address">
-                            <button type="submit"><i class="flaticon-right-arrow"></i></button>
-                        </form>
+                        <h2 class="title" data-aos="fade-right" data-aos-delay="0">Portal Layanan PPID</h2>
+                        <p data-aos="fade-right" data-aos-delay="300">Badan Penanggulangan Bencana Daerah</p>
+                        <p data-aos="fade-right" data-aos-delay="400">Provinsi Kalimantan Timur</p>
                     </div>
                 </div>
             </div>
@@ -30,6 +27,73 @@
         </div>
     </section>
     <!-- banner-area-end -->
+
+    <!-- features-area -->
+    <section class="features-area-three">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-7">
+                    <div class="section-title-two text-center mb-40 tg-heading-subheading animation-style1">
+                        <span class="sub-title tg-element-title">Layanan Kami</span>
+                        <h2 class="title tg-element-title">Daftar Informasi Publik</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="features-item-wrap-two">
+                <div class="row justify-content-center">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="features-item-three">
+                            <div class="features-icon-three">
+                                <i class="flaticon-inspiration"></i>
+                            </div>
+                            <div class="features-content-three">
+                                <h2 class="title">Informasi Setiap Saat</h2>
+                                <p>Morem ipsum dolor sittemet consectetur adipiscing elitflorai psum dolor.</p>
+                                <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="features-item-three">
+                            <div class="features-icon-three">
+                                <i class="flaticon-layers"></i>
+                            </div>
+                            <div class="features-content-three">
+                                <h2 class="title">Informasi Berkala</h2>
+                                <p>Morem ipsum dolor sittemet consectetur adipiscing elitflorai psum dolor.</p>
+                                <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="features-item-three">
+                            <div class="features-icon-three">
+                                <i class="flaticon-calculator"></i>
+                            </div>
+                            <div class="features-content-three">
+                                <h2 class="title">Informasi Serta Merta</h2>
+                                <p>Morem ipsum dolor sittemet consectetur adipiscing elitflorai psum dolor.</p>
+                                <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="features-item-three">
+                            <div class="features-icon-three">
+                                <i class="flaticon-investment"></i>
+                            </div>
+                            <div class="features-content-three">
+                                <h2 class="title">Informasi Dikecualikan</h2>
+                                <p>Morem ipsum dolor sittemet consectetur adipiscing elitflorai psum dolor.</p>
+                                <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- features-area-end -->
 
     <!-- brand-area -->
     <section class="brand-aera-two">
@@ -72,73 +136,6 @@
         </div>
     </section>
     <!-- brand-area-end -->
-
-    <!-- features-area -->
-    <section class="features-area-three">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7">
-                    <div class="section-title-two text-center mb-40 tg-heading-subheading animation-style1">
-                        <span class="sub-title tg-element-title">What We Do For You</span>
-                        <h2 class="title tg-element-title">The features that make our Service unique</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="features-item-wrap-two">
-                <div class="row justify-content-center">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="features-item-three">
-                            <div class="features-icon-three">
-                                <i class="flaticon-inspiration"></i>
-                            </div>
-                            <div class="features-content-three">
-                                <h2 class="title">Finance Planning</h2>
-                                <p>Morem ipsum dolor sittemet consectetur adipiscing elitflorai psum dolor.</p>
-                                <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="features-item-three">
-                            <div class="features-icon-three">
-                                <i class="flaticon-layers"></i>
-                            </div>
-                            <div class="features-content-three">
-                                <h2 class="title">Business Consulting</h2>
-                                <p>Morem ipsum dolor sittemet consectetur adipiscing elitflorai psum dolor.</p>
-                                <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="features-item-three">
-                            <div class="features-icon-three">
-                                <i class="flaticon-calculator"></i>
-                            </div>
-                            <div class="features-content-three">
-                                <h2 class="title">Tax Advisory</h2>
-                                <p>Morem ipsum dolor sittemet consectetur adipiscing elitflorai psum dolor.</p>
-                                <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="features-item-three">
-                            <div class="features-icon-three">
-                                <i class="flaticon-investment"></i>
-                            </div>
-                            <div class="features-content-three">
-                                <h2 class="title">Business Audit</h2>
-                                <p>Morem ipsum dolor sittemet consectetur adipiscing elitflorai psum dolor.</p>
-                                <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- features-area-end -->
 
     <!-- about-area -->
     <section class="about-area-four pb-120">
