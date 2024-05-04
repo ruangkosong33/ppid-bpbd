@@ -16,42 +16,60 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children"><a href="#">Informasi Publik</a>
-                    <ul class="sub-menu">
-                        <li class="menu-item-has-children"><a href="services.html">Services</a>
-                            <ul class="sub-menu">
-                                <li><a href="services.html">Finance Services</a></li>
-                                <li><a href="services-2.html">Consulting Services</a></li>
-                                <li><a href="services-3.html">Insurance Services</a></li>
-                                <li><a href="services-4.html">Agency Services</a></li>
-                                <li><a href="services-5.html">Business Services</a></li>
+                    <ul class="sub-menu mega-menu">
+                        <li>
+                            <ul class="mega-sub-menu">
+                                <li><a href="index.html">Definisi Informasi Publik</a></li>
+                                <li><a href="index.html">Informasi Berkala</a></li>
+                                <li><a href="index-2.html">Informasi Serta Merta</a></li>
+                                <li><a href="index-3.html">Informasi Setiap Saat</a></li>
+                                <li><a href="index-3.html">Informasi Dikecualikan</a></li>
+                                <li><a href="index-3.html">Formulir Permohonan <br> Informasi</a></li>
+                                <li><a href="index-3.html">Formulir Pengajuan <br> Keberatan Informasi</a></li>
+                                <li><a href="index-3.html">Anggaran Kegiatan</a></li>
+                                <li><a href="index-3.html">Pengadaan Barang & Jasa</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item-has-children"><a href="services-details.html">Layanan</a>
-                            <ul class="sub-menu">
-                                <li><a href="services-details.html">Services Details One</a></li>
-                                <li><a href="services-details-2.html">Services Details Two</a></li>
-                                <li><a href="services-details-3.html">Services Details Three</a></li>
-                                <li><a href="services-details-4.html">Services Details Four</a></li>
-                                <li><a href="services-details-5.html">Services Details Five</a></li>
+                        <li>
+                            <ul class="mega-sub-menu">
+                                <li><a href="index-3.html">Tata Cara Permohonan <br> Informasi</a></li>
+                                <li><a href="index-3.html">Tata Cara Pengajuan <br> Keberatan Informasi</a></li>
+                                <li><a href="index-3.html">Tata Cara Sengketa <br> Informasi</a></li>
+                                <li><a href="index-3.html">Laporan Tahunan</a></li>
+                                <li><a href="index-3.html">Survey Layanan</a></li>
+                                <li><a href="index-3.html">Notulen</a></li>
                             </ul>
                         </li>
-                        <li><a href="project-details.html">Portfolio Details</a></li>
-                        <li><a href="team-details.html">Team Details</a></li>
-                        <li><a href="error.html">404 Error</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children"><a href="#">Layanan</a>
-                    <ul class="sub-menu">
-                        <li><a href="blog.html">Our Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
+                    <ul class="sub-menu mega-menu">
+                        <li>
+                            <ul class="mega-sub-menu">
+                                <li><a href="index.html">SOP</a></li>
+                                <li><a href="index-3.html">Waktu & Layanan</a></li>
+                                <li><a href="index-3.html">Standar Biaya</a></li>
+                                <li><a href="index-3.html">Sarana & Prasarana</a></li>
+                                <li><a href="index-3.html">Produk Hukum</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="mega-sub-menu">
+                                <li><a href="index.html">Kode Etik</a></li>
+                                <li><a href="index-2.html">Maklumat Pelayanan</a></li>
+                                <li><a href="index-2.html">Hak Atas Informasi</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="contact.html">Dokumentasi</a></li>
+                <li><a href="contact.html">SP4N Lapor</a></li>
+
             </ul>
         </div>
         <div class="header-action">
             <ul class="list-wrap">
-                <li class="header-search"><a href="#"><i class="flaticon-search"></i></a></li>
+                {{-- <li class="header-search"><a href="#"><i class="flaticon-search"></i></a></li> --}}
                 <li class="offcanvas-menu offcanvas-menu-two">
                     <a href="#" class="menu-tigger">
                         <span></span>
