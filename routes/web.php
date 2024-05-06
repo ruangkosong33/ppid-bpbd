@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SettingController;
@@ -14,7 +15,10 @@ use App\Http\Controllers\Landing\MediaController;
 use App\Http\Controllers\Media\PartnerController;
 use App\Http\Controllers\Tentang\DasarController;
 use App\Http\Controllers\Tentang\WaktuController;
+use App\Http\Controllers\Layanan\SaranaController;
+use App\Http\Controllers\Tentang\ProfilController;
 use App\Http\Controllers\Landing\BerandaController;
+use App\Http\Controllers\Landing\LayananController;
 use App\Http\Controllers\Landing\TentangController;
 use App\Http\Controllers\Tentang\StandarController;
 use App\Http\Controllers\Artikel\KategoriController;
@@ -48,6 +52,7 @@ Route::get('/struktur-organisasi', [TentangController::class, 'strukturs'])->nam
 Route::get('/keputusan', [TentangController::class, 'keputusans'])->name('keputusan');
 Route::get('/kode-etik', [TentangController ::class, 'etiks'])->name('etik');
 Route::get('/banner', [MediaController::class, 'banners'])->name('front.banner');
+Route::get('/sarana-prasarana', [LayananController::class, 'saranas'])->name('sarana');
 
 
 //--END FRONTEND--//
@@ -76,6 +81,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 
         //Layanan
         Route::resource('/etik', EtikController::class);
+        Route::resource('/sarana', SaranaController::class);
 
         //Artikel
         Route::resource('/kategori', KategoriController::class);

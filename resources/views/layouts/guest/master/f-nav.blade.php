@@ -49,7 +49,7 @@
                                 <li><a href="index.html">SOP</a></li>
                                 <li><a href="index-3.html">Waktu & Layanan</a></li>
                                 <li><a href="index-3.html">Standar Biaya</a></li>
-                                <li><a href="index-3.html">Sarana & Prasarana</a></li>
+                                <li><a href="{{route('sarana')}}">Sarana & Prasarana</a></li>
                                 <li><a href="index-3.html">Produk Hukum</a></li>
                             </ul>
                         </li>
