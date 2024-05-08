@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Media\FotoController;
+use App\Http\Controllers\Layanan\SopController;
 use App\Http\Controllers\Media\VideoController;
 use App\Http\Controllers\Tentang\HakController;
 use App\Http\Controllers\Artikel\PostController;
 use App\Http\Controllers\Layanan\EtikController;
 use App\Http\Controllers\Media\BannerController;
+use App\Http\Controllers\Tentang\TeamController;
 use App\Http\Controllers\Tentang\VisiController;
 use App\Http\Controllers\Landing\MediaController;
 use App\Http\Controllers\Media\PartnerController;
@@ -25,10 +27,12 @@ use App\Http\Controllers\Artikel\KategoriController;
 use App\Http\Controllers\Tentang\DefinisiController;
 use App\Http\Controllers\Tentang\MaklumatController;
 use App\Http\Controllers\Tentang\StrukturController;
+use App\Http\Controllers\Informasi\LaporanController;
 use App\Http\Controllers\Tentang\KeputusanController;
 use App\Http\Controllers\Informasi\SengketaController;
 use App\Http\Controllers\Informasi\PengajuanController;
 use App\Http\Controllers\Informasi\PermohonanController;
+use App\Http\Controllers\Informasi\FileLaporanController;
 use App\Http\Controllers\Informasi\FormPengajuanController;
 use App\Http\Controllers\Informasi\FormPermohonanController;
 
@@ -78,10 +82,19 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::resource('/keputusan', KeputusanController::class);
         Route::resource('/hak', HakController::class);
         Route::resource('/definisi', DefinisiController::class);
+        Route::resource('/team', TeamController::class);
 
         //Layanan
         Route::resource('/etik', EtikController::class);
         Route::resource('/sarana', SaranaController::class);
+
+        Route::resource('/sop', SopController::class);
+        Route::get('/filesop/{sop}', [FileSopController::class, 'index'])->name('filesop.index');
+        Route::get('/filesop/create/{sop}', [FileSopController::class, 'create'])->name('filesop.create');
+        Route::post('/filesop/{sop}', [FileSopController::class, 'store'])->name('filesop.store');
+        Route::get('/filesop/edit/{filesop}', [FileSopController::class, 'edit'])->name('filesop.edit');
+        Route::put('/filesop/{filesop}', [FileSopController::class, 'update'])->name('filesop.update');
+        Route::delete('/filesop/{filesop}', [FileSopController::class, 'destroy'])->name('filesop.destroy');
 
         //Artikel
         Route::resource('/kategori', KategoriController::class);
@@ -93,6 +106,14 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::resource('/sengketa', SengketaController::class);
         Route::resource('/formpermohonan', FormPermohonanController::class);
         Route::resource('/formpengajuan', FormPengajuanController::class);
+
+        Route::resource('/laporan', LaporanController::class);
+        Route::get('/filelaporan/{laporan}', [FileLaporanController::class, 'index'])->name('filelaporan.index');
+        Route::get('/filelaporan/create/{laporan}', [ileLaporanpController::class, 'create'])->name('filelaporan.create');
+        Route::post('/filelaporan/{sop}', [FileLaporanController::class, 'store'])->name('filelaporan.store');
+        Route::get('/filelaporan/edit/{filelaporan}', [FileLaporanController::class, 'edit'])->name('filelaporan.edit');
+        Route::put('/filelaporan/{filelaporan}', [FileLaporanController::class, 'update'])->name('filelaporan.update');
+        Route::delete('/filelaporan/{filelaporan}', [FileLaporanController::class, 'destroy'])->name('filelaporan.destroy');
 
         //Media
         Route::resource('/banner', BannerController::class);
@@ -107,7 +128,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::get('logout', function () {
             Auth::logout();
         });
-        
+
     });
 
 });

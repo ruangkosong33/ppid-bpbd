@@ -3,9 +3,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-9 order-0 order-lg-2">
                 <div class="banner-img-three" data-aos="fade-left" data-aos-delay="300">
-                    <img src="{{asset('fr/assets/img/banner/h3_banner_img01.jpg')}}" alt="" class="main-img">
-                    <img src="{{asset('fr/assets/img/banner/h3_banner_img02.jpg')}}" alt="" class="img-two" data-parallax='{"y" : 100 }'>
-                    <img src="{{asset('fr/assets/img/banner/h3_banner_img03.jpg')}}" alt="" class="img-three" data-parallax='{"x" : -100 }'>
+                    <img src="{{asset('fr/assets/img/banner/hak.png')}}" alt="" class="main-img">
+                    {{-- <img src="{{asset('fr/assets/img/banner/h3_banner_img02.jpg')}}" alt="" class="img-two" data-parallax='{"y" : 100 }'> --}}
+                    {{-- <img src="{{asset('fr/assets/img/banner/publik.png')}}" alt="" class="img-three" data-parallax='{"x" : -100 }'> --}}
                 </div>
             </div>
             <div class="col-lg-5">
