@@ -13,17 +13,20 @@ use App\Http\Controllers\Layanan\EtikController;
 use App\Http\Controllers\Media\BannerController;
 use App\Http\Controllers\Tentang\TeamController;
 use App\Http\Controllers\Tentang\VisiController;
+use App\Http\Controllers\Informasi\DipController;
 use App\Http\Controllers\Landing\MediaController;
 use App\Http\Controllers\Media\PartnerController;
 use App\Http\Controllers\Tentang\DasarController;
 use App\Http\Controllers\Tentang\WaktuController;
 use App\Http\Controllers\Layanan\SaranaController;
+use App\Http\Controllers\Tentang\FungsiController;
 use App\Http\Controllers\Tentang\ProfilController;
 use App\Http\Controllers\Landing\BerandaController;
 use App\Http\Controllers\Landing\LayananController;
 use App\Http\Controllers\Landing\TentangController;
 use App\Http\Controllers\Tentang\StandarController;
 use App\Http\Controllers\Artikel\KategoriController;
+use App\Http\Controllers\Informasi\KatDipController;
 use App\Http\Controllers\Tentang\DefinisiController;
 use App\Http\Controllers\Tentang\MaklumatController;
 use App\Http\Controllers\Tentang\StrukturController;
@@ -45,6 +48,7 @@ Auth::routes();
 //--FRONTEND--//
 Route::get('/beranda', [BerandaController::class, 'beranda'])->name('beranda');
 Route::get('/profil', [TentangController::class, 'profils'])->name('profil');
+Route::get('/tugas-pokok-dan-fungsi', [TentangController::class, 'fungsis']);
 Route::get('/visi-misi', [TentangController::class, 'visis'])->name('visi');
 Route::get('/dasar-hukum', [TentangController::class, 'dasars'])->name('dasar');
 Route::get('/definisi', [TentangController::class, 'definisi'])->name('definisi');
@@ -57,6 +61,7 @@ Route::get('/keputusan', [TentangController::class, 'keputusans'])->name('keputu
 Route::get('/kode-etik', [TentangController ::class, 'etiks'])->name('etik');
 Route::get('/banner', [MediaController::class, 'banners'])->name('front.banner');
 Route::get('/sarana-prasarana', [LayananController::class, 'saranas'])->name('sarana');
+Route::get('/tim-ppid', [TentangController::class, 'teams'])->name('team');
 
 
 //--END FRONTEND--//
@@ -83,6 +88,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::resource('/hak', HakController::class);
         Route::resource('/definisi', DefinisiController::class);
         Route::resource('/team', TeamController::class);
+        Route::resource('/fungsi', FungsiController::class);
 
         //Layanan
         Route::resource('/etik', EtikController::class);
@@ -106,6 +112,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::resource('/sengketa', SengketaController::class);
         Route::resource('/formpermohonan', FormPermohonanController::class);
         Route::resource('/formpengajuan', FormPengajuanController::class);
+        Route::resource('/katdip', KatDipController::class);
+        Route::resource('/dip', DipController::class);
 
         Route::resource('/laporan', LaporanController::class);
         Route::get('/filelaporan/{laporan}', [FileLaporanController::class, 'index'])->name('filelaporan.index');

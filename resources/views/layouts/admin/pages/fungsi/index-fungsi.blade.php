@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Definisi Informasi Publik')
+@section('title', 'Tugas Pokok & Fungsi')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Definisi Informasi Publik</li>
+    <li class="breadcrumb-item active">Tugas Pokok & Fungsi</li>
 @endsection
 
 @section('content')
@@ -12,11 +12,11 @@
         <div class="col-lg-12">
             <x-card>
                 <x-slot name="header">
-                    @if($definisi->isEmpty())
-                        <a href="{{route('definisi.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
+                    @if($fungsi->isEmpty())
+                        <a href="{{route('fungsi.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
                     @else
-                    @foreach ($definisi as $definisis)
-                        <a href="{{route('definisi.edit', $definisis->id)}}" class="btn btn-warning"><i class="fas fa-plus-circle"></i> Edit</a>
+                    @foreach ($fungsi as $fungsis)
+                        <a href="{{route('fungsi.edit', $fungsis->id)}}" class="btn btn-warning"><i class="fas fa-plus-circle"></i> Edit</a>
                     @endforeach
                     @endif
                 </x-slot>
@@ -26,14 +26,14 @@
                         <th>Judul</th>
                         <th>Deskripsi</th>
                     </x-slot>
-                        @foreach ($definisi as $definisis)
+                        @foreach ($fungsi as $fungsis)
                         <tr>
                             <td width="38%">Sub Judul</td>
-                            <td>{{$definisis->title}}</td>
+                            <td>{{$fungsis->title}}</td>
                         </tr>
                         <tr>
                             <td width="38%">Deskripsi</td>
-                            <td>{!!$definisis->body!!}</td>
+                            <td>{!!$fungsis->body!!}</td>
                         </tr>
                         @endforeach
                 </x-table>

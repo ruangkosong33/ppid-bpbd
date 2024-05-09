@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Tentang;
 
-use App\Models\Definisi;
+use App\Models\Fungsi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class DefinisiController extends Controller
+class FungsiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $definisi=Definisi::orderBy('id')->get();
+        $fungsi=Fungsi::orderBy('id')->get();
 
-        return view('layouts.admin.pages.definisi.index-definisi', ['definisi'=>$definisi]);
+        return view('layouts.admin.pages.fungsi.index-fungsi', ['fungsi'=>$fungsi]);
     }
 
     /**
@@ -23,7 +23,7 @@ class DefinisiController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin.pages.definisi.create-definisi');
+        return view('layouts.admin.pages.fungsi.create-fungsi');
     }
 
     /**
@@ -35,14 +35,14 @@ class DefinisiController extends Controller
             'title'=>'required',
         ]);
 
-        $definisi=Definisi::create([
+        $fungsi=Fungsi::create([
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Simpan');
 
-        return redirect()->route('definisi.index');
+        return redirect()->route('fungsi.index');
     }
 
     /**
@@ -56,39 +56,39 @@ class DefinisiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Definisi $definisi)
+    public function edit(Fungsi $fungsi)
     {
-        return view('layouts.admin.pages.definisi.edit-definisi', ['definisi'=>$definisi]);
+        return view('layouts.admin.pages.fungsi.edit-fungsi', ['fungsi'=>$fungsi]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Definisi $definisi)
+    public function update(Request $request, Fungsi $fungsi)
     {
         $this->validate($request, [
             'title'=>'required',
         ]);
 
-        $definisi->update([
+        $fungsi->update([
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Update');
 
-        return redirect()->route('definisi.index');
+        return redirect()->route('fungsi.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Definisi $definisi)
+    public function destroy(Fungsi $fungsi)
     {
-        $definisi->delete();
+        $fungsi->delete();
 
-        flash('Data Berhasil Di Hapus');
+        flash('Data Berhasil Di Update');
 
-        return redirect()->route('definisi.index');
+        return redirect()->route('fungsi.index');
     }
 }

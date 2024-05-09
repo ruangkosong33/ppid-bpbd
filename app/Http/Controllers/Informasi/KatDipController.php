@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Tentang;
+namespace App\Http\Controllers\Informasi;
 
-use App\Models\Definisi;
+use App\Models\Katdip;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class DefinisiController extends Controller
+class KatDipController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $definisi=Definisi::orderBy('id')->get();
+        $katdip=Katdip::orderBy('id', 'DESC')->get();
 
-        return view('layouts.admin.pages.definisi.index-definisi', ['definisi'=>$definisi]);
+        return view('layouts.admin.pages.katdip.index-katdip', ['katdip'=>$katdip]);
     }
 
     /**
@@ -23,7 +23,7 @@ class DefinisiController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin.pages.definisi.create-definisi');
+        return view('layouts.admin.pages.katdip.create-katdip');
     }
 
     /**
@@ -35,14 +35,13 @@ class DefinisiController extends Controller
             'title'=>'required',
         ]);
 
-        $definisi=Definisi::create([
+        $katip=Katdip::create([
             'title'=>$request->title,
-            'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Simpan');
 
-        return redirect()->route('definisi.index');
+        return redirect()->route('katdip.index');
     }
 
     /**
@@ -56,39 +55,38 @@ class DefinisiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Definisi $definisi)
+    public function edit(Katdip $katdip)
     {
-        return view('layouts.admin.pages.definisi.edit-definisi', ['definisi'=>$definisi]);
+        return view('layouts.admin.pages.katdip.edit-katdip', ['katdip'=>$katdip]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Definisi $definisi)
+    public function update(Request $request, Katdip $katdip)
     {
         $this->validate($request, [
             'title'=>'required',
         ]);
 
-        $definisi->update([
+        $katdip->update([
             'title'=>$request->title,
-            'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Update');
 
-        return redirect()->route('definisi.index');
+        return redirect()->route('katdip.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Definisi $definisi)
+    public function destroy(Katdip $katdip)
     {
-        $definisi->delete();
+        $katdip->delete();
 
         flash('Data Berhasil Di Hapus');
 
-        return redirect()->route('definisi.index');
+        return redirect()->route('katdip.index');
     }
 }

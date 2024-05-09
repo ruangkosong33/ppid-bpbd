@@ -13,6 +13,7 @@
                         <li><a href="">Tugas Pokok & Fungsi</a></li>
                         <li><a href="{{route('keputusan')}}">Surat Keputusan</a></li>
                         <li><a href="{{route('dasar')}}">Dasar Hukum</a></li>
+                        <li><a href="{{route('team')}}">Tim PPID</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children"><a href="#">Informasi Publik</a>

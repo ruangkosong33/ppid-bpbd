@@ -40,9 +40,10 @@
           <li class="nav-item
             {{request()->is('admin/dasar*') ? 'menu-open' : ''}}
             {{request()->is('admin/visi*') ? 'menu-open' : ''}}
-            {{request()->is('admin/maklumat*') ? 'menu-open' : ''}}
             {{request()->is('admin/struktur*') ? 'menu-open' : ''}}
-            
+            {{request()->is('admin/fungsi*') ? 'menu-open' : ''}}
+            {{request()->is('admin/team*') ? 'menu-open' : ''}}
+
                                                                         ">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
@@ -69,35 +70,19 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('maklumat.index')}}" class="nav-link {{request()->is('admin/maklumat*') ? 'active' : ''}}">
+                <a href="{{route('fungsi.index')}}" class="nav-link {{request()->is('admin/fungsi*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Maklumat Pelayanan</p>
+                  <p>Tugas Pokok & Fungsi</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{route('struktur.index')}}" class="nav-link {{request()->is('admin/struktur*') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Struktur Organisasi</p>
-                  </a>
+              <li class="nav-item">
+                <a href="{{route('struktur.index')}}" class="nav-link {{request()->is('admin/struktur*') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Struktur Organisasi</p>
+                </a>
                 </li>
-              </ul>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('standar.index')}}" class="nav-link {{request()->is('admin/standar*') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Standar Biaya</p>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('waktu.index')}}" class="nav-link {{request()->is('admin/waktu*') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Waktu Layanan</p>
-                </a>
-              </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
@@ -107,142 +92,200 @@
                 </a>
               </li>
             </ul>
-
-          </li>
-
-          <li class="nav-item
-            {{request()->is('admin/kategori*') ? 'menu-open' : ''}} --}}
-            {{request()->is('admin/post*') ? 'menu-open' : ''}} --}}
-                                                                      ">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-newspaper"></i>
-                <p>
-                Data Artikel
-                <i class="right fas fa-angle-left"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="{{route('kategori.index')}}" class="nav-link {{request()->is('admin/kategori*') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Kategori</p>
-                </a>
-                </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="{{route('post.index')}}" class="nav-link {{request()->is('admin/post*') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Berita</p>
-                </a>
-                </li>
-            </ul>
-          </li>
-
-          <li class="nav-item
-            {{request()->is('admin/banner*') ? 'menu-open' : ''}}
-            {{request()->is('admin/foto*') ? 'menu-open' : ''}}
-            {{request()->is('admin/video*') ? 'menu-open' : ''}}
-            {{request()->is('admin/partner*') ? 'menu-open' : ''}}
-                                                                        ">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-video"></i>
-                <p>
-                Data Media
-                <i class="right fas fa-angle-left"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="{{route('banner.index')}}" class="nav-link {{request()->is('admin/banner*') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Banner</p>
-                </a>
-                </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="{{route('foto.index')}}" class="nav-link {{request()->is('admin/foto*') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Foto</p>
-                </a>
-                </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="{{route('video.index')}}" class="nav-link {{request()->is('admin/video*') ? 'active' : ''}}">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Video</p>
-                </a>
-                </li>
-            </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="{{route('partner.index')}}" class="nav-link {{request()->is('admin/partner*') ? 'active' : ''}}">
+                <a href="{{route('team.index')}}" class="nav-link {{request()->is('admin/team*') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Partner</p>
-              </a>
+                  <p>Tim PPID</p>
+                </a>
               </li>
             </ul>
+
           </li>
 
           <li class="nav-item
-            {{-- {{request()->is('admin/download*') ? 'menu-open' : ''}}
-            {{request()->is('admin/filedownload*') ? 'menu-open' : ''}} --}}
+            {{request()->is('admin/definisi*') ? 'menu-open' : ''}}
+            {{request()->is('admin/dip*') ? 'menu-open' : ''}}
+            {{request()->is('admin/katdip*') ? 'menu-open' : ''}}
                                                                                 ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-folder-open"></i>
                 <p>
-                Informasi Publik
+                Data Informasi Publik
                 <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                {{-- <a href="{{route('download.index')}}" class="nav-link {{ request()->is('admin/download*') ? 'active' : '' }}"> --}}
+                  <a href="{{route('definisi.index')}}" class="nav-link {{request()->is('admin/definisi*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Kategori Informasi</p>
+                    <p>Definsi Informasi</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('katdip.index')}}" class="nav-link {{request()->is('admin/katdip*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Kategori DIP</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('dip.index')}}" class="nav-link {{request()->is('admin/dip*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>File DIP</p>
+                  </a>
+                </li>
+            </ul>
+
+          </li>
+
+          <li class="nav-item
+            {{request()->is('admin/etik*') ? 'menu-open' : ''}}
+            {{request()->is('admin/hukum*') ? 'menu-open' : ''}}
+            {{request()->is('admin/sarana*') ? 'menu-open' : ''}}
+            {{request()->is('admin/sop*') ? 'menu-open' : ''}}
+            {{request()->is('admin/filesop*') ? 'menu-open' : ''}}
+            {{request()->is('admin/hak*') ? 'menu-open' : ''}}
+            {{request()->is('admin/standar*') ? 'menu-open' : ''}}
+            {{request()->is('admin/maklumat*') ? 'menu-open' : ''}}
+            {{request()->is('admin/waktu*') ? 'menu-open' : ''}}
+                                                                    ">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-wallet"></i>
+                <p>
+                Data Layanan
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('maklumat.index')}}" class="nav-link {{request()->is('admin/maklumat*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Maklumat Pelayanan</p>
+                  </a>
+                </li>
+              </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('etik.index')}}" class="nav-link {{request()->is('admin/etik*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Kode Etik</p>
                 </a>
                 </li>
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                {{-- <a href="{{route('filedownload.index')}}" class="nav-link {{ request()->is('admin/filedownload*') ? 'active' : ''}}"> --}}
+                  <a href="{{route('waktu.index')}}" class="nav-link {{request()->is('admin/waktu*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>File Informasi</p>
+                    <p>Waktu Layanan</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('sarana.index')}}" class="nav-link {{request()->is('admin/sarana*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Sarana & Prasarana</p>
+                </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('hak.index')}}" class="nav-link {{request()->is('admin/hak*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Hak Informasi</p>
+                </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('standar.index')}}" class="nav-link {{request()->is('admin/standar*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Standar Biaya</p>
                 </a>
                 </li>
             </ul>
           </li>
 
           <li class="nav-item
-            {{-- {{request()->is('admin/agenda*') ? 'menu-open' : ''}}
-            {{request()->is('admin/form*') ? 'menu-open' : ''}} --}}
+          {{request()->is('admin/kategori*') ? 'menu-open' : ''}} --}}
+          {{request()->is('admin/post*') ? 'menu-open' : ''}} --}}
                                                                     ">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-wallet"></i>
-                <p>
-                Data Kegiatan
-                <i class="right fas fa-angle-left"></i>
-                </p>
+          <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-newspaper"></i>
+              <p>
+              Data Artikel
+              <i class="right fas fa-angle-left"></i>
+              </p>
+          </a>
+          <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('kategori.index')}}" class="nav-link {{request()->is('admin/kategori*') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kategori Berita</p>
+              </a>
+              </li>
+          </ul>
+          <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('post.index')}}" class="nav-link {{request()->is('admin/post*') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Post Berita</p>
+              </a>
+              </li>
+          </ul>
+        </li>
+
+          <li class="nav-item
+          {{request()->is('admin/banner*') ? 'menu-open' : ''}}
+          {{request()->is('admin/foto*') ? 'menu-open' : ''}}
+          {{request()->is('admin/video*') ? 'menu-open' : ''}}
+          {{request()->is('admin/partner*') ? 'menu-open' : ''}}
+                                                                      ">
+          <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-video"></i>
+              <p>
+              Data Media
+              <i class="right fas fa-angle-left"></i>
+              </p>
+          </a>
+          <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('banner.index')}}" class="nav-link {{request()->is('admin/banner*') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Banner</p>
+              </a>
+              </li>
+          </ul>
+          <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('foto.index')}}" class="nav-link {{request()->is('admin/foto*') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Galeri Foto</p>
+              </a>
+              </li>
+          </ul>
+          <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('video.index')}}" class="nav-link {{request()->is('admin/video*') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Galeri Video</p>
+              </a>
+              </li>
+          </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="{{route('partner.index')}}" class="nav-link {{request()->is('admin/partner*') ? 'active' : ''}}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Link Partner</p>
             </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                {{-- <a href="{{route('agenda.index')}}" class="nav-link {{request()->is('admin/agenda*') ? 'active' : ''}}"> --}}
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Agenda</p>
-                </a>
-                </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                {{-- <a href="{{route('form.index')}}" class="nav-link {{request()->is('admin/form*') ? 'active' : ''}}"> --}}
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Form</p>
-                </a>
-                </li>
-            </ul>
-          </li>
+            </li>
+          </ul>
+        </li>
+
 
           <li class="nav-header"><strong>Setting</strong></li>
 

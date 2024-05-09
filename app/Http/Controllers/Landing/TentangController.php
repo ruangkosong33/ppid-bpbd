@@ -25,6 +25,13 @@ class TentangController extends Controller
         return view('layouts.guest.pages.visi.index-visi', ['visis'=>$visis]);
     }
 
+    public function fungsis()
+    {
+        $fungsis=Fungsi::first();
+
+        return view('layouts.guest.pages.fungsi.index-fungis', ['fungsis'=>$fungsis]);
+    }
+
     public function haks()
     {
         $haks=Hak::first();

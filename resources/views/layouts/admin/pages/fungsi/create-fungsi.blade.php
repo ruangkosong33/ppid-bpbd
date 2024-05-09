@@ -1,27 +1,27 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Definisi Informasi Publik')
+@section('title', 'Tugas Pokok & Fungsi')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active"><a href="{{route('definisi.index')}}">Definisi Informasi Publik</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('fungsi.index')}}">Tugas Pokok & Fungsi</a></li>
     <li class="breadcrumb-item active">Tambah Data</li>
 @endsection
 
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <form action="{{route('definisi.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('fungsi.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <x-card>
 
                     <div class="form-group">
                         <label for="title">Judul</label>
-                        <input type="text" class="form-control" name="title" placeholder="Definisi Informasi Publik">
+                        <input type="text" class="form-control" name="title" placeholder="Tugas Pokok & Fungsi">
                     </div>
 
                     <div class="form-group">
                         <label for="body">Deskripsi</label>
-                        <textarea class="form-control" name="body" id="summernote" placeholder="Definisi Informasi Publik"></textarea>
+                        <textarea class="form-control" name="body" id="summernote" placeholder="Tugas Pokok & Fungsi"></textarea>
                     </div>
 
                     <x-slot name="footer">
