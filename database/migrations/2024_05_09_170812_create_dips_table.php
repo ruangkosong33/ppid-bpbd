@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('dips', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('katdip_id')->references('id')->on('katidips');
+            $table->foreignId('katdip_id')->references('id')->on('katdips');
             $table->string('title');
             $table->string('slug');
             $table->string('file')->nullable();

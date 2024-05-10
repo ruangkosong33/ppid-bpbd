@@ -63,8 +63,8 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Dokumentasi</a></li>
-                <li><a href="contact.html">SP4N Lapor</a></li>
+                <li><a href="#">Dokumentasi</a></li>
+                <li><a href="https://www.lapor.go.id">SP4N Lapor</a></li>
 
             </ul>
         </div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Katdip extends Model
@@ -26,4 +27,9 @@ class Katdip extends Model
         ];
     }
 
+    //RELATION
+    public function dips(): HasMany
+    {
+        return $this->hasMany(Dip::class);
+    }
 }

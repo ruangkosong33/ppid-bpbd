@@ -1,9 +1,10 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Tim PPID')
+@section('title', 'File Kategori Daftar Informasi Publik')
+
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Data Tim PPID</li>
+    <li class="breadcrumb-item active">Data File DIP</li>
 @endsection
 
 @section('content')
@@ -12,28 +13,28 @@
         <div class="col-lg-12">
             <x-card>
                 <x-slot name="header">
-                    <a href="{{route('team.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
+                    <a href="{{route('dip.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
                 </x-slot>
 
                 <x-table>
                     <x-slot name="thead">
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>Gambar</th>
-                        <th>Jabatan</th>
+                        <th>Kategori DIP</th>
+                        <th>Judul</th>
+                        <th>File</th>
                         <th>Action</th>
                     </x-slot>
-                    @foreach ($team as $key=>$teams)
+                    @foreach ($dip as $key=>$dips)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{$teams->name}}</td>
-                            <td><img src="{{asset('storage/image-team/' . $teams->image)}}" width="100px"></td>
-                            <td>{{$teams->job}}</td>
+                            <td>{{$dips->katdips->title}}</td>
+                            <td>{{$dips->title}}</td>
+                            <td><a href="{{ asset('storage/file-dip/' . $dips->file) }}" download>{{$dips->file}}</a></td>
                             <td>
-                                <a href="{{route('team.edit', $teams->id)}}" class="btn btn-warning btn-sm">
+                                <a href="{{route('dip.edit', $dips->id)}}" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form method="post" action="{{route('team.destroy', $teams->id)}}" class="d-inline">
+                                <form method="post" action="{{route('dip.destroy', $dips->id)}}" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete" onclick="return confirm('Yakin Ingin Menghapus Data?')">
@@ -43,11 +44,8 @@
                             </td>
                         </tr>
                     @endforeach
-
                 </x-table>
-
             </x-card>
-
         </div>
     </div>
 
@@ -55,10 +53,10 @@
 
 @include('include.datatable')
 
-@push('script')
+    @push('script')
 
-<script>
-    $('.table').DataTable();
-</script>
+        <script>
+            $('.table').DataTable();
+        </script>
 
-@endpush
+    @endpush

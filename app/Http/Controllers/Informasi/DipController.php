@@ -6,6 +6,7 @@ use App\Models\Dip;
 use App\Models\Katdip;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class DipController extends Controller
 {
@@ -14,7 +15,7 @@ class DipController extends Controller
      */
     public function index()
     {
-        $dip=Dip::with('katdip')->orderBy('id', 'DESC')->get();
+        $dip=Dip::with(['katdips'])->orderBy('id', 'DESC')->get();
 
         return view('layouts.admin.pages.dip.index-dip', ['dip'=>$dip]);
     }
@@ -82,7 +83,7 @@ class DipController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Dip $dip)
     {
         $this->validate($request, [
             'title'=>'required',
@@ -91,7 +92,7 @@ class DipController extends Controller
 
         if($request->file('file'))
         {
-            if ($hukum->file) {
+            if ($dip->file) {
                 Storage::delete('public/file-dip/' . $dip->file);
             }
 
@@ -124,6 +125,8 @@ class DipController extends Controller
         {
             Storage::delete('public/file-dip/' . $dip->file);
         }
+
+        $dip->delete();
 
         flash('Data Berhasil Di Hapus');
 
