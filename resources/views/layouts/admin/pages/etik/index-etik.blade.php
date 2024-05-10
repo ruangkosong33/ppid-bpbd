@@ -3,7 +3,7 @@
 @section('title', 'Kode Etik')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Kode Etik</li>
+    <li class="breadcrumb-item active">Data Kode Etik</li>
 @endsection
 
 @section('content')

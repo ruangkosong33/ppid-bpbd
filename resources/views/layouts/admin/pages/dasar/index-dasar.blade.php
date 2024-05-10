@@ -3,7 +3,7 @@
 @section('title', 'Dasar Hukum')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Dasar Hukum</li>
+    <li class="breadcrumb-item active">Data Dasar Hukum</li>
 @endsection
 
 @section('content')

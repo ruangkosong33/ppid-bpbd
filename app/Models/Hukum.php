@@ -12,7 +12,7 @@ class Hukum extends Model
 
     protected $table='hukums';
 
-    protected $fillable=['title', 'slug', 'body', 'file'];
+    protected $fillable=['title', 'slug', 'date', 'file'];
 
     protected $hidden=[];
 

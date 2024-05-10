@@ -196,7 +196,7 @@
                 <li class="nav-item">
                 <a href="{{route('hak.index')}}" class="nav-link {{request()->is('admin/hak*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Hak Informasi</p>
+                    <p>Hak Atas Informasi</p>
                 </a>
                 </li>
             </ul>
@@ -205,6 +205,14 @@
                 <a href="{{route('standar.index')}}" class="nav-link {{request()->is('admin/standar*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Standar Biaya</p>
+                </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('hukum.index')}}" class="nav-link {{request()->is('admin/hukum*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Produk Hukum</p>
                 </a>
                 </li>
             </ul>

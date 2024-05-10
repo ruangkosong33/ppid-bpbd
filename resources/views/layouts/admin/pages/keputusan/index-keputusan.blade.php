@@ -3,7 +3,7 @@
 @section('title', 'Surat Keputusan')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Surat Keputusan</li>
+    <li class="breadcrumb-item active">Data Surat Keputusan</li>
 @endsection
 
 @section('content')

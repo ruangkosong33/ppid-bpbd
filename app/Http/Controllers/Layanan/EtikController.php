@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Layanan;
 
-use App\Http\Controllers\Controller;
+use App\Models\Etik;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class EtikController extends Controller
 {

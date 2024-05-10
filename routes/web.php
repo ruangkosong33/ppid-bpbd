@@ -15,6 +15,7 @@ use App\Http\Controllers\Tentang\TeamController;
 use App\Http\Controllers\Tentang\VisiController;
 use App\Http\Controllers\Informasi\DipController;
 use App\Http\Controllers\Landing\MediaController;
+use App\Http\Controllers\Layanan\HukumController;
 use App\Http\Controllers\Media\PartnerController;
 use App\Http\Controllers\Tentang\DasarController;
 use App\Http\Controllers\Tentang\WaktuController;
@@ -93,6 +94,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         //Layanan
         Route::resource('/etik', EtikController::class);
         Route::resource('/sarana', SaranaController::class);
+        Route::resource('/hukum', HukumController::class);
 
         Route::resource('/sop', SopController::class);
         Route::get('/filesop/{sop}', [FileSopController::class, 'index'])->name('filesop.index');

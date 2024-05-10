@@ -3,7 +3,7 @@
 @section('title', 'Standar Biaya')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Standar Biaya</li>
+    <li class="breadcrumb-item active">Data Standar Biaya</li>
 @endsection
 
 @section('content')
