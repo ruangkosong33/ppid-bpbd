@@ -25,6 +25,7 @@ use App\Http\Controllers\Tentang\ProfilController;
 use App\Http\Controllers\Landing\BerandaController;
 use App\Http\Controllers\Landing\LayananController;
 use App\Http\Controllers\Landing\TentangController;
+use App\Http\Controllers\Layanan\FileSopController;
 use App\Http\Controllers\Tentang\StandarController;
 use App\Http\Controllers\Artikel\KategoriController;
 use App\Http\Controllers\Informasi\KatDipController;
@@ -100,9 +101,9 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::get('/filesop/{sop}', [FileSopController::class, 'index'])->name('filesop.index');
         Route::get('/filesop/create/{sop}', [FileSopController::class, 'create'])->name('filesop.create');
         Route::post('/filesop/{sop}', [FileSopController::class, 'store'])->name('filesop.store');
-        Route::get('/filesop/edit/{filesop}', [FileSopController::class, 'edit'])->name('filesop.edit');
-        Route::put('/filesop/{filesop}', [FileSopController::class, 'update'])->name('filesop.update');
-        Route::delete('/filesop/{filesop}', [FileSopController::class, 'destroy'])->name('filesop.destroy');
+        Route::get('/filesop/{sop}/edit/{filesop}', [FileSopController::class, 'edit'])->name('filesop.edit');
+        Route::put('/filesop/{sop}/{filesop}', [FileSopController::class, 'update'])->name('filesop.update');
+        Route::delete('/filesop/{sop}/{filesop}', [FileSopController::class, 'destroy'])->name('filesop.destroy');
 
         //Artikel
         Route::resource('/kategori', KategoriController::class);

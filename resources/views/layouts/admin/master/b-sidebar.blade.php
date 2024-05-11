@@ -216,6 +216,14 @@
                 </a>
                 </li>
             </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('sop.index')}}" class="nav-link {{ request()->is('admin/sop*') || request()->is('admin/filesop*') ? 'active' : '' }}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SOP</p>
+                </a>
+                </li>
+            </ul>
           </li>
 
           <li class="nav-item
