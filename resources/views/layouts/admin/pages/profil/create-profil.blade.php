@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Profil PPID')
+@section('title', 'Data Profil PPID')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active"><a href="{{route('profil.index')}}">Profil PPID</a></li>

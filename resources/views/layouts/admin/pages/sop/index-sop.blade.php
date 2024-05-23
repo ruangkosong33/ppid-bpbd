@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Standar Operasional Prosedur')
+@section('title', 'Data Standar Operasional Prosedur')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Data SOP</li>
+    <li class="breadcrumb-item active">SOP</li>
 @endsection
 
 @section('content')

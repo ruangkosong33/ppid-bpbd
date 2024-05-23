@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Kategori')
+@section('title', 'Data Kategori')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Data Kategori</li>
+    <li class="breadcrumb-item active">Kategori</li>
 @endsection
 
 @section('content')

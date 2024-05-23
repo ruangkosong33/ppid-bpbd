@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Kode Etik')
+@section('title', 'Data Kode Etik')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active">Data Kode Etik</li>

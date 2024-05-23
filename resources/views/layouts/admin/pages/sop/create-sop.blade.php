@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Standar Operasional Prosedur')
+@section('title', 'Data Standar Operasional Prosedur')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active"><a href="{{route('sop.index')}}">Data SOP</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('sop.index')}}">SOP</a></li>
     <li class="breadcrumb-item active">Tambah Data</li>
 @endsection
 

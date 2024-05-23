@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Standar Biaya')
+@section('title', 'Data Standar Biaya')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active"><a href="{{route('maklumat.index')}}">Standar Biaya</a></li>

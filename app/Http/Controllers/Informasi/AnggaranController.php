@@ -71,7 +71,7 @@ class AnggaranController extends Controller
      */
     public function edit(Anggaran $anggaran)
     {
-        return view('layouts.admnin.pages.anggaran.edit-anggaran', ['anggaran'=>$anggaran]);
+        return view('layouts.admin.pages.anggaran.edit-anggaran', ['anggaran'=>$anggaran]);
     }
 
     /**
@@ -86,8 +86,8 @@ class AnggaranController extends Controller
 
         if($request->file('file'))
         {
-            if ($filelaporan->file) {
-                Storage::delete('public/file-laporan/' . $filelaporan->file);
+            if ($anggaran->file) {
+                Storage::delete('public/file-anggaran/' . $anggaran->file);
             }
             $file=$request->file('file');
             $extension=$file->getClientOriginalName();

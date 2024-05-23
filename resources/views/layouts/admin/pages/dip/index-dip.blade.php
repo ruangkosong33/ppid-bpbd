@@ -1,10 +1,10 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'File Kategori Daftar Informasi Publik')
+@section('title', 'Data File Kategori Daftar Informasi Publik')
 
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Data File DIP</li>
+    <li class="breadcrumb-item active">File DIP</li>
 @endsection
 
 @section('content')

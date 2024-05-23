@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Visi & Misi')
+@section('title', 'Data Visi & Misi')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active"><a href="{{route('visi.index')}}">Visi & Misi</a></li>

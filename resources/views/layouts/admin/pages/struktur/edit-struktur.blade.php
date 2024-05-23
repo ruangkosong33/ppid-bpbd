@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Struktur Organisasi')
+@section('title', 'Data Struktur Organisasi')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active"><a href="{{route('struktur.index')}}">Struktur Organisasi</a></li>

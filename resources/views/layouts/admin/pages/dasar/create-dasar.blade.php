@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Dasar Hukum')
+@section('title', 'Data Dasar Hukum')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active"><a href="{{route('dasar.index')}}">Dasar Hukum</a></li>

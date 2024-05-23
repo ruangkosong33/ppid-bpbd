@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Surat Keputusan')
+@section('title', 'Data Surat Keputusan')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active"><a href="{{route('keputusan.index')}}">Surat Keputusan</a></li>

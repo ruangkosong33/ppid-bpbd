@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'File Kategori Informasi Publik')
+@section('title', 'Data File Kategori Informasi Publik')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active"><a href="{{route('dip.index')}}">Data File Kategori DIP</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('dip.index')}}">File Kategori DIP</a></li>
     <li class="breadcrumb-item active">Tambah Data</li>
 @endsection
 

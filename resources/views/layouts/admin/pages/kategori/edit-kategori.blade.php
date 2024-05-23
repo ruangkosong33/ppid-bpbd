@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Kategori')
+@section('title', 'Data Kategori')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active"><a href="{{route('kategori.index')}}">Data Kategori</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('kategori.index')}}">Kategori</a></li>
     <li class="breadcrumb-item active">Edit Data Kategori</li>
 @endsection
 

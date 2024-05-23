@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Waktu Layanan')
+@section('title', 'Data Waktu Layanan')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active">Waktu Layanan</li>

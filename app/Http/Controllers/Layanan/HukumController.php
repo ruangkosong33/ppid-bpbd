@@ -50,8 +50,8 @@ class HukumController extends Controller
 
         $hukum=Hukum::create([
             'title'=>$request->title,
+            'date'=>$request->date,
             'file'=>$files,
-            'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Simpan');
@@ -78,7 +78,7 @@ class HukumController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Hukum $hukum)
     {
         $this->validate($request, [
             'title'=>'required',
@@ -102,8 +102,8 @@ class HukumController extends Controller
 
         $hukum->update([
             'title'=>$request->title,
+            'date'=>$request->date,
             'file'=>$files,
-            'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Update');

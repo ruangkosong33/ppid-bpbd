@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Definisi Informasi Publik')
+@section('title', 'Data Definisi Informasi Publik')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active"><a href="{{route('definisi.index')}}">Definisi Informasi Publik</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('definisi.index')}}">Data Definisi Informasi Publik</a></li>
     <li class="breadcrumb-item active">Edit Data</li>
 @endsection
 

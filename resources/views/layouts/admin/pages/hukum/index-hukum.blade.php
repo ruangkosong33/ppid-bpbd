@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Produk Hukum')
+@section('title', 'Data Produk Hukum')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Data Produk Hukum</li>
+    <li class="breadcrumb-item active">Produk Hukum</li>
 @endsection
 
 @section('content')
@@ -19,8 +19,8 @@
                     <x-slot name="thead">
                         <th>No</th>
                         <th>Judul</th>
-                        <th>Tanggal</th>
                         <th>File</th>
+                        <th>Tanggal</th>
                         <th>Action</th>
                     </x-slot>
                     @foreach ($hukum as $key=>$hukums)

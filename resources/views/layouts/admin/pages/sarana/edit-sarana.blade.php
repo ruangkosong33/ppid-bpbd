@@ -1,9 +1,9 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Sarana & Prasarana')
+@section('title', 'Data Sarana & Prasarana')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active"><a href="{{route('sarana.index')}}">Data Sarana & Prasaran</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('sarana.index')}}">Sarana & Prasaran</a></li>
     <li class="breadcrumb-item active">Edit Data</li>
 @endsection
 
