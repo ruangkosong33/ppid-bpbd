@@ -108,6 +108,8 @@
             {{request()->is('admin/dip*') ? 'menu-open' : ''}}
             {{request()->is('admin/katdip*') ? 'menu-open' : ''}}
             {{request()->is('admin/anggaran*') ? 'menu-open' : ''}}
+            {{request()->is('admin/laporan*') ? 'menu-open' : ''}}
+            {{request()->is('admin/filelaporan*') ? 'menu-open' : ''}}
                                                                                 ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-folder-open"></i>
@@ -129,6 +131,14 @@
                   <a href="{{route('anggaran.index')}}" class="nav-link {{request()->is('admin/anggaran*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Anggaran Kegiatan</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('laporan.index')}}" class="nav-link {{request()->is('admin/anggaran*') || request()->is('admin/filelaporan*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Laporan Tahunan</p>
                   </a>
                 </li>
             </ul>

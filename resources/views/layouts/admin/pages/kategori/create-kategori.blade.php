@@ -4,7 +4,7 @@
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active"><a href="{{route('kategori.index')}}">Kategori</a></li>
-    <li class="breadcrumb-item active">Tambah Kategori</li>
+    <li class="breadcrumb-item active">Tambah Data</li>
 @endsection
 
 @section('content')

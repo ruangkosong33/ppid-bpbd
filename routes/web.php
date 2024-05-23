@@ -122,11 +122,11 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 
         Route::resource('/laporan', LaporanController::class);
         Route::get('/filelaporan/{laporan}', [FileLaporanController::class, 'index'])->name('filelaporan.index');
-        Route::get('/filelaporan/create/{laporan}', [ileLaporanpController::class, 'create'])->name('filelaporan.create');
-        Route::post('/filelaporan/{sop}', [FileLaporanController::class, 'store'])->name('filelaporan.store');
-        Route::get('/filelaporan/edit/{filelaporan}', [FileLaporanController::class, 'edit'])->name('filelaporan.edit');
-        Route::put('/filelaporan/{filelaporan}', [FileLaporanController::class, 'update'])->name('filelaporan.update');
-        Route::delete('/filelaporan/{filelaporan}', [FileLaporanController::class, 'destroy'])->name('filelaporan.destroy');
+        Route::get('/filelaporan/create/{laporan}', [FileLaporanController::class, 'create'])->name('filelaporan.create');
+        Route::post('/filelaporan/{laporan}', [FileLaporanController::class, 'store'])->name('filelaporan.store');
+        Route::get('/filelaporan/{laporan}/edit/{filelaporan}', [FileLaporanController::class, 'edit'])->name('filelaporan.edit');
+        Route::put('/filelaporan/{laporan}/{filelaporan}', [FileLaporanController::class, 'update'])->name('filelaporan.update');
+        Route::delete('/filelaporan/{laporan}/{filelaporan}', [FileLaporanController::class, 'destroy'])->name('filelaporan.destroy');
 
         //Media
         Route::resource('/banner', BannerController::class);

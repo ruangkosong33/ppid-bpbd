@@ -38,7 +38,7 @@ class FileLaporanController extends Controller
             $files=null;
         }
 
-        $filelapora=$laporan->filelaporans()->create([
+        $filelaporan=$laporan->filelaporans()->create([
             'title'=>$request->title,
             'file'=>$files,
         ]);
