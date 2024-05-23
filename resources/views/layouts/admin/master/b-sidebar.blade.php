@@ -107,6 +107,7 @@
             {{request()->is('admin/definisi*') ? 'menu-open' : ''}}
             {{request()->is('admin/dip*') ? 'menu-open' : ''}}
             {{request()->is('admin/katdip*') ? 'menu-open' : ''}}
+            {{request()->is('admin/anggaran*') ? 'menu-open' : ''}}
                                                                                 ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-folder-open"></i>
@@ -120,6 +121,14 @@
                   <a href="{{route('definisi.index')}}" class="nav-link {{request()->is('admin/definisi*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Definsi Informasi</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('anggaran.index')}}" class="nav-link {{request()->is('admin/anggaran*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Anggaran Kegiatan</p>
                   </a>
                 </li>
             </ul>
