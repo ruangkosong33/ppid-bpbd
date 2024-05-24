@@ -43,8 +43,8 @@
             {{request()->is('admin/struktur*') ? 'menu-open' : ''}}
             {{request()->is('admin/fungsi*') ? 'menu-open' : ''}}
             {{request()->is('admin/team*') ? 'menu-open' : ''}}
-
-                                                                        ">
+            {{request()->is('admin/keputusan*') ? 'menu-open' : ''}}
+                                                                          ">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
@@ -136,7 +136,7 @@
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('laporan.index')}}" class="nav-link {{request()->is('admin/anggaran*') || request()->is('admin/filelaporan*') ? 'active' : ''}}">
+                  <a href="{{route('laporan.index')}}" class="nav-link {{request()->is('admin/laporan*') || request()->is('admin/filelaporan*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Laporan Tahunan</p>
                   </a>
@@ -171,7 +171,7 @@
             {{request()->is('admin/standar*') ? 'menu-open' : ''}}
             {{request()->is('admin/maklumat*') ? 'menu-open' : ''}}
             {{request()->is('admin/waktu*') ? 'menu-open' : ''}}
-                                                                    ">
+                                                                        ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-wallet"></i>
                 <p>
@@ -246,81 +246,80 @@
           </li>
 
           <li class="nav-item
-          {{request()->is('admin/kategori*') ? 'menu-open' : ''}} --}}
-          {{request()->is('admin/post*') ? 'menu-open' : ''}} --}}
-                                                                    ">
-          <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-newspaper"></i>
-              <p>
-              Data Artikel
-              <i class="right fas fa-angle-left"></i>
-              </p>
-          </a>
-          <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('kategori.index')}}" class="nav-link {{request()->is('admin/kategori*') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kategori Berita</p>
-              </a>
-              </li>
-          </ul>
-          <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('post.index')}}" class="nav-link {{request()->is('admin/post*') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Post Berita</p>
-              </a>
-              </li>
-          </ul>
-        </li>
+            {{request()->is('admin/kategori*') ? 'menu-open' : ''}} --}}
+            {{request()->is('admin/post*') ? 'menu-open' : ''}} --}}
+                                                                      ">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-newspaper"></i>
+                <p>
+                Data Artikel
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('kategori.index')}}" class="nav-link {{request()->is('admin/kategori*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Kategori Berita</p>
+                </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('post.index')}}" class="nav-link {{request()->is('admin/post*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Post Berita</p>
+                </a>
+                </li>
+            </ul>
+          </li>
 
           <li class="nav-item
-          {{request()->is('admin/banner*') ? 'menu-open' : ''}}
-          {{request()->is('admin/foto*') ? 'menu-open' : ''}}
-          {{request()->is('admin/video*') ? 'menu-open' : ''}}
-          {{request()->is('admin/partner*') ? 'menu-open' : ''}}
-                                                                      ">
-          <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-video"></i>
-              <p>
-              Data Media
-              <i class="right fas fa-angle-left"></i>
-              </p>
-          </a>
-          <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('banner.index')}}" class="nav-link {{request()->is('admin/banner*') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Banner</p>
-              </a>
-              </li>
-          </ul>
-          <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('foto.index')}}" class="nav-link {{request()->is('admin/foto*') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Galeri Foto</p>
-              </a>
-              </li>
-          </ul>
-          <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('video.index')}}" class="nav-link {{request()->is('admin/video*') ? 'active' : ''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Galeri Video</p>
-              </a>
-              </li>
-          </ul>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-            <a href="{{route('partner.index')}}" class="nav-link {{request()->is('admin/partner*') ? 'active' : ''}}">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Link Partner</p>
+            {{request()->is('admin/banner*') ? 'menu-open' : ''}}
+            {{request()->is('admin/foto*') ? 'menu-open' : ''}}
+            {{request()->is('admin/video*') ? 'menu-open' : ''}}
+            {{request()->is('admin/partner*') ? 'menu-open' : ''}}
+                                                                        ">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-video"></i>
+                <p>
+                Data Media
+                <i class="right fas fa-angle-left"></i>
+                </p>
             </a>
-            </li>
-          </ul>
-        </li>
-
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('banner.index')}}" class="nav-link {{request()->is('admin/banner*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Banner</p>
+                </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('foto.index')}}" class="nav-link {{request()->is('admin/foto*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Galeri Foto</p>
+                </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('video.index')}}" class="nav-link {{request()->is('admin/video*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Galeri Video</p>
+                </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('partner.index')}}" class="nav-link {{request()->is('admin/partner*') ? 'active' : ''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Link Partner</p>
+              </a>
+              </li>
+            </ul>
+          </li>
 
           <li class="nav-header"><strong>Setting</strong></li>
 

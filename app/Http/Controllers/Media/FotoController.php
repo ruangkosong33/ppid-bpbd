@@ -18,7 +18,7 @@ class FotoController extends Controller
     {
         $foto=Foto::orderBy('id')->get();
 
-        return view('layouts.guest.pages.foto.index-foto', ['foto'=>$foto]);
+        return view('layouts.admin.pages.foto.index-foto', ['foto'=>$foto]);
     }
 
     /**
@@ -26,7 +26,7 @@ class FotoController extends Controller
      */
     public function create()
     {
-        return view('layouts.guest.pages.foto.create-foto');
+        return view('layouts.admin.pages.foto.create-foto');
     }
 
     /**
@@ -134,9 +134,9 @@ class FotoController extends Controller
      */
     public function destroy(Foto $foto)
     {
-        if ($banner->image && Storage::exists('public/image-banner/' . $banner->image))
+        if ($foto->image && Storage::exists('public/image-banner/' . $foto->image))
         {
-            Storage::delete('public/image-banner/' . $banner->image);
+            Storage::delete('public/image-banner/' . $foto->image);
         }
 
         $foto->delete();

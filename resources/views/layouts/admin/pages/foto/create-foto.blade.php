@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.b-master')
 
-@section('title', 'Galeri Foto')
+@section('title', 'Data Galeri Foto')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active"><a href="{{route('foto.index')}}">Galeri Foto</a></li>

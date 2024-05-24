@@ -18,7 +18,7 @@ class VideoController extends Controller
     {
         $video=Video::orderBy('id')->get();
 
-        return view('layouts.admin.pages.video.index.video', ['video'=>$video]);
+        return view('layouts.admin.pages.video.index-video', ['video'=>$video]);
     }
 
     /**
