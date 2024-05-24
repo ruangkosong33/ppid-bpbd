@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Informasi;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class FormPengajuanController extends Controller
 {

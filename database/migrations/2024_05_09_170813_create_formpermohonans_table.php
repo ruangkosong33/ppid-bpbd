@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('formpermohonans', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->foreignId('katdip_id')->references('id')->on('katdips');
+            $table->string('alamat');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('pekerjaan');
+            $table->longText('rincian');
+            $table->longText('tujuan');
+            $table->enum('memperoleh', [1,2,3,4]);
+            $table->enum('mendapatkan', [1,2]);
+            $table->enum('salinan', [1,2,3]);
             $table->timestamps();
         });
     }

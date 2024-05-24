@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('formpengajuans', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->string('email');
+            $table->string('ktp');
+            $table->string('image');
+            $table->string('phone');
+            $table->string('alamat');
+            $table->longText('rincian');
+            $table->longText('keterangan');
+            $table->enum('salinan', [1,2,3,4,5,6,7]);
             $table->timestamps();
         });
     }
