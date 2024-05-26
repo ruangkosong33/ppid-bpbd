@@ -37,7 +37,8 @@ class FormPengajuanController extends Controller
         $this->validate($request, [
             'name'=>'required',
             'email'=>'required',
-            'ktp'=>'required|mimes:jpeg,jpg,png|max:5000',
+            'ktp'=>'required',
+            'image'=>'required|mimes:jpeg,jpg,png|max:5000',
             'phone'=>'required',
             'alamat'=>'required',
             'rincian'=>'required',
@@ -66,7 +67,8 @@ class FormPengajuanController extends Controller
         $formpengajuan=Formpengajuan::create([
             'name'=>$request->name,
             'email'=>$request->email,
-            'ktp'=>$images,
+            'ktp'=>$request->ktp,
+            'image'=>$images,
             'phone'=>$request->phone,
             'alamat'=>$request->alamat,
             'rincian'=>$request->rincian,
@@ -104,7 +106,8 @@ class FormPengajuanController extends Controller
         $this->validate($request, [
             'name'=>'required',
             'email'=>'required',
-            'ktp'=>'required|mimes:jpeg,jpg,png|max:5000',
+            'ktp'=>'required',
+            'image'=>'mimes:jpeg,jpg,png|max:5000',
             'phone'=>'required',
             'alamat'=>'required',
             'rincian'=>'required',
@@ -137,7 +140,8 @@ class FormPengajuanController extends Controller
         $formpengajuan->update([
             'name'=>$request->name,
             'email'=>$request->email,
-            'ktp'=>$images,
+            'ktp'=>$request->ktp,
+            'image'=>$images,
             'phone'=>$request->phone,
             'alamat'=>$request->alamat,
             'rincian'=>$request->rincian,

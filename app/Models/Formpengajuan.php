@@ -12,7 +12,7 @@ class Formpengajuan extends Model
 
     protected $table='formpengajuans';
 
-    protected $fillable=['name', 'slug', 'ktp', 'phone', 'alamat', 'rincian', 'keterangan', 'salinan'];
+    protected $fillable=['name', 'slug', 'email', 'ktp', 'image', 'phone', 'alamat', 'rincian', 'keterangan', 'salinan'];
 
     protected $hidden=[];
 

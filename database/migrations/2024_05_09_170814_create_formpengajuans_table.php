@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('email');
             $table->string('ktp');
+            $table->string('image');
             $table->string('phone');
             $table->string('alamat');
             $table->longText('rincian');
