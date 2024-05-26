@@ -110,6 +110,8 @@
             {{request()->is('admin/anggaran*') ? 'menu-open' : ''}}
             {{request()->is('admin/laporan*') ? 'menu-open' : ''}}
             {{request()->is('admin/filelaporan*') ? 'menu-open' : ''}}
+            {{request()->is('admin/formpermohonan*') ? 'menu-open' : ''}}
+            {{request()->is('admin/formpengajuan*') ? 'menu-open' : ''}}
                                                                                 ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-folder-open"></i>
@@ -155,6 +157,22 @@
                   <a href="{{route('dip.index')}}" class="nav-link {{request()->is('admin/dip*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>File DIP</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('formpermohonan.index')}}" class="nav-link {{request()->is('admin/formpermohonan*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Form Permohonan</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('formpengajuan.index')}}" class="nav-link {{request()->is('admin/formpengajuan*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Form Pengajuan</p>
                   </a>
                 </li>
             </ul>

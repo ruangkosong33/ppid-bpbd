@@ -35,7 +35,31 @@ class FormPermohonanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'name'=>'required',
+            'katdip_id'=>'required',
+            'alamat'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'pekerjaan'=>'required',
+            'rincian'=>'required',
+            'tujuan'=>'required',
+            'memperoleh'=>'required',
+            'mendapatkan'=>'required',
+            'salinan'=>'required',
+        ]);
 
+        $formpermohonan=Formpermohonan::create([
+            'name'=>$request->name,
+            'katdip_id'=>$request->katdip_id,
+            'alamat'=>$request->alamat,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'pekerjaan'=>$request->pekerjaan,
+            'rincian'=>$request->rincian,
+            'tujuan'=>$request->tujuan,
+            'memperoleh'=>$request->memperoleh,
+            'mendapatkan'=>$request->mendapatkan,
+            'salinan'=>$request->salinan,
         ]);
 
         flash('Data Berhasil Di Simpan');
@@ -66,6 +90,34 @@ class FormPermohonanController extends Controller
      */
     public function update(Request $request, Formpermohonan $formpermohonan)
     {
+        $this->validate($request, [
+            'name'=>'required',
+            'katdip_id'=>'required',
+            'alamat'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'pekerjaan'=>'required',
+            'rincian'=>'required',
+            'tujuan'=>'required',
+            'memperoleh'=>'required',
+            'mendapatkan'=>'required',
+            'salinan'=>'required',
+        ]);
+
+        $formpermohonan->update([
+            'name'=>$request->name,
+            'katdip_id'=>$request->katdip_id,
+            'alamat'=>$request->alamat,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'pekerjaan'=>$request->pekerjaan,
+            'rincian'=>$request->rincian,
+            'tujuan'=>$request->tujuan,
+            'memperoleh'=>$request->memperoleh,
+            'mendapatkan'=>$request->mendapatkan,
+            'salinan'=>$request->salinan,
+        ]);
+
         flash('Data Berhasil Di Update');
 
         return redirect()->route('formpermohonan.index');
@@ -76,6 +128,8 @@ class FormPermohonanController extends Controller
      */
     public function destroy(Formpermohonan $formpermohonan)
     {
+        $formpermohonan->delete();
+        
         flash('Data Berhasil Di Hapus');
 
         return redirect()->route('formpermohonan.index');

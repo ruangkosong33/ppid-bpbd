@@ -32,4 +32,9 @@ class Katdip extends Model
     {
         return $this->hasMany(Dip::class);
     }
+
+    public function formpermohonans(): HasMany
+    {
+        return $this->hasMany(Formpermohonan::class);
+    }
 }

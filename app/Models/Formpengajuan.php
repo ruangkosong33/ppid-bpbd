@@ -12,7 +12,17 @@ class Formpengajuan extends Model
 
     protected $table='formpengajuans';
 
-    protected $fillable=[];
+    protected $fillable=['name', 'slug', 'ktp', 'phone', 'alamat', 'rincian', 'keterangan', 'salinan'];
 
     protected $hidden=[];
+
+    //SLUG
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 }

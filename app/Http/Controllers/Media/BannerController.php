@@ -94,7 +94,7 @@ class BannerController extends Controller
         ]);
 
         if ($request->file('image')) {
-            if ($post->image) {
+            if ($banner->image) {
                 Storage::delete('public/image-banner/' . $banner->image);
             }
 
