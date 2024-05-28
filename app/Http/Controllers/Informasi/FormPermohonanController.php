@@ -72,7 +72,7 @@ class FormPermohonanController extends Controller
      */
     public function show(Formpermohonan $formpermohonan)
     {
-        return view('layouts.admin.pages.formpermohonan.create-form', ['formpermohonan'=>$formpermohonan]);
+        return view('layouts.admin.pages.formpermohonan.show-form', ['formpermohonan'=>$formpermohonan]);
     }
 
     /**
@@ -82,7 +82,7 @@ class FormPermohonanController extends Controller
     {
         $katdip=Katdip::orderBy('id')->get();
 
-        return view('layouts.admin.pages.formpermohonan.create-form', ['katdip'=>$katdip, 'formpermohonan'=>$formpermohonan]);
+        return view('layouts.admin.pages.formpermohonan.edit-form', ['katdip'=>$katdip, 'formpermohonan'=>$formpermohonan]);
     }
 
     /**

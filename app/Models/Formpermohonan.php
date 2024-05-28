@@ -32,6 +32,6 @@ class Formpermohonan extends Model
     //RELATION
     public function katdips(): BelongsTo
     {
-        return $this->belongsTo(Katdip::class);
+        return $this->belongsTo(Katdip::class, 'katdip_id');
     }
 }
