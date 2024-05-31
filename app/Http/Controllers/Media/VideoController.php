@@ -60,6 +60,7 @@ class VideoController extends Controller
         $video=Video::create([
             'title'=>$request->title,
             'image'=>$images,
+            'link'=>$request->link,
         ]);
 
         flash('Data Berhasil Di Simpan');
@@ -117,6 +118,7 @@ class VideoController extends Controller
         $video->update([
             'title'=>$request->title,
             'image'=>$images,
+            'link'=>$request->link,
         ]);
 
         flash('Data Berhasil Di Update');
