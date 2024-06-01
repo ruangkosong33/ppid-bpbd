@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -11,7 +12,9 @@ class SettingController extends Controller
      */
     public function index()
     {
-        //
+        $setting=Setting::orderBy('id')->get();
+
+        return view('layouts.admin.pages.setting.index-setting', ['setting'=>$setting]);
     }
 
     /**
@@ -19,7 +22,7 @@ class SettingController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.admin.pages.setting.create-setting');
     }
 
     /**
@@ -27,7 +30,18 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $setting=Setting::create([
+            'link_ig'=>$request->link_ig,
+            'link_fb'=>$request->link_fb,
+            'link_x'=>$request->link_x,
+            'address'=>$request->address,
+            'phone'=>$request->phone,
+            'email'=>$request->email,
+        ]);
+
+        flash('Data Berhasil Di Simpan');
+
+        return redirect()->route('setting.index');
     }
 
     /**
@@ -41,17 +55,28 @@ class SettingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Setting $setting)
     {
-        //
+       return view('layouts.admin.pages.setting.edit-setting', ['setting'=>$setting]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Setting $setting)
     {
-        //
+        $setting->update([
+            'link_ig'=>$request->link_ig,
+            'link_fb'=>$request->link_fb,
+            'link_x'=>$request->link_x,
+            'address'=>$request->address,
+            'phone'=>$request->phone,
+            'email'=>$request->email,
+        ]);
+
+        flash('Data Berhasil Di Update');
+
+        return redirect()->route('setting.index');
     }
 
     /**
