@@ -112,7 +112,9 @@
             {{request()->is('admin/filelaporan*') ? 'menu-open' : ''}}
             {{request()->is('admin/formpermohonan*') ? 'menu-open' : ''}}
             {{request()->is('admin/formpengajuan*') ? 'menu-open' : ''}}
-                                                                                ">
+            {{request()->is('admin/notulen*') ? 'menu-open' : ''}}
+            {{request()->is('admin/pengadaan*') ? 'menu-open' : ''}}
+                                                                                    ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-folder-open"></i>
                 <p>
@@ -173,6 +175,22 @@
                   <a href="{{route('formpengajuan.index')}}" class="nav-link {{request()->is('admin/formpengajuan*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Form Pengajuan</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('notulen.index')}}" class="nav-link {{request()->is('admin/notulen*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>File Notulen</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('pengadaan.index')}}" class="nav-link {{request()->is('admin/pengadaan*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Barang & Jasa</p>
                   </a>
                 </li>
             </ul>

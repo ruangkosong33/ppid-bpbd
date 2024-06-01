@@ -33,9 +33,11 @@ use App\Http\Controllers\Tentang\DefinisiController;
 use App\Http\Controllers\Tentang\MaklumatController;
 use App\Http\Controllers\Tentang\StrukturController;
 use App\Http\Controllers\Informasi\LaporanController;
+use App\Http\Controllers\Informasi\NotulenController;
 use App\Http\Controllers\Tentang\KeputusanController;
 use App\Http\Controllers\Informasi\AnggaranController;
 use App\Http\Controllers\Informasi\SengketaController;
+use App\Http\Controllers\Informasi\PengadaanController;
 use App\Http\Controllers\Informasi\PengajuanController;
 use App\Http\Controllers\Informasi\PermohonanController;
 use App\Http\Controllers\Informasi\FileLaporanController;
@@ -119,6 +121,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::resource('/katdip', KatDipController::class);
         Route::resource('/dip', DipController::class);
         Route::resource('/anggaran', AnggaranController::class);
+        Route::resource('/notulen', NotulenController::class);
+        Route::resource('/pengadaan', PengadaanController::class);
 
         Route::resource('/laporan', LaporanController::class);
         Route::get('/filelaporan/{laporan}', [FileLaporanController::class, 'index'])->name('filelaporan.index');
