@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Katdip;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $sumkatdip=Katdip::count();
+        $sumpost=Post::count();
+        $sumagenda=Agenda::count();
+
+        return view('home', ['sumkatdip'=>$sumkatdip, 'sumpost'=>$sumpost, 'sumagenda'=>$sumagenda]);
     }
 
     public function admin()

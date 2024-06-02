@@ -207,7 +207,8 @@
             {{request()->is('admin/standar*') ? 'menu-open' : ''}}
             {{request()->is('admin/maklumat*') ? 'menu-open' : ''}}
             {{request()->is('admin/waktu*') ? 'menu-open' : ''}}
-                                                                        ">
+            {{request()->is('admin/agenda*') ? 'menu-open' : ''}}
+                                                                                ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-wallet"></i>
                 <p>
@@ -217,12 +218,20 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
+                  <a href="{{route('agenda.index')}}" class="nav-link {{request()->is('admin/agenda*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Agenda Kegitan</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
                   <a href="{{route('maklumat.index')}}" class="nav-link {{request()->is('admin/maklumat*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Maklumat Pelayanan</p>
                   </a>
                 </li>
-              </ul>
+            </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                 <a href="{{route('etik.index')}}" class="nav-link {{request()->is('admin/etik*') ? 'active' : ''}}">
