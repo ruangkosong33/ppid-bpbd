@@ -17,7 +17,7 @@
             <div class="inner">
               <h3></h3>
 
-              <p>Total Kategori</p>
+              <p>Total Kategori Berita</p>
             </div>
             <div class="icon">
               <i class="ion ion-pricetag"></i>
@@ -105,6 +105,7 @@
             <div class="small-box bg-light">
                 <div class="inner">
                     <h3></h3>
+
                     <p>Total Informasi Publik</p>
                 </div>
                 <div class="icon">
@@ -132,6 +133,7 @@
         <div class="col-lg-8 col-6">
             <div class="card">
                 <div class="card-header">
+
                     <h5>Total Berita Berdasarkan Tahun</h5>
                 </div>
                 <div class="card-body">
@@ -145,6 +147,7 @@
         <div class="col-lg-4 col-6">
             <div class="card">
                 <div class="card-header">
+
                     <h5>Total Kategori Berdasarkan Berita</h5>
                 </div>
                 <div class="card-body">
@@ -171,6 +174,7 @@
         <div class="col-lg-8 col-6">
             <div class="card">
                 <div class="card-header">
+                    
                     <h5>Total Agenda Kegiatan Berdasarkan Bulan</h5>
                 </div>
                 <div class="card-body">

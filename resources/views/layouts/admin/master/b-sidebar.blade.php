@@ -324,6 +324,7 @@
             {{request()->is('admin/foto*') ? 'menu-open' : ''}}
             {{request()->is('admin/video*') ? 'menu-open' : ''}}
             {{request()->is('admin/partner*') ? 'menu-open' : ''}}
+            {{request()->is('admin/penghargaan*') ? 'menu-open' : ''}}
                                                                         ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-video"></i>
@@ -334,12 +335,20 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
+                <a href="{{route('penghargaan.index')}}" class="nav-link {{request()->is('admin/penghargaan*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Galeri Penghargaan</p>
+                </a>
+                </li>
+            </ul>
+            {{-- <ul class="nav nav-treeview">
+                <li class="nav-item">
                 <a href="{{route('banner.index')}}" class="nav-link {{request()->is('admin/banner*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Banner</p>
                 </a>
                 </li>
-            </ul>
+            </ul> --}}
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                 <a href="{{route('foto.index')}}" class="nav-link {{request()->is('admin/foto*') ? 'active' : ''}}">

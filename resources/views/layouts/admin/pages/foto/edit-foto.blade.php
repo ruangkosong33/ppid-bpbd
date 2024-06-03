@@ -12,6 +12,7 @@
         <div class="col-lg-12">
             <form action="{{route('foto.update', $foto->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <x-card>
 
                     <div class="form-group">
