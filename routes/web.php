@@ -16,6 +16,7 @@ use App\Http\Controllers\Tentang\VisiController;
 use App\Http\Controllers\Informasi\DipController;
 use App\Http\Controllers\Landing\MediaController;
 use App\Http\Controllers\Layanan\HukumController;
+use App\Http\Controllers\Media\GraphicController;
 use App\Http\Controllers\Media\PartnerController;
 use App\Http\Controllers\Tentang\DasarController;
 use App\Http\Controllers\Tentang\WaktuController;
@@ -137,6 +138,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::delete('/filelaporan/{laporan}/{filelaporan}', [FileLaporanController::class, 'destroy'])->name('filelaporan.destroy');
 
         //Media
+        Route::resource('/graphic', GraphicController::class);
         Route::resource('/banner', BannerController::class);
         Route::resource('/foto', FotoController::class);
         Route::resource('/video', VideoController::class);

@@ -321,6 +321,7 @@
 
           <li class="nav-item
             {{request()->is('admin/banner*') ? 'menu-open' : ''}}
+            {{request()->is('admin/graphic*') ? 'menu-open' : ''}}
             {{request()->is('admin/foto*') ? 'menu-open' : ''}}
             {{request()->is('admin/video*') ? 'menu-open' : ''}}
             {{request()->is('admin/partner*') ? 'menu-open' : ''}}
@@ -333,6 +334,14 @@
                 <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="{{route('graphic.index')}}" class="nav-link {{request()->is('admin/graphic*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Galeri Infografis</p>
+                </a>
+                </li>
+            </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                 <a href="{{route('penghargaan.index')}}" class="nav-link {{request()->is('admin/penghargaan*') ? 'active' : ''}}">
