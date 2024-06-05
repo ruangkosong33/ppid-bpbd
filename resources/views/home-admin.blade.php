@@ -15,7 +15,7 @@
         <div class="col-lg-3 col-6">
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3></h3>
+              <h3>{{$sumkategori}}</h3>
 
               <p>Total Kategori Berita</p>
             </div>
@@ -29,7 +29,7 @@
         <div class="col-lg-3 col-6">
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3></h3>
+              <h3>{{$sumpost}}</h3>
 
               <p>Total Berita</p>
             </div>
@@ -43,9 +43,9 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3></h3>
+                <h3>{{$sumteam}}</h3>
 
-                <p>Total Pegawai</p>
+                <p>Total Tim PPID</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-stalker"></i>
@@ -57,7 +57,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-secondary">
               <div class="inner">
-                <h3></h3>
+                <h3>{{$sumagenda}}</h3>
 
                 <p>Total Agenda</p>
               </div>
@@ -76,9 +76,9 @@
         <div class="col-lg-3 col-6">
           <div class="small-box bg-dark">
             <div class="inner">
-              <h3></h3>
+              <h3>{{$sumsop}}</h3>
 
-              <p>Total Bidang</p>
+              <p>Total SOP</p>
             </div>
             <div class="icon">
               <i class="ion ion-bookmark"></i>
@@ -90,9 +90,9 @@
         <div class="col-lg-3 col-6">
           <div class="small-box bg-success">
             <div class="inner">
-              <h3></h3>
+              <h3>{{$sumhukum}}</h3>
 
-              <p>Total File Download</p>
+              <p>Total Produk Hukum</p>
             </div>
             <div class="icon">
               <i class="ion ion-folder"></i>
@@ -104,7 +104,7 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-light">
                 <div class="inner">
-                    <h3></h3>
+                    <h3>{{$sumdip}}</h3>
 
                     <p>Total Informasi Publik</p>
                 </div>
@@ -119,9 +119,9 @@
         <div class="col-lg-3 col-6">
           <div class="small-box bg-primary">
             <div class="inner">
-              <h3></h3>
+              <h3>{{$sumlaporan}}</h3>
 
-              <p>Total Pengumuman</p>
+              <p>Total Laporan Tahunan</p>
             </div>
             <div class="icon">
               <i class="ion ion-checkmark-round"></i>
@@ -174,7 +174,7 @@
         <div class="col-lg-8 col-6">
             <div class="card">
                 <div class="card-header">
-                    
+
                     <h5>Total Agenda Kegiatan Berdasarkan Bulan</h5>
                 </div>
                 <div class="card-body">

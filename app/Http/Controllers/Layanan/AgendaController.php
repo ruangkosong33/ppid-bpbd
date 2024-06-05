@@ -13,7 +13,7 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        $agenda-Agenda::orderBy('id')->get();
+        $agenda=Agenda::orderBy('id')->get();
 
         return view('layouts.admin.pages.agenda.index-agenda', ['agenda'=>$agenda]);
     }

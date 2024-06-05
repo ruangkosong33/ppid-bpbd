@@ -82,7 +82,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
     Route::prefix('admin')->group(function () {
 
         //Dashboard
-        Route::get('/dashboard', [HomeController::class, 'admin'])->name('home.admin');
+        Route::get('/dashboard', [HomeController::class, 'index'])->name('home.admin');
 
         //Tentang
         Route::resource('/profil', ProfilController::class);
