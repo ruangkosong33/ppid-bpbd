@@ -56,7 +56,7 @@
                         </li>
                         <li>
                             <ul class="mega-sub-menu">
-                                <li><a href="index.html">Kode Etik</a></li>
+                                <li><a href="{{route('etik')}}">Kode Etik</a></li>
                                 <li><a href="index-2.html">Maklumat Pelayanan</a></li>
                                 <li><a href="index-2.html">Hak Atas Informasi</a></li>
                             </ul>

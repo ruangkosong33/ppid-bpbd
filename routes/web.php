@@ -36,6 +36,7 @@ use App\Http\Controllers\Tentang\MaklumatController;
 use App\Http\Controllers\Tentang\StrukturController;
 use App\Http\Controllers\Informasi\LaporanController;
 use App\Http\Controllers\Informasi\NotulenController;
+use App\Http\Controllers\Landing\InformasiController;
 use App\Http\Controllers\Media\PenghargaanController;
 use App\Http\Controllers\Tentang\KeputusanController;
 use App\Http\Controllers\Informasi\AnggaranController;
@@ -59,17 +60,18 @@ Route::get('/profil', [TentangController::class, 'profils'])->name('profil');
 Route::get('/tugas-pokok-dan-fungsi', [TentangController::class, 'fungsis']);
 Route::get('/visi-misi', [TentangController::class, 'visis'])->name('visi');
 Route::get('/dasar-hukum', [TentangController::class, 'dasars'])->name('dasar');
-Route::get('/definisi', [TentangController::class, 'definisi'])->name('definisi');
-Route::get('/maklumat-pelayanan', [TentangController::class, 'maklumats'])->name('maklumat');
+Route::get('/maklumat-pelayanan', [InformasiController::class, 'maklumats'])->name('maklumat');
 Route::get('/standar-pelayanan', [TentangController::class, 'standars'])->name('standar');
-Route::get('/hak-atas-informasi', [TentangController::class, 'haks'])->name('hak');
-Route::get('/waktu-pelayanan', [TentangController::class, 'waktus'])->name('waktu');
+Route::get('/hak-atas-informasi', [LayananController::class, 'haks'])->name('hak');
+Route::get('/waktu-pelayanan', [LayananController::class, 'waktus'])->name('waktu');
 Route::get('/struktur-organisasi', [TentangController::class, 'strukturs'])->name('struktur');
 Route::get('/keputusan', [TentangController::class, 'keputusans'])->name('keputusan');
-Route::get('/kode-etik', [TentangController ::class, 'etiks'])->name('etik');
+Route::get('/kode-etik', [LayananController ::class, 'etiks'])->name('etik');
 Route::get('/banner', [MediaController::class, 'banners'])->name('front.banner');
 Route::get('/sarana-prasarana', [LayananController::class, 'saranas'])->name('sarana');
 Route::get('/tim-ppid', [TentangController::class, 'teams'])->name('team');
+Route::get('/waktu-layanan', [LayananController::class, 'waktus'])->name('waktu');
+Route::get('/anggaran-kegiatan', [InformasiController::class, 'anggarans'])->name('anggaran');
 
 
 //--END FRONTEND--//

@@ -7,6 +7,7 @@ use App\Models\Team;
 use App\Models\Video;
 use App\Models\Agenda;
 use App\Models\Partner;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,8 +25,10 @@ class BerandaController extends Controller
 
         $agendas=Agenda::orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(6)->get();
 
+        $settings=Setting::orderBy('id')->get();
+
         return view('layouts.guest.pages.beranda.index-beranda',
 
-        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'partners'=>$partners, 'agendas'=>$agendas]);
+        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'settings'=>$settings]);
     }
 }
