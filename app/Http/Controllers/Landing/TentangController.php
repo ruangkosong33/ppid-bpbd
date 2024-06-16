@@ -24,7 +24,7 @@ class TentangController extends Controller
     {
         $fungsis=Fungsi::first();
 
-        return view('layouts.guest.pages.fungsi.index-fungis', ['fungsis'=>$fungsis]);
+        return view('layouts.guest.pages.fungsi.index-fungsi', ['fungsis'=>$fungsis]);
     }
 
     public function dasars()

@@ -57,7 +57,7 @@ Auth::routes();
 //--FRONTEND--//
 Route::get('/beranda', [BerandaController::class, 'beranda'])->name('beranda');
 Route::get('/profil', [TentangController::class, 'profils'])->name('profil');
-Route::get('/tugas-pokok-dan-fungsi', [TentangController::class, 'fungsis']);
+Route::get('/tugas-pokok-dan-fungsi', [TentangController::class, 'fungsis'])->name('fungsi');
 Route::get('/visi-misi', [TentangController::class, 'visis'])->name('visi');
 Route::get('/dasar-hukum', [TentangController::class, 'dasars'])->name('dasar');
 Route::get('/maklumat-pelayanan', [LayananController::class, 'maklumats'])->name('maklumat');
@@ -72,6 +72,7 @@ Route::get('/sarana-prasarana', [LayananController::class, 'saranas'])->name('sa
 Route::get('/tim-ppid', [TentangController::class, 'teams'])->name('team');
 Route::get('/waktu-layanan', [LayananController::class, 'waktus'])->name('waktu');
 Route::get('/anggaran-kegiatan', [InformasiController::class, 'anggarans'])->name('anggaran');
+Route::get('/definisi-informasi', [InformasiController::class, 'definisis'])->name('definisi');
 
 
 //--END FRONTEND--//

@@ -10,7 +10,7 @@
                     <ul class="sub-menu">
                         <li><a href="{{route('visi')}}">Visi & Misi</a></li>
                         <li><a href="{{route('struktur')}}">Struktur Organisasi</a></li>
-                        <li><a href="">Tugas Pokok & Fungsi</a></li>
+                        <li><a href="{{route('fungsi')}}">Tugas Pokok & Fungsi</a></li>
                         <li><a href="{{route('keputusan')}}">Surat Keputusan</a></li>
                         <li><a href="{{route('dasar')}}">Dasar Hukum</a></li>
                         <li><a href="{{route('team')}}">Tim PPID</a></li>
@@ -20,14 +20,14 @@
                     <ul class="sub-menu mega-menu">
                         <li>
                             <ul class="mega-sub-menu">
-                                <li><a href="index.html">Definisi Informasi Publik</a></li>
+                                <li><a href="{{route('definisi')}}">Definisi Informasi Publik</a></li>
                                 <li><a href="index.html">Informasi Berkala</a></li>
                                 <li><a href="index-2.html">Informasi Serta Merta</a></li>
                                 <li><a href="index-3.html">Informasi Setiap Saat</a></li>
                                 <li><a href="index-3.html">Informasi Dikecualikan</a></li>
                                 <li><a href="index-3.html">Formulir Permohonan <br> Informasi</a></li>
                                 <li><a href="index-3.html">Formulir Pengajuan <br> Keberatan Informasi</a></li>
-                                <li><a href="index-3.html">Anggaran Kegiatan</a></li>
+                                <li><a href="{{route('anggaran')}}">Anggaran Kegiatan</a></li>
                                 <li><a href="index-3.html">Pengadaan Barang & Jasa</a></li>
                             </ul>
                         </li>
@@ -48,8 +48,8 @@
                         <li>
                             <ul class="mega-sub-menu">
                                 <li><a href="index.html">SOP</a></li>
-                                <li><a href="index-3.html">Waktu & Layanan</a></li>
-                                <li><a href="index-3.html">Standar Biaya</a></li>
+                                <li><a href="{{route('waktu')}}">Waktu & Layanan</a></li>
+                                <li><a href="{{route('standar')}}">Standar Biaya</a></li>
                                 <li><a href="{{route('sarana')}}">Sarana & Prasarana</a></li>
                                 <li><a href="index-3.html">Produk Hukum</a></li>
                             </ul>
@@ -58,7 +58,7 @@
                             <ul class="mega-sub-menu">
                                 <li><a href="{{route('etik')}}">Kode Etik</a></li>
                                 <li><a href="{{route('maklumat')}}">Maklumat Pelayanan</a></li>
-                                <li><a href="index-2.html">Hak Atas Informasi</a></li>
+                                <li><a href="{{route('hak')}}">Hak Atas Informasi</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -84,7 +84,9 @@
                     </div>
                     <div class="content">
                         <span>No. Kontak Kami</span>
-                        <a href="tel:0123456789">+123 8989 444</a>
+                        @foreach ($settings as $item)
+                        <a href="tel:0541741040">(0541)-{{$item->phone}}</a>
+                        @endforeach
                     </div>
                 </li>
             </ul>
