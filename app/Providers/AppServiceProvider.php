@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\View\Composers\HeaderComposer;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer(['layouts.guest.master.f-master', 'layouts.guest.master.f-header'], HeaderComposer::class);
     }
 }

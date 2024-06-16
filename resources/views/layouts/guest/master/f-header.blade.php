@@ -6,8 +6,10 @@
                 <div class="col-lg-7">
                     <div class="header-top-left header-top-left-two">
                         <ul class="list-wrap">
-                            <li><i class="flaticon-location"></i>256 Avenue, Mark Street, Newyork City</li>
-                            <li><i class="flaticon-mail"></i><a href="mailto:gerow@gmail.com">gerow@gmail.com</a></li>
+                            @foreach ($settings as $item)
+                            <li><i class="flaticon-location" style="font-size: 14px;">{{$item->address}}</i></li>
+                            <li><i class="flaticon-mail"></i><a href="mailto:{{ $item->email }}">{{ $item->email }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

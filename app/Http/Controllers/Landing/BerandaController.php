@@ -25,10 +25,8 @@ class BerandaController extends Controller
 
         $agendas=Agenda::orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(6)->get();
 
-        $settings=Setting::orderBy('id')->get();
-
         return view('layouts.guest.pages.beranda.index-beranda',
 
-        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'settings'=>$settings]);
+        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas]);
     }
 }

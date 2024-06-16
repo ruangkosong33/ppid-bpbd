@@ -26,6 +26,7 @@ class LayananController extends Controller
 
         return view('layouts.guest.pages.standar.index-standar', ['standars'=>$standars]);
     }
+    
     public function waktus()
     {
         $waktus=Waktu::first();

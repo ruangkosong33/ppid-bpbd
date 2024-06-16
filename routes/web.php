@@ -14,7 +14,6 @@ use App\Http\Controllers\Media\BannerController;
 use App\Http\Controllers\Tentang\TeamController;
 use App\Http\Controllers\Tentang\VisiController;
 use App\Http\Controllers\Informasi\DipController;
-use App\Http\Controllers\Landing\MediaController;
 use App\Http\Controllers\Layanan\HukumController;
 use App\Http\Controllers\Media\GraphicController;
 use App\Http\Controllers\Media\PartnerController;
@@ -47,6 +46,7 @@ use App\Http\Controllers\Informasi\PermohonanController;
 use App\Http\Controllers\Informasi\FileLaporanController;
 use App\Http\Controllers\Informasi\FormPengajuanController;
 use App\Http\Controllers\Informasi\FormPermohonanController;
+
 
 Route::get('/', function () {
     return view('welcome');

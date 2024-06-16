@@ -7,7 +7,7 @@
         <meta name="description" content="Gerow - Business Consulting HTML Template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="shortcut icon" type="image/x-icon" href="{{asset('fr/assets/img/favicon.png')}}">
+		<link rel="shortcut icon" type="image/x-icon" href="{{asset('fr/assets/img/pemprov-kaltim.png')}}">
         <!-- Place favicon.ico in the root directory -->
 
         @stack('css_vendor')
