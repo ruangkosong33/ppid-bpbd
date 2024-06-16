@@ -60,7 +60,7 @@ Route::get('/profil', [TentangController::class, 'profils'])->name('profil');
 Route::get('/tugas-pokok-dan-fungsi', [TentangController::class, 'fungsis']);
 Route::get('/visi-misi', [TentangController::class, 'visis'])->name('visi');
 Route::get('/dasar-hukum', [TentangController::class, 'dasars'])->name('dasar');
-Route::get('/maklumat-pelayanan', [InformasiController::class, 'maklumats'])->name('maklumat');
+Route::get('/maklumat-pelayanan', [LayananController::class, 'maklumats'])->name('maklumat');
 Route::get('/standar-pelayanan', [TentangController::class, 'standars'])->name('standar');
 Route::get('/hak-atas-informasi', [LayananController::class, 'haks'])->name('hak');
 Route::get('/waktu-pelayanan', [LayananController::class, 'waktus'])->name('waktu');

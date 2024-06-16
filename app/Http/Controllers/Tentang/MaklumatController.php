@@ -35,7 +35,7 @@ class MaklumatController extends Controller
             'title'=>'required',
         ]);
 
-        $maklumat=Maklumat::create($request, [
+        $maklumat=Maklumat::create([
             'title'=>$request->title,
             'body'=>$request->body,
         ]);
