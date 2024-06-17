@@ -19,14 +19,23 @@
                         <input type="text" class="form-control" name="title" placeholder="Surat Keputusan">
                     </div>
 
-                    <div class="form-group">
-                        <label for="body">Deskripsi</label>
-                        <textarea class="form-control" name="body" id="summernote" placeholder="Surat Keputusan"></textarea>
-                    </div>
+                    <div class="row">
 
-                    <div class="form-group">
-                        <label for="file">File</label>
-                        <input type="file" class="form-control" name="file">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="date">Tanggal Di Tetapkan</label>
+                                <input type="date" class="form-control" name="date">
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="file">File</label>
+                                <input type="file" class="form-control" name="file">
+                            </div>
+                        </div>
+
                     </div>
 
                     <x-slot name="footer">

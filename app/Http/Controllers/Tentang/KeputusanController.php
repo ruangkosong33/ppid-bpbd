@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Tentang;
 use App\Models\Keputusan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class KeputusanController extends Controller
 {
@@ -50,7 +51,7 @@ class KeputusanController extends Controller
         $keputusan=Keputusan::create([
             'title'=>$request->title,
             'file'=>$files,
-            'body'=>$request->body,
+            'date'=>$request->date,
         ]);
 
         flash('Data Berhasil Di Simpan');
@@ -86,6 +87,10 @@ class KeputusanController extends Controller
 
         if($request->file('file'))
         {
+            if ($keputusan->file) {
+                Storage::delete('public/file-keputusan/' . $keputusan->file);
+            }
+            
             $file=$request->file('file');
             $extension=$file->getClientOriginalName();
             $files=$extension;
@@ -98,7 +103,7 @@ class KeputusanController extends Controller
         $keputusan->update([
             'title'=>$request->title,
             'file'=>$files,
-            'body'=>$request->body,
+            'date'=>$request->date,
         ]);
 
         flash('Data Berhasil Di Update');
@@ -111,10 +116,15 @@ class KeputusanController extends Controller
      */
     public function destroy(Keputusan $keputusan)
     {
+        if ($keputusan->file && Storage::exists('public/file-keputusan/' . $keputusan->file))
+        {
+            Storage::delete('public/file-keputusan/' . $keputusan->file);
+        }
+
         $keputusan->delete();
 
         flash('Data Berhasil Di Hapus');
 
-        return redirect()->route('keputusan.index');
+        return redirect()->back();
     }
 }

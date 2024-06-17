@@ -66,6 +66,7 @@ Route::get('/hak-atas-informasi', [LayananController::class, 'haks'])->name('hak
 Route::get('/waktu-pelayanan', [LayananController::class, 'waktus'])->name('waktu');
 Route::get('/struktur-organisasi', [TentangController::class, 'strukturs'])->name('struktur');
 Route::get('/keputusan', [TentangController::class, 'keputusans'])->name('keputusan');
+Route::get('/keputusan/{slug}', [TentangController::class, 'detailsKeputusan'])->name('detail.keputusan');
 Route::get('/kode-etik', [LayananController ::class, 'etiks'])->name('etik');
 Route::get('/banner', [MediaController::class, 'banners'])->name('front.banner');
 Route::get('/sarana-prasarana', [LayananController::class, 'saranas'])->name('sarana');

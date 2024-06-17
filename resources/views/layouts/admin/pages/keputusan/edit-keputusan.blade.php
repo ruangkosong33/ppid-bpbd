@@ -21,14 +21,24 @@
                         value="{{old('title') ?? $keputusan->title}}">
                     </div>
 
-                    <div class="form-group">
-                        <label for="body">Deskripsi</label>
-                        <textarea class="form-control" name="body" id="summernote">{{old('body', $keputusan->body ?? '')}}</textarea>
-                    </div>
+                    <div class="row">
 
-                    <div class="form-group">
-                        <label for="file">File</label>
-                        <input type="file" class="form-control" name="file">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="date">Tanggal Di Tetapkan</label>
+                                <input type="date" class="form-control" name="date"
+                                value="{{old('date') ?? $keputusan->date}}">
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="file">File</label>
+                                <input type="file" class="form-control" name="file">
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="form-group">

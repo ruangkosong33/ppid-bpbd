@@ -36,9 +36,16 @@ class TentangController extends Controller
 
     public function keputusans()
     {
-        $keputusans=Keputusan::first();
+        $keputusans=Keputusan::orderBy('id')->get();
 
         return view('layouts.guest.pages.keputusan.index-keputusan', ['keputusans'=>$keputusans]);
+    }
+
+    public function detailsKeputusan($slug)
+    {
+        $item=Keputusan::where('slug', $slug)->first();
+
+        return view('layouts.guest.pages.keputusan.detail-keputusan', ['item'=>$item]);
     }
 
     public function strukturs()
