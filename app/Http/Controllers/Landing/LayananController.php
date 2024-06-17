@@ -22,7 +22,7 @@ class LayananController extends Controller
 
     public function standars()
     {
-        $standars=Standar::orderBy('id', 'DESC')->get();
+        $standars=Standar::first();
 
         return view('layouts.guest.pages.standar.index-standar', ['standars'=>$standars]);
     }

@@ -61,7 +61,7 @@ Route::get('/tugas-pokok-dan-fungsi', [TentangController::class, 'fungsis'])->na
 Route::get('/visi-misi', [TentangController::class, 'visis'])->name('visi');
 Route::get('/dasar-hukum', [TentangController::class, 'dasars'])->name('dasar');
 Route::get('/maklumat-pelayanan', [LayananController::class, 'maklumats'])->name('maklumat');
-Route::get('/standar-pelayanan', [TentangController::class, 'standars'])->name('standar');
+Route::get('/standar-pelayanan', [LayananController::class, 'standars'])->name('standar');
 Route::get('/hak-atas-informasi', [LayananController::class, 'haks'])->name('hak');
 Route::get('/waktu-pelayanan', [LayananController::class, 'waktus'])->name('waktu');
 Route::get('/struktur-organisasi', [TentangController::class, 'strukturs'])->name('struktur');

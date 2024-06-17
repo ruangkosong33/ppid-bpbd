@@ -1,5 +1,13 @@
 @extends('layouts.guest.master.f-master')
 
+@push('css_vendor')
+<style>
+    .bg {
+        background-color: #1e6c6e;
+    }
+</style>
+@endpush
+
 @section('content')
 
     @include('components.breadcrumb', ['title' => 'Surat Keputusan'])
@@ -17,10 +25,10 @@
                         <div class="col-md-11">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered">
-                                    <thead>
+                                    <thead class="bg text-white">
                                         <tr>
                                             <th class="text-center">NO</th>
-                                            <th class="text-center">Judul</th>
+                                            <th class="text-center">JUDUL</th>
                                             <th class="text-center">TANGGAL DI TETAPKAN</th>
                                             <th class="text-center">ACTION</th>
                                         </tr>

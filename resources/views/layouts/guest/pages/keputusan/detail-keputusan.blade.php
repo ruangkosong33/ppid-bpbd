@@ -1,6 +1,5 @@
 @extends('layouts.guest.master.f-master')
 
-
 @section('content')
     @include('components.breadcrumb', ['title' => 'File Surat Keputusan'])
 
