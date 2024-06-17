@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Landing;
 
+use App\Models\Notulen;
 use App\Models\Anggaran;
 use App\Models\Definisi;
 use Illuminate\Http\Request;
@@ -21,5 +22,12 @@ class InformasiController extends Controller
         $definisis=Definisi::first();
 
         return view('layouts.guest.pages.definisi.index-definisi', ['definisis'=>$definisis]);
+    }
+
+    public function notulens()
+    {
+        $notulens=Notulen::orderBy('id', 'DESC')->get();
+
+        return view('layouts.guest.pages.notulen.index-notulen', ['notulens'=>$notulens]);
     }
 }

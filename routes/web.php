@@ -73,6 +73,7 @@ Route::get('/tim-ppid', [TentangController::class, 'teams'])->name('team');
 Route::get('/waktu-layanan', [LayananController::class, 'waktus'])->name('waktu');
 Route::get('/anggaran-kegiatan', [InformasiController::class, 'anggarans'])->name('anggaran');
 Route::get('/definisi-informasi', [InformasiController::class, 'definisis'])->name('definisi');
+Route::get('/notulen', [InformasiController::class, 'notulens'])->name('notulen');
 
 
 //--END FRONTEND--//

@@ -13,6 +13,8 @@
                     <h2 class="title" data-aos="fade-right" data-aos-delay="0">Portal Layanan PPID</h2>
                     <p data-aos="fade-right" data-aos-delay="300">Badan Penanggulangan Bencana Daerah</p>
                     <p data-aos="fade-right" data-aos-delay="400">Provinsi Kalimantan Timur</p>
+                    <br>
+                    <button class="btn btn-two" data-aos="fade-up" data-aos-delay="600">TANGGAP TANGKAS TANGGUH</button>
                 </div>
             </div>
         </div>

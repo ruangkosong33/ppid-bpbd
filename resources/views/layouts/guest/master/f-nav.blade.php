@@ -38,7 +38,7 @@
                                 <li><a href="index-3.html">Tata Cara Sengketa <br> Informasi</a></li>
                                 <li><a href="index-3.html">Laporan Tahunan</a></li>
                                 <li><a href="index-3.html">Survey Layanan</a></li>
-                                <li><a href="index-3.html">Notulen</a></li>
+                                <li><a href="{{route('notulen')}}">Notulen</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -6,6 +6,7 @@ use App\Models\Struktur;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Drivers\Gd\Driver;
 
 class StrukturController extends Controller
@@ -35,7 +36,7 @@ class StrukturController extends Controller
     {
         $this->validate($request, [
             'title'=>'required',
-            'image'=>'mimes:jpg,jpeg,png|max:10000',
+            'image'=>'mimes:jpg,jpeg,png|max:5000',
         ]);
 
         if($request->file('image'))
@@ -46,10 +47,13 @@ class StrukturController extends Controller
             $images=time(). '.' .$extension;
 
             $img=Image::make($file);
-            $img->resize(550,350);
+            $img->resize(1920,901);
 
             $path='public/image-struktur/'.$images;
             Storage::put($path, $img->encode());
+        }
+        else{
+            $images='';
         }
 
         $struktur=Struktur::create([
@@ -84,7 +88,42 @@ class StrukturController extends Controller
      */
     public function update(Request $request, Struktur $struktur)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'image'=>'mimes:jpeg,jpg,png|max:5000',
+        ]);
+
+        if($request->file('image'))
+        {
+            if ($struktur->image) {
+                Storage::delete('public/image-struktur/' . $struktur->image);
+            }
+
+            $manager= new ImageManager(new Driver());
+
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalName();
+            $images=time(). '.' .$extension;
+
+            $img=$manager->read($request->file('image'));
+            $img->resize(1920,901);
+
+            $path='public/image-struktur/'.$images;
+            Storage::put($path, $img->encode());
+        }
+        else{
+            $images=$struktur->image;
+        }
+
+        $struktur->update([
+            'title'=>$request->title,
+            'image'=>$images,
+            'body'=>$request->body,
+        ]);
+
+        flash('Data Berhasil Di Update');
+
+        return redirect()->route('struktur.index');
     }
 
     /**
@@ -92,10 +131,15 @@ class StrukturController extends Controller
      */
     public function destroy(Struktur $struktur)
     {
+        if ($struktur->image && Storage::exists('public/image-struktur/' . $struktur->image))
+        {
+            Storage::delete('public/image-struktur/' . $struktur->image);
+        }
+
         $struktur->delete();
 
         flash('Data Berhasil Di Hapus');
 
-        return redirect()->route('struktur.index');
+        return redirect()->back();
     }
 }

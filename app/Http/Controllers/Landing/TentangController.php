@@ -52,6 +52,6 @@ class TentangController extends Controller
     {
         $teams=Team::orderBy('id')->get();
 
-        return view('layouts.guest.pages.team.front-team', ['teams'=>$teams]);
+        return view('layouts.guest.pages.team.index-team', ['teams'=>$teams]);
     }
 }
