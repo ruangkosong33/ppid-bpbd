@@ -26,6 +26,11 @@
 
                     </div>
 
+                    <div class="form-group">
+                        <label for="body">Deskripsi</label>
+                        <textarea class="form-control" name="body" id="summernote">{{old('body', $katdip->body ?? '')}}</textarea>
+                    </div>
+
                     <x-slot name="footer">
                         <button type="button" onclick="history.back()" class="btn btn-dark" >Kembali</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
@@ -36,3 +41,8 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+    @include('include.summernote')
+@endpush
+

@@ -19,12 +19,14 @@
                     <x-slot name="thead">
                         <th>No</th>
                         <th>Judul</th>
+                        <th>Deskripsi</th>
                         <th>Action</th>
                     </x-slot>
                     @foreach ($katdip as $key=>$katdips)
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$katdips->title}}</td>
+                            <td>{!!$katdips->body!!}</td>
                             <td>
                                 <a href="{{route('katdip.edit', $katdips->id)}}" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>

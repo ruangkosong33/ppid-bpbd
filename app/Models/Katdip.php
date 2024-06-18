@@ -13,7 +13,7 @@ class Katdip extends Model
 
     protected $table='katdips';
 
-    protected $fillable=['title', 'slug'];
+    protected $fillable=['title', 'slug', 'body'];
 
     protected $hidden=[];
 

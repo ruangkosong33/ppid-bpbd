@@ -37,6 +37,7 @@ class KatDipController extends Controller
 
         $katip=Katdip::create([
             'title'=>$request->title,
+            'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Simpan');
@@ -71,6 +72,7 @@ class KatDipController extends Controller
 
         $katdip->update([
             'title'=>$request->title,
+            'body'=>$request->body,
         ]);
 
         flash('Data Berhasil Di Update');

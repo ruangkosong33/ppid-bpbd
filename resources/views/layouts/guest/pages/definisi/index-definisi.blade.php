@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('components.breadcrumb', ['title' => $definisi->title])
+    @include('components.breadcrumb', ['title' => $definisis->title])
 
     <!-- Details -->
     <section class="project-details-area pt-50 pb-120">

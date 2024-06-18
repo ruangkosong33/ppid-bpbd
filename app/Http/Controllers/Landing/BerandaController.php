@@ -6,6 +6,7 @@ use App\Models\Foto;
 use App\Models\Team;
 use App\Models\Video;
 use App\Models\Agenda;
+use App\Models\Katdip;
 use App\Models\Partner;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -25,8 +26,10 @@ class BerandaController extends Controller
 
         $agendas=Agenda::orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(6)->get();
 
+        $katdips=Katdip::orderBy('id', 'DESC')->get();
+
         return view('layouts.guest.pages.beranda.index-beranda',
 
-        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas]);
+        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'katdips'=>$katdips]);
     }
 }
