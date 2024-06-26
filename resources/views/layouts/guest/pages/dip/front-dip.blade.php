@@ -11,20 +11,66 @@
         </div>
         <div class="features-item-wrap-two">
             <div class="row justify-content-center">
-                @foreach ($katdips as $item)
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="features-item-three">
                         <div class="features-icon-three">
                             <i class="flaticon-layers"></i>
                         </div>
+                        @foreach ($sertamertaFront as $item)
                         <div class="features-content-three">
                             <h2 class="title">{{$item->title}}</h2>
                             <p>{!!$item->body!!}</p>
-                            <a href="services-details.html" class="link-btn">See Details <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                            <a href="{{route('sertamerta.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
                         </div>
+                        @endforeach
                     </div>
                 </div>
-                @endforeach
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="features-item-three">
+                        <div class="features-icon-three">
+                            <i class="flaticon-layers"></i>
+                        </div>
+                        @foreach ($setiapsaatFront as $item)
+                        <div class="features-content-three">
+                            <h2 class="title">{{$item->title}}</h2>
+                            <p>{!!$item->body!!}</p>
+                            <a href="{{route('sertamerta.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="features-item-three">
+                        <div class="features-icon-three">
+                            <i class="flaticon-layers"></i>
+                        </div>
+                        @foreach ($berkalaFront as $item)
+                        <div class="features-content-three">
+                            <h2 class="title">{{$item->title}}</h2>
+                            <p>{!!$item->body!!}</p>
+                            <a href="{{route('berkala.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="features-item-three">
+                        <div class="features-icon-three">
+                            <i class="flaticon-layers"></i>
+                        </div>
+                        @foreach ($kecualikanFront as $item)
+                        <div class="features-content-three">
+                            <h2 class="title">{{$item->title}}</h2>
+                            <p>{!!$item->body!!}</p>
+                            <a href="{{route('kecualikan.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

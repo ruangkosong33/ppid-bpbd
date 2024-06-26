@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Landing;
 
+use App\Models\Dip;
 use App\Models\Foto;
 use App\Models\Team;
 use App\Models\Video;
@@ -20,16 +21,25 @@ class BerandaController extends Controller
 
         $videos=Video::orderBy('id')->get();
 
-        $partners=Partner::orderBy('id')->get();
+        $partners=Partner::orderBy('id')->limit('6')->get();
 
         $teams=Team::orderBy('id')->get();
 
         $agendas=Agenda::orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(6)->get();
 
-        $katdips=Katdip::orderBy('id', 'DESC')->get();
+        $sertamertaFront=  Katdip::where('title', 'Informasi Serta Merta')->get();
+
+        $setiapsaatFront=  Katdip::where('title', 'Informasi Setiap Saat')->get();
+
+        $berkalaFront=  Katdip::where('title', 'Informasi Berkala')->get();
+
+        $kecualikanFront=  Katdip::where('title', 'Informasi Di Kecualikan')->get();
 
         return view('layouts.guest.pages.beranda.index-beranda',
 
-        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'katdips'=>$katdips]);
+        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'sertamertaFront'=>$sertamertaFront,
+         'setiapsaatFront'=>$setiapsaatFront, 'berkalaFront'=>$berkalaFront, 'kecualikanFront'=>$kecualikanFront,
+
+        ]);
     }
 }
