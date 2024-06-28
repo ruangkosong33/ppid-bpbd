@@ -13,7 +13,7 @@ class Post extends Model
 
     protected $table='posts';
 
-    protected $fillable=['title', 'slug', 'kategori_id', 'image', 'body', 'date', 'status'];
+    protected $fillable=['title', 'slug', 'kategori_id', 'image', 'body', 'date', 'status', 'user_id'];
 
     protected $hidden=[];
 
@@ -49,5 +49,10 @@ class Post extends Model
     public function kategoris(): BelongsTo
     {
         return $this->belongsTo(Kategori::class, 'kategori_id');
+    }
+
+    public function users(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

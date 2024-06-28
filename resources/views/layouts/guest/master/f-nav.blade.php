@@ -63,7 +63,23 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">Dokumentasi</a></li>
+                <li class="menu-item-has-children"><a href="#">Berita</a>
+                    <ul class="sub-menu mega-menu">
+                        <li>
+                            <ul class="mega-sub-menu">
+                                <li><a href="{{route('semua.berita')}}">Berita Utama</a></li>
+                                <li><a href="index.html">Berita Infografis</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="mega-sub-menu">
+                                <li><a href="{{route('etik')}}">Galeri Foto</a></li>
+                                <li><a href="{{route('maklumat')}}">Galeri Video</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
                 <li><a href="https://www.lapor.go.id">SP4N Lapor</a></li>
 
             </ul>

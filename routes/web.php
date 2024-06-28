@@ -23,6 +23,7 @@ use App\Http\Controllers\Layanan\AgendaController;
 use App\Http\Controllers\Layanan\SaranaController;
 use App\Http\Controllers\Tentang\FungsiController;
 use App\Http\Controllers\Tentang\ProfilController;
+use App\Http\Controllers\Landing\ArtikelController;
 use App\Http\Controllers\Landing\BerandaController;
 use App\Http\Controllers\Landing\LayananController;
 use App\Http\Controllers\Landing\TentangController;
@@ -67,6 +68,8 @@ Route::get('/waktu-pelayanan', [LayananController::class, 'waktus'])->name('wakt
 Route::get('/struktur-organisasi', [TentangController::class, 'strukturs'])->name('struktur');
 Route::get('/keputusan', [TentangController::class, 'keputusans'])->name('keputusan');
 Route::get('/keputusan/{slug}', [TentangController::class, 'detailsKeputusan'])->name('detail.keputusan');
+Route::get('/berita', [ArtikelController::class, 'semuaBerita'])->name('semua.berita');
+Route::get('/berita/{slug}', [ArtikelController::class, 'detailBerita'])->name('detail.berita');
 Route::get('/kode-etik', [LayananController ::class, 'etiks'])->name('etik');
 Route::get('/banner', [MediaController::class, 'banners'])->name('front.banner');
 Route::get('/sarana-prasarana', [LayananController::class, 'saranas'])->name('sarana');

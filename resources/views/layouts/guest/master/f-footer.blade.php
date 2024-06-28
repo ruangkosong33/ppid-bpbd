@@ -91,7 +91,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright-text-two text-center">
-                            <p>Copyright © gerow | All Right Reserved</p>
+                            <p>Copyright 2024 ©PPID - BPBD Provinsi Kalimantan Timur</p>
                         </div>
                     </div>
                 </div>

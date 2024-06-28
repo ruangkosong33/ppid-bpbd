@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('body')->nullable();
             $table->date('date')->nullable();
             $table->enum('status', ['Publish', 'Draft'])->default('Draft');
+            $table->foreignId('user_id')->references('id')->on('users')->after('slug');
             $table->timestamps();
         });
     }

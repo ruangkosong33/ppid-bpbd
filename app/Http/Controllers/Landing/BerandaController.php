@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Landing;
 
 use App\Models\Dip;
 use App\Models\Foto;
+use App\Models\Post;
 use App\Models\Team;
 use App\Models\Video;
 use App\Models\Agenda;
@@ -25,6 +26,8 @@ class BerandaController extends Controller
 
         $teams=Team::orderBy('id')->get();
 
+        $postFront = Post::with('kategoris')->where('status', 'publish')->orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(3)->get();
+
         $agendas=Agenda::orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(6)->get();
 
         $sertamertaFront=  Katdip::where('title', 'Informasi Serta Merta')->get();
@@ -37,8 +40,8 @@ class BerandaController extends Controller
 
         return view('layouts.guest.pages.beranda.index-beranda',
 
-        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'sertamertaFront'=>$sertamertaFront,
-         'setiapsaatFront'=>$setiapsaatFront, 'berkalaFront'=>$berkalaFront, 'kecualikanFront'=>$kecualikanFront,
+        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'postFront'=>$postFront,
+         'sertamertaFront'=>$sertamertaFront, 'setiapsaatFront'=>$setiapsaatFront, 'berkalaFront'=>$berkalaFront, 'kecualikanFront'=>$kecualikanFront,
 
         ]);
     }

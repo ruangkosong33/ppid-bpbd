@@ -57,7 +57,7 @@ class PostController extends Controller
             $images=time(). '.' .$extension;
 
             $img=$manager->read($request->file('image'));
-            $img->resize(550,350);
+            $img->resize(857,480);
 
             $path='public/image-post/'.$images;
             Storage::put($path, $img->encode());
@@ -122,7 +122,7 @@ class PostController extends Controller
             $images = time(). '.' .$extension;
         
             $img = $manager->read($request->file('image'));
-            $img->resize(550, 350);
+            $img->resize(857,480);
         
             $path = 'public/image-post/'.$images;
             Storage::put($path, $img->encode());
