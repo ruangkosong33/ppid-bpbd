@@ -68,7 +68,7 @@
                         <li>
                             <ul class="mega-sub-menu">
                                 <li><a href="{{route('semua.berita')}}">Berita Utama</a></li>
-                                <li><a href="index.html">Berita Infografis</a></li>
+                                <li><a href="{{route('semua.graphics')}}">Berita Infografis</a></li>
                             </ul>
                         </li>
                         <li>

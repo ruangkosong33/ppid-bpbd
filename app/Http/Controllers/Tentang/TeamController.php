@@ -48,7 +48,7 @@ class TeamController extends Controller
             $images=time(). '.' .$extension;
 
             $img=$manager->read($request->file('image'));
-            $img->resize(550,350);
+            $img->resize(288,306);
 
             $path='public/image-team/'.$images;
             Storage::put($path, $img->encode());
@@ -106,7 +106,7 @@ class TeamController extends Controller
             $images = time(). '.' .$extension;
 
             $img = $manager->read($request->file('image'));
-            $img->resize(550, 350);
+            $img->resize(288,306);
 
             $path = 'public/image-team/'.$images;
             Storage::put($path, $img->encode());

@@ -20,12 +20,6 @@
                                 <div class="social-toggle-icon">
                                     <i class="fas fa-share-alt"></i>
                                 </div>
-                                <ul class="list-wrap">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                </ul>
                             </div>
                         </div>
                         <div class="team-content-three">

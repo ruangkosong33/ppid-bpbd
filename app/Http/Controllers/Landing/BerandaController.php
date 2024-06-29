@@ -9,6 +9,7 @@ use App\Models\Team;
 use App\Models\Video;
 use App\Models\Agenda;
 use App\Models\Katdip;
+use App\Models\Graphic;
 use App\Models\Partner;
 use App\Models\Setting;
 use App\Models\Kategori;
@@ -27,7 +28,7 @@ class BerandaController extends Controller
 
         $teams=Team::orderBy('id')->get();
 
-        $kategoris=Kategori::orderBy('id')->get();
+        $graphics=Graphic::orderBy('id', 'DESC')->limit('4')->get();
 
         $postFront = Post::with('kategoris')->where('status', 'publish')->orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(3)->get();
 
@@ -43,9 +44,8 @@ class BerandaController extends Controller
 
         return view('layouts.guest.pages.beranda.index-beranda',
 
-        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'postFront'=>$postFront,
+        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'postFront'=>$postFront, 'graphics'=>$graphics,
          'sertamertaFront'=>$sertamertaFront, 'setiapsaatFront'=>$setiapsaatFront, 'berkalaFront'=>$berkalaFront, 'kecualikanFront'=>$kecualikanFront,
-         'kategoris'=>$kategoris,
         ]);
     }
 }
