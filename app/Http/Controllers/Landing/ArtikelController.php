@@ -11,7 +11,7 @@ class ArtikelController extends Controller
 {
     public function semuaBerita()
     {
-        $articles = Post::with('kategori')->where('status', 'publish')->orderBy('date', 'DESC')->orderBy('id', 'DESC');
+        $articles = Post::with('kategoris')->where('status', 'publish')->orderBy('date', 'DESC')->orderBy('id', 'DESC');
         $recent_posts = $articles->where('status', 'publish')->limit(3)->get();
         $articles = $articles->where('status', 'publish')->paginate(5);
         $categories = Kategori::with('posts')->get();

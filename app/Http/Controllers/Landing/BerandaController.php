@@ -11,6 +11,7 @@ use App\Models\Agenda;
 use App\Models\Katdip;
 use App\Models\Partner;
 use App\Models\Setting;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,6 +26,8 @@ class BerandaController extends Controller
         $partners=Partner::orderBy('id')->limit('6')->get();
 
         $teams=Team::orderBy('id')->get();
+
+        $kategoris=Kategori::orderBy('id')->get();
 
         $postFront = Post::with('kategoris')->where('status', 'publish')->orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(3)->get();
 
@@ -42,7 +45,7 @@ class BerandaController extends Controller
 
         ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'postFront'=>$postFront,
          'sertamertaFront'=>$sertamertaFront, 'setiapsaatFront'=>$setiapsaatFront, 'berkalaFront'=>$berkalaFront, 'kecualikanFront'=>$kecualikanFront,
-
+         'kategoris'=>$kategoris,
         ]);
     }
 }

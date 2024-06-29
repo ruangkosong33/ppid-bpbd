@@ -1,5 +1,9 @@
 @extends('layouts.guest.master.f-master')
 
+@php
+    use Illuminate\Support\Str;
+@endphp
+
 @section('content')
 
     @include('components.breadcrumb', ['title' => 'Semua Berita'])
@@ -11,30 +15,29 @@
                 <div class="row justify-content-center">
                     <div class="col-71">
                         <div class="blog-post-wrap">
-                            @foreach ($articles as $item)
                             <div class="row">
+                                @foreach ($articles as $item)
                                 <div class="col-md-6">
                                     <div class="blog-post-item-two">
                                         <div class="blog-post-thumb-two">
-                                            <a href="{{route('detail.berita')}}"><img src="assets/img/blog/h3_blog_img01.jpg" alt=""></a>
-                                            <a href="blog.html" class="tag tag-two">{{$item->kategori->title}}</a>
+                                            <a href="{{route('detail.berita', $item->slug)}}"><img src="{{asset('storage/image-post/' . $item->image) }}" alt="{{$item->image}}"></a>
+                                            <a href="blog.html" class="tag tag-two">{{$item->kategoris->title}}</a>
                                         </div>
                                         <div class="blog-post-content-two">
-                                            <h2 class="title"><a href="blog-details.html">{{$item->title}}</a></h2>
-                                            <p>{!!$item->body!!}</p>
+                                            <h2 class="title"><a href="{{route('detail.berita', $item->slug)}}">{{ Str::limit($item->title, 50) }}</a></h2>
+                                            <p>{{ Str::limit(strip_tags($item->body), 80) }}</p>
                                             <div class="blog-meta">
                                                 <ul class="list-wrap">
-                                                    <li>
-                                                        <a href="blog-details.html"><img src="assets/img/blog/blog_avatar01.png" alt="">Kat Doven</a>
-                                                    </li>
-                                                    <li><i class="far fa-calendar"></i>{{$item->date}}</li>
+                                                    <li><i class="far fa-user"></i>by {{$item->users->name}}</a></li>
+                                                    <li><i class="far fa-calendar"></i>{{ \Carbon\Carbon::parse($item->date)->format('d-m-Y') }}</li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>   
                                 </div>
+                                @endforeach
                             </div>
-                            @endforeach
+                            
                             <div class="pagination-wrap mt-30">
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination list-wrap">
@@ -49,82 +52,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-29">
-                        <aside class="blog-sidebar">
-                            <div class="sidebar-search">
-                                <form action="#">
-                                    <input type="text" placeholder="Search Here . . .">
-                                    <button type="submit"><i class="flaticon-search"></i></button>
-                                </form>
-                            </div>
-                            <div class="blog-widget">
-                                <h4 class="bw-title">Categories</h4>
-                                <div class="bs-cat-list">
-                                    <ul class="list-wrap">
-                                        <li><a href="#">Business <span>(02)</span></a></li>
-                                        <li><a href="#">Consulting <span>(08)</span></a></li>
-                                        <li><a href="#">Corporate <span>(05)</span></a></li>
-                                        <li><a href="#">Design <span>(02)</span></a></li>
-                                        <li><a href="#">Fashion <span>(11)</span></a></li>
-                                        <li><a href="#">Marketing <span>(12)</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="blog-widget">
-                                <h4 class="bw-title">Recent Posts</h4>
-                                <div class="rc-post-wrap">
-                                    <div class="rc-post-item">
-                                        <div class="thumb">
-                                            <a href="blog-details.html"><img src="assets/img/blog/rc_post01.jpg" alt=""></a>
-                                        </div>
-                                        <div class="content">
-                                            <span class="date"><i class="far fa-calendar"></i>22 Jan, 2023</span>
-                                            <h2 class="title"><a href="blog-details.html">Whale be raised must be in a month</a></h2>
-                                        </div>
-                                    </div>
-                                    <div class="rc-post-item">
-                                        <div class="thumb">
-                                            <a href="blog-details.html"><img src="assets/img/blog/rc_post02.jpg" alt=""></a>
-                                        </div>
-                                        <div class="content">
-                                            <span class="date"><i class="far fa-calendar"></i>22 Jan, 2023</span>
-                                            <h2 class="title"><a href="blog-details.html">Whale be raised must be in a month</a></h2>
-                                        </div>
-                                    </div>
-                                    <div class="rc-post-item">
-                                        <div class="thumb">
-                                            <a href="blog-details.html"><img src="assets/img/blog/rc_post03.jpg" alt=""></a>
-                                        </div>
-                                        <div class="content">
-                                            <span class="date"><i class="far fa-calendar"></i>22 Jan, 2023</span>
-                                            <h2 class="title"><a href="blog-details.html">Whale be raised must be in a month</a></h2>
-                                        </div>
-                                    </div>
-                                    <div class="rc-post-item">
-                                        <div class="thumb">
-                                            <a href="blog-details.html"><img src="assets/img/blog/rc_post04.jpg" alt=""></a>
-                                        </div>
-                                        <div class="content">
-                                            <span class="date"><i class="far fa-calendar"></i>22 Jan, 2023</span>
-                                            <h2 class="title"><a href="blog-details.html">Whale be raised must be in a month</a></h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-widget">
-                                <h4 class="bw-title">Tags</h4>
-                                <div class="bs-tag-list">
-                                    <ul class="list-wrap">
-                                        <li><a href="#">Finance</a></li>
-                                        <li><a href="#">Consultancy</a></li>
-                                        <li><a href="#">Data</a></li>
-                                        <li><a href="#">Agency</a></li>
-                                        <li><a href="#">Travel</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
+                    @include('components.sidebar-post')
                 </div>
             </div>
         </div>

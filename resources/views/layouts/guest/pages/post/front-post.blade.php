@@ -28,9 +28,7 @@
                         <p>{{ Str::limit(strip_tags($item->body), 50) }}</p>
                         <div class="blog-meta">
                             <ul class="list-wrap">
-                                <li>
-                                    <a href="blog-details.html"><img src="{{asset('fr/assets/img/blog/blog_avatar01.png')}}" alt="">{{$item->users->name}}</a>
-                                </li>
+                                <li><i class="far fa-user"></i>by {{$item->users->name}}</a></li>
                                 <li><i class="far fa-calendar"></i>{{ \Carbon\Carbon::parse($item->date)->format('d-m-Y') }}</li>
                             </ul>
                         </div>
