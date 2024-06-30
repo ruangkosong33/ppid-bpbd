@@ -16,20 +16,20 @@
                     <div class="col-71">
                         <div class="blog-post-wrap">
                             <div class="row">
-                                @foreach ($item as $items)
+                                @foreach ($grafis as $item)
                                 <div class="col-md-6">
                                     <div class="blog-post-item-two">
                                         <div class="blog-post-thumb-two">
-                                            <a href="{{route('detail.graphics', $item->slug)}}"><img src="{{asset('storage/image-grafis/' . $item->image) }}" alt="{{$item->image}}"></a>
-                                            <a href="blog.html" class="tag tag-two">{{$item->kategoris->title}}</a>
+                                            <a href="{{route('detail.grafis', $item->slug)}}"><img src="{{asset('storage/image-grafis/' . $item->image) }}" alt="{{$item->image}}"></a>
+                                            {{-- <a href="blog.html" class="tag tag-two">{{$item->kategoris->title}}</a> --}}
                                         </div>
                                         <div class="blog-post-content-two">
-                                            <h2 class="title"><a href="{{route('detail.graphics', $item->slug)}}">{{ Str::limit($item->title, 50) }}</a></h2>
+                                            <h2 class="title"><a href="{{route('detail.grafis', $item->slug)}}">{{ Str::limit($item->title, 50) }}</a></h2>
                                             <p>{{ Str::limit(strip_tags($item->body), 80) }}</p>
                                             <div class="blog-meta">
                                                 <ul class="list-wrap">
-                                                    <li><i class="far fa-user"></i>by {{$item->users->name}}</a></li>
-                                                    <li><i class="far fa-calendar"></i>{{ \Carbon\Carbon::parse($item->date)->format('d-m-Y') }}</li>
+                                                    {{-- <li><i class="far fa-user"></i>by {{$item->users->name}}</a></li> --}}
+                                                    {{-- <li><i class="far fa-calendar"></i>{{ \Carbon\Carbon::parse($item->date)->format('d-m-Y') }}</li> --}}
                                                 </ul>
                                             </div>
                                         </div>

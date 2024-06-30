@@ -16,17 +16,17 @@ class MediaController extends Controller
         return view('layouts.guest.pages.foto.index-foto', ['fotos'=>$fotos]);
     }
 
-    public function semuaGraphics()
+    public function semuaGrafis()
     {
-        $item=Graphic::orderBy('id', 'DESC')->limit(12)->get();
+        $grafis=Graphic::orderBy('id', 'DESC')->limit(12)->get();
 
-        return view('layouts.guest.pages.infografis.index-infografis', ['item'=>$item]);
+        return view('layouts.guest.pages.infografis.index-infografis', ['grafis'=>$grafis]);
     }
 
-    public function detailGraphics($slug)
+    public function detailGrafis($slug)
     {
-        $items=Graphic::orderBy('slug', $slug)->get();
+        $grafiss=Graphic::where('slug', $slug)->firstOrFail();
 
-        return view('layouts.guest.pages.infografis.detail-infografis', ['items'=>$items]);
+        return view('layouts.guest.pages.infografis.detail-infografis', ['grafiss'=>$grafiss]);
     }
 }
