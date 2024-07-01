@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Landing;
 
 use App\Models\Hak;
+use App\Models\Sop;
 use App\Models\Etik;
 use App\Models\Waktu;
 use App\Models\Sarana;
+use App\Models\Filesop;
 use App\Models\Standar;
 use App\Models\Maklumat;
 use Illuminate\Http\Request;
@@ -53,5 +55,22 @@ class LayananController extends Controller
         $maklumats=Maklumat::first();
 
         return view('layouts.guest.pages.maklumat.index-maklumat', ['maklumats'=>$maklumats]);
+    }
+
+    public function sopIndex()
+    {
+        $sopIndex=Sop::orderBy('id', 'DESC')->paginate(10);
+
+        return view('layouts.guest.pages.sop.index-sop', ['sopIndex'=>$sopIndex]);
+    }
+
+    public function sopList($slug)
+    {
+        $sopList=Sop::where('slug', $slug)->first();
+        $itemList = Filesop::whereHas('sops', function ($q) use ($slug) {
+            $q->where('slug', $slug);
+        })->paginate(10);
+
+        return view('layouts.guest.pages.sop.list-sop', ['sopList'=>$sopList, 'itemList'=>$itemList]);
     }
 }

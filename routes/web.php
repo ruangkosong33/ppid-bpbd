@@ -80,6 +80,8 @@ Route::get('/tim-ppid', [TentangController::class, 'frontTeams'])->name('front.t
 Route::get('/tim-ppid', [TentangController::class, 'semuaTeams'])->name('semua.team');
 Route::get('/tim-ppid/{slug}', [TentangController::class, 'detailTeams'])->name('detail.team');
 Route::get('/waktu-layanan', [LayananController::class, 'waktus'])->name('waktu');
+Route::get('/sop', [LayananController::class, 'sopIndex'])->name('front.sop.index');
+Route::get('/sop/list/{slug}', [LayananController::class, 'sopList'])->name('list.sop.index');
 Route::get('/anggaran-kegiatan', [InformasiController::class, 'anggarans'])->name('anggaran');
 Route::get('/definisi-informasi', [InformasiController::class, 'definisis'])->name('definisi');
 Route::get('/notulen', [InformasiController::class, 'notulens'])->name('notulen');

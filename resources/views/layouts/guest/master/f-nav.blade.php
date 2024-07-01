@@ -47,7 +47,7 @@
                     <ul class="sub-menu mega-menu">
                         <li>
                             <ul class="mega-sub-menu">
-                                <li><a href="index.html">SOP</a></li>
+                                <li><a href="{{route('front.sop.index')}}">SOP</a></li>
                                 <li><a href="{{route('waktu')}}">Waktu & Layanan</a></li>
                                 <li><a href="{{route('standar')}}">Standar Biaya</a></li>
                                 <li><a href="{{route('sarana')}}">Sarana & Prasarana</a></li>

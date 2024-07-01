@@ -13,7 +13,7 @@ class Filesop extends Model
 
     protected $table='filesops';
 
-    protected $fillable=['title', 'slug', 'file'];
+    protected $fillable=['sop_id', 'title', 'slug', 'file'];
 
     protected $hidden=[];
 
@@ -30,6 +30,6 @@ class Filesop extends Model
     //RELATION
     public function sops(): BelongsTo
     {
-        return $this->belongsTo(Sop::class);
+        return $this->belongsTo(Sop::class, 'sop_id');
     }
 }

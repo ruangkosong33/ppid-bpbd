@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             ProfilSeeder::class,
             KatdipSeeder::class,
+            SettingSeeder::class,
         ]);
     }
 }
