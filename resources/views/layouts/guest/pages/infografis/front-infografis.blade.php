@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         @empty
-                        Tidak Ada Data
+                        Tidak Ada Data Infografis
                         @endforelse
                 </div>
         </div>

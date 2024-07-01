@@ -26,7 +26,7 @@ class BerandaController extends Controller
 
         $partners=Partner::orderBy('id')->limit('6')->get();
 
-        $teams=Team::orderBy('id')->get();
+        $frontTeams=Team::orderBy('id')->get();
 
         $graphics=Graphic::orderBy('id', 'DESC')->limit('4')->get();
 
@@ -44,7 +44,7 @@ class BerandaController extends Controller
 
         return view('layouts.guest.pages.beranda.index-beranda',
 
-        ['teams'=>$teams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'postFront'=>$postFront, 'graphics'=>$graphics,
+        ['frontTeams'=>$frontTeams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'postFront'=>$postFront, 'graphics'=>$graphics,
          'sertamertaFront'=>$sertamertaFront, 'setiapsaatFront'=>$setiapsaatFront, 'berkalaFront'=>$berkalaFront, 'kecualikanFront'=>$kecualikanFront,
         ]);
     }

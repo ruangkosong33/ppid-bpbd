@@ -10,101 +10,33 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-title-two text-center mb-50 tg-heading-subheading animation-style1">
-                        <span class="sub-title tg-element-title">Expert People</span>
-                        <h2 class="title tg-element-title">Dedicated Team Members</h2>
-                        <p>Ever find yourself staring at your computer screen a good consulting slogan to come to mind? Oftentimes.</p>
+                        <span class="sub-title tg-element-title">Tim PPID BPBD Kaltim</span>
+                        <h2 class="title tg-element-title">Berkenalan Dengan Tim Kami</h2>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
+                @forelse ($semuateams as $item)
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                     <div class="team-item-three">
                         <div class="team-thumb-three">
-                            <img src="assets/img/team/h3_team_img01.png" alt="">
+                            <img src="{{asset('storage/image-team/' . $item->image) }}" alt="{{$item->image}}">
                             <div class="team-social-three">
                                 <div class="social-toggle-icon">
                                     <i class="fas fa-share-alt"></i>
                                 </div>
-                                <ul class="list-wrap">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                </ul>
+                        
                             </div>
                         </div>
                         <div class="team-content-three">
-                            <h4 class="title"><a href="team-details.html">Brooklyn Simmons</a></h4>
-                            <span>Finance Advisor</span>
+                            <h4 class="title"><a href="{{route('detail.team')}}"></a>{{$item->name}}</h4>
+                            <span>{{$item->job}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                    <div class="team-item-three">
-                        <div class="team-thumb-three">
-                            <img src="assets/img/team/h3_team_img02.png" alt="">
-                            <div class="team-social-three">
-                                <div class="social-toggle-icon">
-                                    <i class="fas fa-share-alt"></i>
-                                </div>
-                                <ul class="list-wrap">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content-three">
-                            <h4 class="title"><a href="team-details.html">Jenny Wilson</a></h4>
-                            <span>Finance Advisor</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                    <div class="team-item-three">
-                        <div class="team-thumb-three">
-                            <img src="assets/img/team/h3_team_img03.png" alt="">
-                            <div class="team-social-three">
-                                <div class="social-toggle-icon">
-                                    <i class="fas fa-share-alt"></i>
-                                </div>
-                                <ul class="list-wrap">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content-three">
-                            <h4 class="title"><a href="team-details.html">Ronald Richards</a></h4>
-                            <span>Finance Advisor</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                    <div class="team-item-three">
-                        <div class="team-thumb-three">
-                            <img src="assets/img/team/h3_team_img04.png" alt="">
-                            <div class="team-social-three">
-                                <div class="social-toggle-icon">
-                                    <i class="fas fa-share-alt"></i>
-                                </div>
-                                <ul class="list-wrap">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="team-content-three">
-                            <h4 class="title"><a href="team-details.html">Marvin McKinney</a></h4>
-                            <span>Finance Advisor</span>
-                        </div>
-                    </div>
-                </div>
+                @empty
+                Tidak Ada Data
+                @endforelse
             </div>
         </div>
     </section>

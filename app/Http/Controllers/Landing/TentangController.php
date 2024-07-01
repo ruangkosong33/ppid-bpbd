@@ -55,10 +55,17 @@ class TentangController extends Controller
         return view('layouts.guest.pages.struktur.index-struktur', ['strukturs'=>$strukturs]);
     }
 
-    public function teams()
+    public function semuaTeams()
     {
-        $teams=Team::orderBy('id')->get();
+        $semuateams=Team::orderBy('id', 'DESC')->get();
 
-        return view('layouts.guest.pages.team.index-team', ['teams'=>$teams]);
+        return view('layouts.guest.pages.team.index-team', ['semuateams'=>$semuateams]);
+    }
+
+    public function detailTeams($slug)
+    {
+        $detailteams=Team::where('slug', $slug)->firstOrFail();
+
+        return view('layouts.guest.pages.team.detail-team', ['detailteams'=>$detailteams]);
     }
 }

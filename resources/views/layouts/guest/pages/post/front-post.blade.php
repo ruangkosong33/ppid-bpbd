@@ -16,7 +16,7 @@
         </div>
 
         <div class="row justify-content-center">
-            @foreach ($postFront as $item)
+            @forelse ($postFront as $item)
             <div class="col-lg-4 col-md-6 col-sm-10">
                 <div class="blog-post-item-two">
                     <div class="blog-post-thumb-two">
@@ -35,8 +35,9 @@
                     </div>
                 </div>
             </div>
-            @endforeach
-    
+            @empty
+            Tidak Ada Data berita
+            @endforelse
         </div>
     </div>
 </section>

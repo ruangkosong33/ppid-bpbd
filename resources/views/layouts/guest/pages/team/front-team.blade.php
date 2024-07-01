@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                @foreach ($teams as $item)
+                @forelse ($frontTeams as $item)
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                     <div class="team-item-three">
                         <div class="team-thumb-three">
@@ -23,12 +23,14 @@
                             </div>
                         </div>
                         <div class="team-content-three">
-                            <h4 class="title"><a href="team-details.html">{{$item->name}}</a></h4>
+                            <h4 class="title"><a href="{{route('detail.team', $item->slug)}}">{{$item->name}}</a></h4>
                             <span>{{$item->job}}</span>
                         </div>
                     </div>
-                    @endforeach
                 </div>
+                @empty
+                Tidak Ada Data Tim PPID
+                @endforelse
             </div>
         </div>
     </section>

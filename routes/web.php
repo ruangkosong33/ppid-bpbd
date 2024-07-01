@@ -76,7 +76,9 @@ Route::get('/infografis/{slug}', [MediaController::class, 'detailGrafis'])->name
 Route::get('/kode-etik', [LayananController ::class, 'etiks'])->name('etik');
 Route::get('/banner', [MediaController::class, 'banners'])->name('front.banner');
 Route::get('/sarana-prasarana', [LayananController::class, 'saranas'])->name('sarana');
-Route::get('/tim-ppid', [TentangController::class, 'teams'])->name('team');
+Route::get('/tim-ppid', [TentangController::class, 'frontTeams'])->name('front.team');
+Route::get('/tim-ppid', [TentangController::class, 'semuaTeams'])->name('semua.team');
+Route::get('/tim-ppid/{slug}', [TentangController::class, 'detailTeams'])->name('detail.team');
 Route::get('/waktu-layanan', [LayananController::class, 'waktus'])->name('waktu');
 Route::get('/anggaran-kegiatan', [InformasiController::class, 'anggarans'])->name('anggaran');
 Route::get('/definisi-informasi', [InformasiController::class, 'definisis'])->name('definisi');
