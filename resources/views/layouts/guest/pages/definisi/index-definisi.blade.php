@@ -9,7 +9,7 @@
         <div class="container">
 
             <div class="section-title-two text-center mb-50">
-                <span class="sub-title">{{$definisi->title}}</span>
+                <span class="sub-title">{{$definisis->title}}</span>
             </div>
 
             <div class="row">

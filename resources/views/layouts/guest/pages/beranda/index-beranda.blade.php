@@ -10,6 +10,10 @@
     @include('layouts.guest.pages.dip.front-dip')
     <!-- End Daftar Informasi Publik -->
 
+    <!-- Total DIP -->
+    {{-- @include('layouts.guest.pages.dip.total-dip') --}}
+    <!-- End Total DIP -->
+
     <!-- Infogragis -->
     @include('layouts.guest.pages.infografis.front-infografis')
     <!-- Enf Infografis -->

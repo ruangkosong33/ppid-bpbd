@@ -8,6 +8,7 @@ use App\Models\Dasar;
 use App\Models\Waktu;
 use App\Models\Fungsi;
 use App\Models\Standar;
+use App\Models\Definisi;
 use App\Models\Maklumat;
 use App\Models\Struktur;
 use Faker\Factory as Faker;
@@ -55,6 +56,11 @@ class ProfilSeeder extends Seeder
 
         Etik::create([
             'title'=>'Kode Etik',
+            'body'=>$faker->text,
+        ]);
+
+        Definisi::create([
+            'title'=>'Definisi Informasi Publik',
             'body'=>$faker->text,
         ]);
     }
