@@ -19,4 +19,43 @@
 <script src="{{asset('fr/assets/js/aos.js')}}"></script>
 <script src="{{asset('fr/assets/js/wow.min.js')}}"></script>
 <script src="{{asset('fr/assets/js/main.js')}}"></script>
+
+<!-- Voice Speech -->
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=F4R6r0uo"></script>
+<script>
+    $(document).ready(function() {
+        responsiveVoice.setDefaultVoice("Indonesian Male");
+        $('a').mouseenter(function() {
+            responsiveVoice.cancel();
+            responsiveVoice.speak($(this)
+        .text());
+        });
+        $(document).mouseup(function(e) {
+            setTimeout(function() {
+                responsiveVoice.cancel();
+                responsiveVoice.speak(
+            getSelectionText());
+            }, 1);
+        });
+    });
+
+    function getSelectionText() {
+        var text = "";
+        if (window.getSelection) {
+            text = window.getSelection().toString();
+        } else if (document.selection && document.selection.type != "Control") {
+            text = document.selection.createRange().text;
+        }
+        return text;
+    }
+</script>
+<!-- End Voice Speech -->
+
+<!-- Widget Disabilitas -->
+<script src="https://cdn.userway.org/widget.js" data-account="LMKiBTt2Mr"></script>
+<!-- End Widget -->
+
+@stack('script_vendor')
+@vite('resources/js/app-guest.js')
+
 <!-- END JS -->

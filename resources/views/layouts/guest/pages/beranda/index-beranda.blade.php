@@ -14,13 +14,17 @@
     @include('layouts.guest.pages.infografis.front-infografis')
     <!-- Enf Infografis -->
 
-    <!-- team-area -->
+    <!-- TIM PPID -->
     @include('layouts.guest.pages.team.front-team')
-    <!-- team-area-end -->
+    <!-- End TIM PPID -->
 
-    <!-- blog-area -->
+    <!-- Berita -->
     @include('layouts.guest.pages.post.front-post')
-    <!-- blog-area-end -->
+    <!-- End Berita -->
+
+    <!-- Media Sosial -->
+    @include('layouts.guest.pages.medsos.front-medsos')
+    <!-- End Media Sosial -->
 
     <br>
     

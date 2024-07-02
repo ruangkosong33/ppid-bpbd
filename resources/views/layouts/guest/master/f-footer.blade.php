@@ -1,6 +1,6 @@
 <footer>
-    <div class="footer-area-three">
-        <div class="footer-top-three">
+    <div class="footer-area-two footer-bg-two" data-background="{{asset('fr/assets/img/bg/h2_footer_bg.jpg')}}">
+        <div class="footer-top-two">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-7">
@@ -24,43 +24,42 @@
                     </div>
                     <div class="col-lg-2 col-md-5 col-sm-6">
                         <div class="footer-widget">
-                            <h4 class="fw-title">Menu</h4>
+                            <h4 class="fw-title">Menu Pintasan</h4>
                             <div class="footer-link">
                                 <ul class="list-wrap">
-                                    <li><a href="about.html">Company</a></li>
-                                    <li><a href="contact.html">Careers</a></li>
-                                    <li><a href="contact.html">Press media</a></li>
-                                    <li><a href="blog.html">Our Blog</a></li>
-                                    <li><a href="contact.html">Privacy Policy</a></li>
+                                    <li><a href="{{route('hak')}}">Hak Atas Informasi</a></li>
+                                    <li><a href="{{route('sarana')}}">Sarana & Prasarana</a></li>
+                                    <li><a href="{{route('etik')}}">Kode Etik</a></li>
+                                    <li><a href="{{route('maklumat')}}">Maklumat Pelayanan</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-5 col-sm-6">
                         <div class="footer-widget">
-                            <h4 class="fw-title">Quick Links</h4>
+                            <h4 class="fw-title">Tautan Cepat</h4>
                             <div class="footer-link">
                                 <ul class="list-wrap">
-                                    <li><a href="contact.html">How it’s Work</a></li>
-                                    <li><a href="contact.html">Partners</a></li>
-                                    <li><a href="contact.html">Testimonials</a></li>
-                                    <li><a href="contact.html">Case Studies</a></li>
-                                    <li><a href="contact.html">Pricing</a></li>
+                                    <li><a href="{{route('berkala.index')}}">Informasi Berkala</a></li>
+                                    <li><a href="{{route('sertamerta.index')}}">Informasi Serta Merta</a></li>
+                                    <li><a href="{{route('setiapsaat.index')}}">Informasi Setiap Saat</a></li>
+                                    <li><a href="contact.html">Informasi Di Kecualikan</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-7">
                         <div class="footer-widget">
-                            <h4 class="fw-title">Contact</h4>
+                            <h4 class="fw-title">Kontak Kami</h4>
                             <div class="footer-info">
+                                @foreach ($settings as $item)
                                 <ul class="list-wrap">
                                     <li>
                                         <div class="icon">
                                             <i class="flaticon-pin"></i>
                                         </div>
                                         <div class="content">
-                                            <p>58 Street Commercial Road Fratton, Australia</p>
+                                            <p>{{$item->address}}</p>
                                         </div>
                                     </li>
                                     <li>
@@ -68,7 +67,7 @@
                                             <i class="flaticon-phone-call"></i>
                                         </div>
                                         <div class="content">
-                                            <a href="tel:0123456789">+123 888 9999</a>
+                                            <a href="tel:0541741040">0541 - {{$item->phone}}</a>
                                         </div>
                                     </li>
                                     <li>
@@ -76,10 +75,14 @@
                                             <i class="flaticon-clock"></i>
                                         </div>
                                         <div class="content">
-                                            <p>Mon – Sat: 8 am – 5 pm, <br> Sunday: <span>CLOSED</span></p>
+                                            <p>Senin – Kamis : <span>08.00 – 16.30</span>
+                                            <p>Jumat : <span>08.00 – 12.00</span>
+                                            <br> 
+                                            Sabtu - Minggu : <span>Tutup</span></p>
                                         </div>
                                     </li>
                                 </ul>
+                                @endforeach
                             </div>
                         </div>
                     </div>
