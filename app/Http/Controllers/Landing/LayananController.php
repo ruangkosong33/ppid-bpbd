@@ -66,11 +66,17 @@ class LayananController extends Controller
 
     public function sopList($slug)
     {
-        $sopList=Sop::where('slug', $slug)->first();
+        $sopList=Sop::where('slug', $slug)->firstOrFail();
         $itemList = Filesop::whereHas('sops', function ($q) use ($slug) {
             $q->where('slug', $slug);
         })->paginate(10);
 
         return view('layouts.guest.pages.sop.list-sop', ['sopList'=>$sopList, 'itemList'=>$itemList]);
+    }
+
+    public function sopDetail($slug)
+    {
+        $item = Filesop::with('sops')->where('slug', $slug)->first();
+        return view('layouts.guest.pages.sop.detail-sop', compact('item'));
     }
 }
