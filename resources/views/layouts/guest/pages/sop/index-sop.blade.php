@@ -101,7 +101,7 @@
                                     <tbody>
                                         @foreach ($sopIndex as $key=>$k)
                                         <tr>
-                                            <td class="text-center">{{ $key+1 }}</td>
+                                            <td class="text-center">{{ $sopIndex->firstItem() + $key }}</td>
                                             <td class="text-center">{{ $k->title }}</td>
                                             {{-- <td class="text-center">{{ date('d-m-Y', strtotime($k->date)) }}</td> --}}
                                             <td class="text-center"><a href="{{ route('list.sop.index', $k->slug) }}" class="btn btn-info btn-sm">Lihat</a></td>
@@ -114,7 +114,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        {{-- {{ $keputusans->links() }} --}}
+                        {{ $sopIndex->links() }}
                     </div>
 
                 </div>
