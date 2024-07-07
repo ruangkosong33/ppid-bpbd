@@ -19,6 +19,13 @@ class InformasiController extends Controller
         return view('layouts.guest.pages.anggaran.index-anggaran', ['anggarans'=>$anggarans]);
     }
 
+    public function anggaranDetail($slug)
+    {
+        $anggarans=Anggaran::orderBy('id', 'DESC')->get();
+
+        return view('layouts.guest.pages.anggaran.index-anggaran', ['anggarans'=>$anggarans]);
+    }
+
     public function definisis()
     {
         $definisis=Definisi::first();
