@@ -12,7 +12,7 @@ class Pengadaan extends Model
 
     protected $table='pengadaans';
 
-    protected $fillable=['title', 'slug', 'date', 'file'];
+    protected $fillable=['title', 'slug', 'date', 'image', 'link'];
 
     protected $hidden=[];
 

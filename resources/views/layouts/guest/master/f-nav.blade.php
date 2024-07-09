@@ -28,7 +28,7 @@
                                 <li><a href="index-3.html">Formulir Permohonan <br> Informasi</a></li>
                                 <li><a href="index-3.html">Formulir Pengajuan <br> Keberatan Informasi</a></li>
                                 <li><a href="{{route('anggaran')}}">Anggaran Kegiatan</a></li>
-                                <li><a href="index-3.html">Pengadaan Barang & Jasa</a></li>
+                                <li><a href="{{route('pengadaan')}}">Pengadaan Barang & Jasa</a></li>
                             </ul>
                         </li>
                         <li>

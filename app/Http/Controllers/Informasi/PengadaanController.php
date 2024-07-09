@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Informasi;
 use App\Models\Pengadaan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class PengadaanController extends Controller
 {
@@ -34,24 +36,32 @@ class PengadaanController extends Controller
     {
         $this->validate($request, [
             'title'=>'required',
-            'file'=>'mimes:pdf|max:50000',
+            'image'=>'mimes:png,jpg,jpeg|max:2000',
         ]);
 
-        if($request->file('file'))
+        if($request->file('image'))
         {
-            $file=$request->file('file');
+            $manager= new ImageManager(new Driver());
+
+            $file=$request->file('image');
             $extension=$file->getClientOriginalName();
-            $files=$extension;
-            $file->storeAs('public/file-pengadaan', $files);
+            $images=time(). '.' .$extension;
+
+            $img=$manager->read($request->file('image'));
+            $img->resize(550,350);
+
+            $path='public/image-pengadaan/'.$images;
+            Storage::put($path, $img->encode());
         }
         else{
-            $files=null;
+            $images='';
         }
 
         $pengadaan=Pengadaan::create([
             'title'=>$request->title,
             'file'=>$files,
             'date'=>$request->date,
+            'link'=>$request->link,
         ]);
 
         flash('Data Berhasil Di Simpan');
@@ -82,28 +92,35 @@ class PengadaanController extends Controller
     {
         $this->validate($request, [
             'title'=>'required',
-            'file'=>'mimes:pdf|max:50000',
+            'image'=>'mimes:png,jpg,jpeg|max:2000',
         ]);
 
-        if($request->file('file'))
-        {
-            if ($pengadaan->file) {
-                Storage::delete('public/file-pengadaan/' . $pengadaan->file);
+        if ($request->file('image')) {
+            if ($pengadaan->image) {
+                Storage::delete('public/image-pengadaan/' . $pengadaan->image);
             }
 
-            $file=$request->file('file');
-            $extension=$file->getClientOriginalName();
-            $files=$extension;
-            $file->storeAs('public/file-pengadaan', $files);
-        }
-        else{
-            $files=$pengadaan->file;
+            $manager = new ImageManager(new Driver());
+
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $images = time(). '.' .$extension;
+
+            $img = $manager->read($request->file('image'));
+            $img->resize(550, 350);
+
+            $path = 'public/image-pengadaan/'.$images;
+            Storage::put($path, $img->encode());
+
+        } else {
+            $images = $pengadaan->image;
         }
 
         $pengadaan->update([
             'title'=>$request->title,
-            'file'=>$files,
+            'image'=>$images,
             'date'=>$request->date,
+            'link'=>$request->link,
         ]);
 
         flash('Data Berhasil Di Update');
@@ -116,9 +133,9 @@ class PengadaanController extends Controller
      */
     public function destroy(Pengadaan $pengadaan)
     {
-        if ($pengadaan->file && Storage::exists('public/file-pengadaan/' . $pengadaan->file))
+        if ($pengadaan->file && Storage::exists('public/image-pengadaan/' . $pengadaan->image))
         {
-            Storage::delete('public/file-pengadaan/' . $pengadaan->file);
+            Storage::delete('public/image-pengadaan/' . $pengadaan->file);
         }
 
         $pengadaan->delete();

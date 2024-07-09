@@ -7,6 +7,7 @@ use App\Models\Katdip;
 use App\Models\Notulen;
 use App\Models\Anggaran;
 use App\Models\Definisi;
+use App\Models\Pengadaan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,16 +15,30 @@ class InformasiController extends Controller
 {
     public function anggarans()
     {
-        $anggarans=Anggaran::orderBy('id', 'DESC')->get();
+        $anggarans=Anggaran::orderBy('id', 'DESC')->paginate(10);
 
         return view('layouts.guest.pages.anggaran.index-anggaran', ['anggarans'=>$anggarans]);
     }
 
-    public function anggaranDetail($slug)
+    public function detailAnggarans($slug)
     {
-        $anggarans=Anggaran::orderBy('id', 'DESC')->get();
+        $detailAnggarans=Anggaran::where('slug', $slug)->firstOrFail();
 
-        return view('layouts.guest.pages.anggaran.index-anggaran', ['anggarans'=>$anggarans]);
+        return view('layouts.guest.pages.anggaran.detail-anggaran', ['detailAnggarans'=>$detailAnggarans]);
+    }
+
+    public function pengadaans()
+    {
+        $pengadaans=Pengadaan::orderBy('id', 'DESC')->paginate(10);
+
+        return view('layouts.guest.pages.pengadaan.index-pengadaan', ['pengadaans'=>$pengadaans]);
+    }
+
+    public function detailPengadaans($slug)
+    {
+        $detailPengadaans=Pengadaan::where('slug', $slug)->firstOrFail();
+
+        return view('layouts.guest.pages.pengadaan.detail-pengadaan', ['detailPengadaans'=>$detailPengadaans]);
     }
 
     public function definisis()

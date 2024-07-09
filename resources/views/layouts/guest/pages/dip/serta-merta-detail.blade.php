@@ -1,7 +1,7 @@
 @extends('layouts.guest.master.f-master')
 
 @section('content')
-    @include('components.breadcrumb', ['title' => 'File DIP Serta Merta'])
+    @include('components.breadcrumb', ['title' => $sertamertas->title])
 
     <section class="project-details-area pt-50 pb-120">
         <div class="container">

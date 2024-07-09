@@ -84,6 +84,7 @@ Route::get('/sop', [LayananController::class, 'sopIndex'])->name('front.sop.inde
 Route::get('/sop/list/{slug}', [LayananController::class, 'sopList'])->name('list.sop.index');
 Route::get('/sop/detail/{slug}', [LayananController::class, 'sopDetail'])->name('detail.sop.index');
 Route::get('/anggaran-kegiatan', [InformasiController::class, 'anggarans'])->name('anggaran');
+Route::get('/anggaran-kegiatan/{slug}', [InformasiController::class, 'detailAnggarans'])->name('detail.anggaran');
 Route::get('/definisi-informasi', [InformasiController::class, 'definisis'])->name('definisi');
 Route::get('/notulen', [InformasiController::class, 'notulens'])->name('notulen');
 Route::get('/informasi-serta-merta', [InformasiController::class, 'sertamerta'])->name('sertamerta.index');
@@ -94,6 +95,8 @@ Route::get('/informasi-berkala', [InformasiController::class, 'berkala'])->name(
 Route::get('/informasi-berkala/{slug}', [InformasiController::class, 'berkalaDetail'])->name('berkala.detail');
 Route::get('/informasi-dikecualikan', [InformasiController::class, 'kecualikan'])->name('kecualikan.index');
 Route::get('/informasi-dikecualikan/{slug}', [InformasiController::class, 'kecualikanDetail'])->name('kecualikan.detail');
+Route::get('/pengadaan', [InformasiController::class, 'pengadaans'])->name('pengadaan');
+Route::get('/pengadaan/{slug}', [InformasiController::class, 'detailPengadaans'])->name('detail.pengadaan');
 
 
 //--END FRONTEND--//
