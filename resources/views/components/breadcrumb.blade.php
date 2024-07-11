@@ -1,6 +1,6 @@
 <section class="banner-area-three" style="margin-top: 20px;">
 
-<section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset('fr/assets/img/bg/breadcrumb_bg.jpg') }}">
+<section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset('fr/assets/img/bg/banner-breadcrumb.png') }}">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
