@@ -31,25 +31,22 @@
                         <input type="date" class="form-control" name="date"
                         value="{{old('date') ?? $pengadaan->date}}">
 
-                        @error('file')
-                            <span class="invalid-feedback">{{$message}}</span>
-                        @enderror
-
                     </div>
 
                     <div class="form-group">
-                        <label for="file">File</label>
-                        <input type="file" class="form-control @error('file') ?? is-invalid @enderror" name="file">
-
-                        @error('file')
-                            <span class="invalid-feedback">{{$message}}</span>
-                        @enderror
+                        <label for="image">Gambar</label>
+                        <input type="file" class="form-control" id="image" name="image"
+                        onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
 
                     </div>
 
+                    <div class="mt-3"><img src="{{asset('storage/image-pengadaan/'. $pengadaan->image)}}" id="output" width="150"></div>
+            
                     <div class="form-group">
-                        <label for="file">File (Existing)</label>
-                        <input type="text" class="form-control" value="{{ $pengadaan->file }}" readonly>
+                        <label for="link">Link URL</label>
+                        <input type="text" class="form-control" name="link"
+                        value="{{old('link') ?? $pengadaan->link}}">
+
                     </div>
 
                     <x-slot name="footer">

@@ -28,7 +28,7 @@
                             <td>{{$key+1}}</td>
                             <td>{{$partners->title}}</td>
                             <td><img src="{{asset('storage/image-partner/' . $partners->image)}}" width="100px"></td>
-                            <td>{{$partners->link}}</td>
+                            <td><a href="{{ $partners->link }}">{{ $partners->link }}</a></td>
                             <td>
                                 <a href="{{ route('partner.edit', $partners->id) }}" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>

@@ -16,32 +16,28 @@
 
                     <div class="form-group">
                         <label for="title">Judul</label>
-                        <input type="text" class="form-control @error('title') ?? is-invalid @enderror" name="title" placeholder="Judul Pengadaan Barang & Jasa"
-                        value="{{ old('title') }}">
-
-                        @error('title')
-                            <span class="invalid-feedback">{{$message}}</span>
-                        @enderror
+                        <input type="text" class="form-control" name="title" placeholder="Judul Pengadaan Barang & Jasa">
 
                     </div>
 
                     <div class="form-group">
-                        <label for="file">File</label>
-                        <input type="file" class="form-control @error('file') ?? is-invalid @enderror" name="file">
-
-                        @error('file')
-                            <span class="invalid-feedback">{{$message}}</span>
-                        @enderror
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="date">File</label>
+                        <label for="date">Tanggal</label>
                         <input type="date" class="form-control" name="date">
 
-                        @error('date')
-                            <span class="invalid-feedback">{{$message}}</span>
-                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Gambar</label>
+                        <input type="file" class="form-control" id="image" name="image"
+                        onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+
+                    </div>
+
+                    <div class="mt-3"><img src="" id="output" width="150"></div>
+
+                    <div class="form-group">
+                        <label for="link">Link URL</label>
+                        <input type="text" class="form-control" name="link" placeholder="Link URL">
 
                     </div>
 

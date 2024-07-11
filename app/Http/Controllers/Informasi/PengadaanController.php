@@ -48,7 +48,7 @@ class PengadaanController extends Controller
             $images=time(). '.' .$extension;
 
             $img=$manager->read($request->file('image'));
-            $img->resize(550,350);
+            $img->resize(857,480);
 
             $path='public/image-pengadaan/'.$images;
             Storage::put($path, $img->encode());
@@ -59,7 +59,7 @@ class PengadaanController extends Controller
 
         $pengadaan=Pengadaan::create([
             'title'=>$request->title,
-            'file'=>$files,
+            'image'=>$images,
             'date'=>$request->date,
             'link'=>$request->link,
         ]);
@@ -107,7 +107,7 @@ class PengadaanController extends Controller
             $images = time(). '.' .$extension;
 
             $img = $manager->read($request->file('image'));
-            $img->resize(550, 350);
+            $img->resize(857,480);
 
             $path = 'public/image-pengadaan/'.$images;
             Storage::put($path, $img->encode());
@@ -133,9 +133,9 @@ class PengadaanController extends Controller
      */
     public function destroy(Pengadaan $pengadaan)
     {
-        if ($pengadaan->file && Storage::exists('public/image-pengadaan/' . $pengadaan->image))
+        if ($pengadaan->image && Storage::exists('public/image-pengadaan/' . $pengadaan->image))
         {
-            Storage::delete('public/image-pengadaan/' . $pengadaan->file);
+            Storage::delete('public/image-pengadaan/' . $pengadaan->image);
         }
 
         $pengadaan->delete();

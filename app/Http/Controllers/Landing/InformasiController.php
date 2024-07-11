@@ -29,7 +29,7 @@ class InformasiController extends Controller
 
     public function pengadaans()
     {
-        $pengadaans=Pengadaan::orderBy('id', 'DESC')->paginate(10);
+        $pengadaans=Pengadaan::orderBy('id', 'DESC')->paginate(9);
 
         return view('layouts.guest.pages.pengadaan.index-pengadaan', ['pengadaans'=>$pengadaans]);
     }

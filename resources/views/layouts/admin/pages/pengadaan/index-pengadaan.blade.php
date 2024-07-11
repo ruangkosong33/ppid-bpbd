@@ -19,16 +19,18 @@
                     <x-slot name="thead">
                         <th>No</th>
                         <th>Judul</th>
-                        <th>File</th>
-                        <th>Tanggal & Tahun</th>
+                        <th>Tanggal</th>
+                        <th>Gambar</th>
+                        <th>Link</th>
                         <th>Action</th>
                     </x-slot>
                     @foreach ($pengadaan as $key=>$pengadaans)
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{Str::limit($pengadaans->title, '15', '...')}}</td>
-                            <td><a href="{{ asset('storage/file-pengadaan/' . $pengadaans->file) }}" download>{{$pengadaans->file}}</a></td>
                             <td>{{ \Carbon\Carbon::parse($pengadaans->date)->format('d-m-Y') }}</td>
+                            <td><img src="{{asset('storage/image-pengadaan/' . $pengadaans->image)}}" width="100px"></td>
+                            <td><a href="{{ $pengadaans->link }}">{{ $pengadaans->link }}</a></td>
                             <td>
                                 <a href="{{route('pengadaan.edit', $pengadaans->id)}}" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>
