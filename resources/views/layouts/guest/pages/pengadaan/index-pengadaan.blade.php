@@ -13,7 +13,7 @@
     <div class="container">
         <div class="features-item-wrap">
             <div class="row justify-content-center">
-                @foreach ($pengadaans as $item)
+                @forelse ($pengadaans as $item)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="features-item-two">
                         <div class="features-icon-two">
@@ -31,7 +31,9 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @empty
+                Tidak Ada Data
+                @endforelse
             </div>
 
             <div class="d-flex justify-content-center mt-4">

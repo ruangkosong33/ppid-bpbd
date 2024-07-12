@@ -9,6 +9,7 @@ use App\Models\Anggaran;
 use App\Models\Definisi;
 use App\Models\Pengadaan;
 use Illuminate\Http\Request;
+use App\Models\Formpengajuan;
 use App\Http\Controllers\Controller;
 
 class InformasiController extends Controller
@@ -50,9 +51,16 @@ class InformasiController extends Controller
 
     public function notulens()
     {
-        $notulens=Notulen::orderBy('id', 'DESC')->get();
+        $notulens=Notulen::orderBy('id', 'DESC')->paginate(10);
 
         return view('layouts.guest.pages.notulen.index-notulen', ['notulens'=>$notulens]);
+    }
+
+    public function detailNotulens($slug)
+    {
+        $detailNotulens=Notulen::where('slug', $slug)->firstOrFail();
+
+        return view('layouts.guest.pages.notulen.detail-notulen', ['detailNotulens'=>$detailNotulens]);
     }
 
     public function sertamerta()
@@ -121,5 +129,62 @@ class InformasiController extends Controller
         $berkalas = Dip::with('katdips')->where('slug', $slug)->firstOrFail();
 
         return view('layouts.guest.pages.dip.berkala-detail', compact('berkalas'));
+    }
+
+    public function requestPengajuans()
+    {
+        return view('layouts.guest.pages.form-dip.form-pengajuan');
+    }
+
+    public function formPengajuans(Request $request)
+    {
+        $this->validate($request, [
+            'name'=>'required',
+            'email'=>'required',
+            'ktp'=>'required',
+            'image'=>'required|mimes:jpeg,jpg,png|max:5000',
+            'phone'=>'required',
+            'alamat'=>'required',
+            'rincian'=>'required',
+            'keterangan'=>'required',
+            'salinan'=>'required',
+        ]);
+
+        if($request->file('image'))
+        {
+            $manager= new ImageManager(new Driver());
+
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalName();
+            $images=time(). '.' .$extension;
+
+            $img=$manager->read($request->file('image'));
+            $img->resize(550,350);
+
+            $path='public/image-ktp/'.$images;
+            Storage::put($path, $img->encode());
+        }
+
+        $formpengajuans=Formpengajuan::create([
+            'name'=>htmlspecialchars($request->name),
+            'email'=>htmlspecialchars($request->email),
+            'ktp'=>htmlspecialchars($request->ktp),
+            'image'=>htmlspecialchars($images),
+            'phone'=>htmlspecialchars($request->phone),
+            'alamat'=>htmlspecialchars($request->alamat),
+            'rincian'=>htmlspecialchars($request->rincian),
+            'keterangan'=>htmlspecialchars($request->keterangan),
+            'salinan'=>htmlspecialchars($request->salinan),
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+
+        flash('Formulir Anda Berhasil Di Kirim');
+
+        return redirect()->back();
+    }
+
+    public function formPermohonans()
+    {
+
     }
 }

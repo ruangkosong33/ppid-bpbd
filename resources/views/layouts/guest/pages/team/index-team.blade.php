@@ -4,8 +4,9 @@
 
     @include('components.breadcrumb', ['title' => 'TIM PPID'])
 
+    <br><br>
     <!-- team-area -->
-    <section class="team-area-three">
+    <section class="team-area-five">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -17,20 +18,18 @@
             </div>
             <div class="row justify-content-center">
                 @forelse ($semuateams as $item)
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                    <div class="team-item-three">
-                        <div class="team-thumb-three">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
+                    <div class="team-item-five">
+                        <div class="team-thumb-five">
                             <img src="{{asset('storage/image-team/' . $item->image) }}" alt="{{$item->image}}">
-                            <div class="team-social-three">
-                                <div class="social-toggle-icon">
-                                    <i class="fas fa-share-alt"></i>
-                                </div>
-                        
-                            </div>
                         </div>
-                        <div class="team-content-three">
-                            <h4 class="title"><a href="{{route('detail.team')}}"></a>{{$item->name}}</h4>
+                        <div class="team-content-five">
+                            <h2 class="title"><a href="team-details.html">{{$item->name}}</a></h2>
                             <span>{{$item->job}}</span>
+                            <div class="team-social-four">
+                                <ul class="list-wrap">
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

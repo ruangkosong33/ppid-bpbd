@@ -87,6 +87,7 @@ Route::get('/anggaran-kegiatan', [InformasiController::class, 'anggarans'])->nam
 Route::get('/anggaran-kegiatan/{slug}', [InformasiController::class, 'detailAnggarans'])->name('detail.anggaran');
 Route::get('/definisi-informasi', [InformasiController::class, 'definisis'])->name('definisi');
 Route::get('/notulen', [InformasiController::class, 'notulens'])->name('notulen');
+Route::get('/notulen/{slug}', [InformasiController::class, 'detailNotulens'])->name('detail.notulen');
 Route::get('/informasi-serta-merta', [InformasiController::class, 'sertamerta'])->name('sertamerta.index');
 Route::get('/informasi-serta-merta/{slug}', [InformasiController::class, 'sertamertaDetail'])->name('sertamerta.detail');
 Route::get('/informasi-setiap-saat', [InformasiController::class, 'setiapsaat'])->name('setiapsaat.index');
@@ -95,6 +96,9 @@ Route::get('/informasi-berkala', [InformasiController::class, 'berkala'])->name(
 Route::get('/informasi-berkala/{slug}', [InformasiController::class, 'berkalaDetail'])->name('berkala.detail');
 Route::get('/informasi-dikecualikan', [InformasiController::class, 'kecualikan'])->name('kecualikan.index');
 Route::get('/informasi-dikecualikan/{slug}', [InformasiController::class, 'kecualikanDetail'])->name('kecualikan.detail');
+Route::get('/form-pengajuan-keberatan-informasi', [InformasiController::class, 'requestPengajuans'])->name('request.pengajuan');
+Route::post('/form-pengajuan-keberatan-informasi', [InformasiController::class, 'formPengajuans'])->name('form.pengajuan');
+Route::get('/form-permohonan-informasi-publik', [InformasiController::class, 'formPermohonans'])->name('form.permohonan');
 Route::get('/pengadaan', [InformasiController::class, 'pengadaans'])->name('pengadaan');
 Route::get('/pengadaan/{slug}', [InformasiController::class, 'detailPengadaans'])->name('detail.pengadaan');
 

@@ -25,8 +25,8 @@
                                 <li><a href="{{route('sertamerta.index')}}">Informasi Serta Merta</a></li>
                                 <li><a href="{{route('setiapsaat.index')}}">Informasi Setiap Saat</a></li>
                                 <li><a href="{{route('kecualikan.index')}}">Informasi Dikecualikan</a></li>
-                                <li><a href="index-3.html">Formulir Permohonan <br> Informasi</a></li>
-                                <li><a href="index-3.html">Formulir Pengajuan <br> Keberatan Informasi</a></li>
+                                <li><a href="{{route('form.permohonan')}}">Formulir Permohonan <br> Informasi</a></li>
+                                <li><a href="{{route('request.pengajuan')}}">Formulir Pengajuan <br> Keberatan Informasi</a></li>
                                 <li><a href="{{route('anggaran')}}">Anggaran Kegiatan</a></li>
                                 <li><a href="{{route('pengadaan')}}">Pengadaan Barang & Jasa</a></li>
                             </ul>
