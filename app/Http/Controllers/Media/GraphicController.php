@@ -48,7 +48,7 @@ class GraphicController extends Controller
             $images=time(). '.' .$extension;
 
             $img=$manager->read($request->file('image'));
-            $img->resize(857,440);
+            $img->resize(465,659);
 
             $path='public/image-grafis/'.$images;
             Storage::put($path, $img->encode());
@@ -107,7 +107,7 @@ class GraphicController extends Controller
             $images=time(). '.' .$extension;
 
             $img=$manager->read($request->file('image'));
-            $img->resize(857,440);
+            $img->resize(465,659);
 
             $path='public/image-grafis/'.$images;
             Storage::put($path, $img->encode());

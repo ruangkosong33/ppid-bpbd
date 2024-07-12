@@ -6,30 +6,29 @@
                     <div class="section-title-two text-center mb-50 tg-heading-subheading animation-style1">
                         <span class="sub-title tg-element-title">TIM PPID BPBD</span>
                         <h2 class="title tg-element-title">Bertemu Tim Kami</h2>
-                        {{-- <p>Ever find yourself staring at your computer screen a good consulting slogan to come to mind? Oftentimes.</p> --}}
+
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                @forelse ($frontTeams as $item)
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                    <div class="team-item-three">
-                        <div class="team-thumb-three">
+                @forelse ($frontTeams->slice(0, 4) as $item)
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
+                    <div class="team-item-five">
+                        <div class="team-thumb-five">
                             <img src="{{ asset('storage/image-team/' . $item->image) }}" alt="{{$item->image}}">
-                            <div class="team-social-three">
-                                <div class="social-toggle-icon">
-                                    <i class="fas fa-share-alt"></i>
-                                </div>
-                            </div>
                         </div>
-                        <div class="team-content-three">
-                            <h4 class="title"><a href="{{route('detail.team', $item->slug)}}">{{$item->name}}</a></h4>
+                        <div class="team-content-five">
+                            <h2 class="title"><a href="{{route('detail.team', $item->slug)}}">{{$item->name}}</a></h2>
                             <span>{{$item->job}}</span>
+                            <div class="team-social-four">
+                                <ul class="list-wrap">
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
                 @empty
-                Tidak Ada Data Tim PPID
+                Tidak Ada Data 
                 @endforelse
             </div>
         </div>

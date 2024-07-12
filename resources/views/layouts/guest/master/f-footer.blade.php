@@ -9,7 +9,7 @@
                                 <a href="index.html"><img src="assets/img/logo/w_logo.png" alt=""></a>
                             </div>
                             <div class="footer-content">
-                                <p>When an unknown printer took a galley of type aawer awtnd scrambled it to make a type specimen book.</p>
+                                <p>PPID BPBD Provinsi Kaltim adalah unit kerja di instansi pemerintah yang bertanggung jawab untuk mengelola dan menyediakan informasi publik. </p>
                                 <div class="footer-social footer-social-three">
                                     <ul class="list-wrap">
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>

@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="services-content-two">
                                     <div class="icon">
-                                        <i class="flaticon-piggy-bank"></i>
+                                        <i class="flaticon-layers"></i>
                                     </div>
                                     <h2 class="title"><a href="{{route('detail.grafis', $item->slug)}}">{{$item->title}}</a></h2>
                                     {{-- <p>Morem ipsum dolor ametey consectre adipiscing.</p> --}}

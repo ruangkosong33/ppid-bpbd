@@ -26,7 +26,7 @@ class BerandaController extends Controller
 
         $partners=Partner::orderBy('id')->limit('6')->get();
 
-        $frontTeams=Team::orderBy('id')->get();
+        $frontTeams=Team::take(4)->get();
 
         $graphics=Graphic::orderBy('id', 'DESC')->limit('4')->get();
 
