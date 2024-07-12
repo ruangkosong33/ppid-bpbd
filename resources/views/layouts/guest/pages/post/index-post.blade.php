@@ -9,8 +9,13 @@
     @include('components.breadcrumb', ['title' => 'Semua Berita'])
 
     <!-- blog-area -->
-    <section class="blog-area pt-120 pb-120">
+    <section class="blog-area pt-50 pb-120">
         <div class="container">
+
+            <div class="section-title-two text-center mb-50">
+                <span class="sub-title">Berita Utama</span>
+            </div>
+
             <div class="inner-blog-wrap">
                 <div class="row justify-content-center">
                     <div class="col-71">

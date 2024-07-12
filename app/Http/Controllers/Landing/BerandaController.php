@@ -28,7 +28,7 @@ class BerandaController extends Controller
 
         $frontTeams=Team::take(4)->get();
 
-        $graphics=Graphic::orderBy('id', 'DESC')->limit('4')->get();
+        $graphics=Graphic::take(6)->get();
 
         $postFront = Post::with('kategoris')->where('status', 'publish')->orderBy('date', 'DESC')->orderBy('id', 'DESC')->limit(3)->get();
 

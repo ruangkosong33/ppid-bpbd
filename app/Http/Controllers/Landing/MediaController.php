@@ -18,15 +18,9 @@ class MediaController extends Controller
 
     public function semuaGrafis()
     {
-        $grafis=Graphic::orderBy('id', 'DESC')->limit(12)->get();
+        $grafis=Graphic::orderBy('id', 'DESC')->paginate(8);
 
         return view('layouts.guest.pages.infografis.index-infografis', ['grafis'=>$grafis]);
     }
-
-    public function detailGrafis($slug)
-    {
-        $grafiss=Graphic::where('slug', $slug)->firstOrFail();
-
-        return view('layouts.guest.pages.infografis.detail-infografis', ['grafiss'=>$grafiss]);
-    }
+    
 }

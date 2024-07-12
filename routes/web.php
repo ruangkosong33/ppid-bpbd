@@ -72,7 +72,6 @@ Route::get('/keputusan/{slug}', [TentangController::class, 'detailsKeputusan'])-
 Route::get('/berita', [ArtikelController::class, 'semuaBerita'])->name('semua.berita');
 Route::get('/berita/{slug}', [ArtikelController::class, 'detailBerita'])->name('detail.berita');
 Route::get('/infografis', [MediaController::class, 'semuaGrafis'])->name('semua.grafis');
-Route::get('/infografis/{slug}', [MediaController::class, 'detailGrafis'])->name('detail.grafis');
 Route::get('/kode-etik', [LayananController ::class, 'etiks'])->name('etik');
 Route::get('/banner', [MediaController::class, 'banners'])->name('front.banner');
 Route::get('/sarana-prasarana', [LayananController::class, 'saranas'])->name('sarana');

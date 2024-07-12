@@ -1,62 +1,50 @@
 @extends('layouts.guest.master.f-master')
 
-@php
-    use Illuminate\Support\Str;
-@endphp
-
 @section('content')
 
     @include('components.breadcrumb', ['title' => 'Semua Berita Infografis'])
 
-    <!-- blog-area -->
-    <section class="blog-area pt-120 pb-120">
+    <!-- InfoGrafis -->
+    <section class="services-area-two services-bg-two">
         <div class="container">
-            <div class="inner-blog-wrap">
-                <div class="row justify-content-center">
-                    <div class="col-71">
-                        <div class="blog-post-wrap">
-                            <div class="row">
-                                @foreach ($grafis as $item)
-                                <div class="col-md-6">
-                                    <div class="blog-post-item-two">
-                                        <div class="blog-post-thumb-two">
-                                            <a href="{{route('detail.grafis', $item->slug)}}"><img src="{{asset('storage/image-grafis/' . $item->image) }}" alt="{{$item->image}}"></a>
-                                            {{-- <a href="blog.html" class="tag tag-two">{{$item->kategoris->title}}</a> --}}
-                                        </div>
-                                        <div class="blog-post-content-two">
-                                            <h2 class="title"><a href="{{route('detail.grafis', $item->slug)}}">{{ Str::limit($item->title, 50) }}</a></h2>
-                                            <p>{{ Str::limit(strip_tags($item->body), 80) }}</p>
-                                            <div class="blog-meta">
-                                                <ul class="list-wrap">
-                                                    {{-- <li><i class="far fa-user"></i>by {{$item->users->name}}</a></li> --}}
-                                                    {{-- <li><i class="far fa-calendar"></i>{{ \Carbon\Carbon::parse($item->date)->format('d-m-Y') }}</li> --}}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>   
+
+            <div class="section-title-two text-center mb-50">
+                <span class="sub-title">Berita Infografis</span>
+            </div>
+
+            <div class="row">
+                @forelse ($grafis as $item)
+                <div class="col-xl-3">
+                    <div class="services-item-five shine-animate-item">
+                        <div class="services-thumb-five">
+                            <a href="{{ asset('storage/image-grafis/' . $item->image) }}" target="_blank">
+                                <img src="{{ asset('storage/image-grafis/' . $item->image) }}" alt="{{ $item->image }}">
+                            </a>
+                        </div>
+                        <div class="services-content-five">
+                            <div class="services-content-five-top">
+                                <div class="icon">
+                                    <i class="flaticon-business-presentation"></i>
                                 </div>
-                                @endforeach
+                                <h2 class="title">
+                                    <a href="{{ asset('storage/image-grafis/' . $item->image) }}" target="_blank">{{ $item->title }}</a>
+                                </h2>
                             </div>
-                            
-                            <div class="pagination-wrap mt-30">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination list-wrap">
-                                        <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-double-left"></i></a></li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item next-page"><a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                            <p>{!!$item->body!!}</p>   
                         </div>
                     </div>
-                    @include('components.sidebar-post')
                 </div>
+                @empty 
+                Tidak Ada Data 
+                @endforelse
             </div>
+
+            <div class="d-flex justify-content-center mt-4">
+                {{ $grafis->links() }}
+            </div>
+
         </div>
-    </section>  
-    <!-- blog-area-end -->
+    </section>
+    <!-- End InfoGrafis -->
 
 @endsection

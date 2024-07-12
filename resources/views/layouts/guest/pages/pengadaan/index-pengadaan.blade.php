@@ -11,6 +11,11 @@
    <!-- features-area -->
    <section class="features-area-two pt-80">
     <div class="container">
+
+        <div class="section-title-two text-center mb-50">
+            <span class="sub-title">Pengadaan Barang & Jasa</span>
+        </div>
+
         <div class="features-item-wrap">
             <div class="row justify-content-center">
                 @forelse ($pengadaans as $item)
