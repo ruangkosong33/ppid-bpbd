@@ -8,7 +8,7 @@
                         <i class="flaticon-folder-1"></i>
                     </div>
                     <div class="counter-content">
-                        <h2 class="count"><span class="odometer" data-count="98"></span>k</h2>
+                        <h2 class="count"><span class="odometer" data-count="{{ $totalSertamerta }}"></span></h2>
                         <p>Total Informasi Berkala</p>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                         <i class="flaticon-folder-1"></i>
                     </div>
                     <div class="counter-content">
-                        <h2 class="count"><span class="odometer" data-count="98"></span>k</h2>
+                        <h2 class="count"><span class="odometer" data-count="{{ $totalBerkala }}"></span></h2>
                         <p>Total Informasi Berkala</p>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                         <i class="flaticon-folder-1"></i>
                     </div>
                     <div class="counter-content">
-                        <h2 class="count"><span class="odometer" data-count="98"></span>k</h2>
+                        <h2 class="count"><span class="odometer" data-count="{{ $totalSetiapsaat }}"></span></h2>
                         <p>Total Informasi Setiap Saat</p>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                         <i class="flaticon-folder-1"></i>
                     </div>
                     <div class="counter-content">
-                        <h2 class="count"><span class="odometer" data-count="98"></span>k</h2>
+                        <h2 class="count"><span class="odometer" data-count="{{ $totalKecualikan }}"></span></h2>
                         <p>Total Informasi Di Kecualikan</p>
                     </div>
                 </div>

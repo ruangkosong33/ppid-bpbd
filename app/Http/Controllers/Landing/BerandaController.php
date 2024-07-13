@@ -42,10 +42,19 @@ class BerandaController extends Controller
 
         $kecualikanFront=  Katdip::where('title', 'Informasi Di Kecualikan')->get();
 
+        $totalSertamerta = Katdip::where('title', 'Informasi Serta Merta')->withCount('dips')->get()->sum('dips_count');
+
+        $totalSetiapsaat = Katdip::where('title', 'Informasi Setiap Saat')->withCount('dips')->get()->sum('dips_count');
+
+        $totalBerkala = Katdip::where('title', 'Informasi Berkala')->withCount('dips')->get()->sum('dips_count');
+
+        $totalKecualikan = Katdip::where('title', 'Informasi Di Kecualikan')->withCount('dips')->get()->sum('dips_count');
+
         return view('layouts.guest.pages.beranda.index-beranda',
 
         ['frontTeams'=>$frontTeams, 'partners'=>$partners, 'fotos'=>$fotos, 'agendas'=>$agendas, 'postFront'=>$postFront, 'graphics'=>$graphics,
          'sertamertaFront'=>$sertamertaFront, 'setiapsaatFront'=>$setiapsaatFront, 'berkalaFront'=>$berkalaFront, 'kecualikanFront'=>$kecualikanFront,
+         'totalSertamerta'=>$totalSertamerta, 'totalSetiapsaat'=>$totalSetiapsaat, 'totalBerkala'=>$totalBerkala, 'totalKecualikan'=>$totalKecualikan,
         ]);
     }
 }
