@@ -63,5 +63,10 @@ class ProfilSeeder extends Seeder
             'title'=>'Definisi Informasi Publik',
             'body'=>$faker->text,
         ]);
+
+        Waktu::create([
+            'title'=>'Waktu & Layanan',
+            'body'=>$faker->text,
+        ]);
     }
 }

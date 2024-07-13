@@ -10,6 +10,14 @@
     @include('layouts.guest.pages.dip.front-dip')
     <!-- End Daftar Informasi Publik -->
 
+    <!-- Alur Proses -->
+    @include('layouts.guest.pages.alur-proses.front-alur')
+    <!-- End Alur Proses -->
+
+    <!-- Total DIP -->
+    @include('layouts.guest.pages.dip.total-dip')
+    <!-- End Total DIP -->
+
     <!-- TIM PPID -->
     @include('layouts.guest.pages.team.front-team')
     <!-- End TIM PPID -->
@@ -21,10 +29,6 @@
     <!-- Infogragis -->
     @include('layouts.guest.pages.infografis.front-infografis')
     <!-- Enf Infografis -->
-
-    <!-- Total DIP -->
-    @include('layouts.guest.pages.dip.total-dip')
-    <!-- End Total DIP -->
 
     <!-- Media Sosial -->
     @include('layouts.guest.pages.medsos.front-medsos')

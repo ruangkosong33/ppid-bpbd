@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-lg-3 col-md-5 col-sm-6">
                         <div class="footer-widget">
-                            <h4 class="fw-title">Tautan Cepat</h4>
+                            <h4 class="fw-title">Daftar Informasi Publik</h4>
                             <div class="footer-link">
                                 <ul class="list-wrap">
                                     <li><a href="{{route('berkala.index')}}">Informasi Berkala</a></li>
