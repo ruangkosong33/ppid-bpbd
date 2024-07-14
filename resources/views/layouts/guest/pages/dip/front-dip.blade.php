@@ -16,11 +16,11 @@
                         <div class="features-icon-three">
                             <i class="flaticon-layers"></i>
                         </div>
-                        @foreach ($sertamertaFront as $item)
+                        @foreach ($berkalaFront as $item)
                         <div class="features-content-three">
                             <h2 class="title">{{$item->title}}</h2>
                             <p>{!!$item->body!!}</p>
-                            <a href="{{route('sertamerta.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                            <a href="{{route('berkala.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
                         </div>
                         @endforeach
                     </div>
@@ -35,7 +35,7 @@
                         <div class="features-content-three">
                             <h2 class="title">{{$item->title}}</h2>
                             <p>{!!$item->body!!}</p>
-                            <a href="{{route('sertamerta.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                            <a href="{{route('setiapsaat.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
                         </div>
                         @endforeach
                     </div>
@@ -46,11 +46,11 @@
                         <div class="features-icon-three">
                             <i class="flaticon-layers"></i>
                         </div>
-                        @foreach ($berkalaFront as $item)
+                        @foreach ($sertamertaFront as $item)
                         <div class="features-content-three">
                             <h2 class="title">{{$item->title}}</h2>
                             <p>{!!$item->body!!}</p>
-                            <a href="{{route('berkala.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
+                            <a href="{{route('sertamerta.index')}}" class="link-btn">Lihat Detail <img src="assets/img/icons/right-arrow.svg" alt=""></a>
                         </div>
                         @endforeach
                     </div>

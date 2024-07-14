@@ -13,12 +13,28 @@ class KatdipSeeder extends Seeder
      */
     public function run(): void
     {
-        $array = ['Informasi Serta Merta', 'Informasi Berkala', 'Informasi Setiap Saat', 'Informasi Di Kecualikan'];
+        $data = [
+            [
+                'title' => 'Informasi Serta Merta',
+                'body' => 'Informasi yang dapat mengancam hajat hidup orang banyak dan ketertiban umum.',
+            ],
+            [
+                'title' => 'Informasi Berkala',
+                'body' => 'Merupakan Informasi Yang Wajib Disediakan Dan Diumumkan Secara Berkala.',
+            ],
+            [
+                'title' => 'Informasi Setiap Saat',
+                'body' => 'Informasi Yang Wajib Disediakan Badan Publik.',
+            ],
+            [
+                'title' => 'Informasi Di Kecualikan',
+                'body' => 'Informasi Yang Tidak Dapat Diakses Oleh Pemohon Informasi Publik.',
+            ],
+        ];
 
-        foreach($array as $k => $arr) {
-            Katdip::create([
-                'title' => $arr,
-            ]);
+        foreach ($data as $item) {
+            Katdip::create($item);
         }
     }
+
 }

@@ -14,7 +14,7 @@
                 <div class="pricing-box active">
                     <span class="popular-tag">INSTAGRAM</span>
                     <div class="pricing-head">
-                       
+                        <div class="elfsight-app-356fee99-ff74-41b1-874b-6d9542fedad4" data-elfsight-app-lazy></div>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="pricing-box active">
                     <span class="popular-tag">YOUTUBE</span>
                     <div class="pricing-head">
-                      
+                        <div class="elfsight-app-f38e1076-d04a-48aa-8157-990f02a76be3" data-elfsight-app-lazy></div>
                     </div>
                 </div>
             </div>
@@ -45,4 +45,5 @@
 
 @push('script_vendor')
     <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 @endpush
