@@ -97,6 +97,7 @@ Route::get('/informasi-dikecualikan', [InformasiController::class, 'kecualikan']
 Route::get('/informasi-dikecualikan/{slug}', [InformasiController::class, 'kecualikanDetail'])->name('kecualikan.detail');
 Route::get('/form-pengajuan-keberatan-informasi', [InformasiController::class, 'requestPengajuans'])->name('request.pengajuan');
 Route::post('/form-pengajuan-keberatan-informasi', [InformasiController::class, 'formPengajuans'])->name('form.pengajuan');
+Route::get('/form-permohonan-informasi-publik', [InformasiController::class, 'requestPermohonans'])->name('request.permohonan');
 Route::get('/form-permohonan-informasi-publik', [InformasiController::class, 'formPermohonans'])->name('form.permohonan');
 Route::get('/pengadaan', [InformasiController::class, 'pengadaans'])->name('pengadaan');
 Route::get('/pengadaan/{slug}', [InformasiController::class, 'detailPengadaans'])->name('detail.pengadaan');

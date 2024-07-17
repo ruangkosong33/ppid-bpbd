@@ -131,6 +131,18 @@ class InformasiController extends Controller
         return view('layouts.guest.pages.dip.berkala-detail', compact('berkalas'));
     }
 
+    public function formPermohonans()
+    {
+        $categories = Katdip::orderBy('title')->get();
+        
+        return view('layouts.guest.pages.form-dip.form-permohonan', ['categories'=>$categories]);
+    }
+
+    public function requestPermohonans()
+    {
+        return redirect()->back();
+    }
+
     public function requestPengajuans()
     {
         return view('layouts.guest.pages.form-dip.form-pengajuan');
@@ -181,10 +193,5 @@ class InformasiController extends Controller
         flash('Formulir Anda Berhasil Di Kirim');
 
         return redirect()->back();
-    }
-
-    public function formPermohonans()
-    {
-
     }
 }
