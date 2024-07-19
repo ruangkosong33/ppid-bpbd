@@ -11,12 +11,16 @@
     <!-- End Daftar Informasi Publik -->
 
     <!-- Alur Proses -->
-    @include('layouts.guest.pages.alur-proses.front-alur')
+    @include('layouts.guest.pages.alur-permohonan.alur-permohonan')
     <!-- End Alur Proses -->
 
     <!-- Total DIP -->
     @include('layouts.guest.pages.dip.total-dip')
     <!-- End Total DIP -->
+
+    <!-- Alur Proses -->
+    {{-- @include('layouts.guest.pages.alur-keberatan.alur-keberatan') --}}
+    <!-- End Alur Proses -->
 
     <!-- TIM PPID -->
     @include('layouts.guest.pages.team.front-team')

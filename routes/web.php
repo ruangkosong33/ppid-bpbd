@@ -46,8 +46,11 @@ use App\Http\Controllers\Informasi\PengadaanController;
 use App\Http\Controllers\Informasi\PengajuanController;
 use App\Http\Controllers\Informasi\PermohonanController;
 use App\Http\Controllers\Informasi\FileLaporanController;
+use App\Http\Controllers\Informasi\TataSengketaController;
 use App\Http\Controllers\Informasi\FormPengajuanController;
+use App\Http\Controllers\Informasi\TataKeberatanController;
 use App\Http\Controllers\Informasi\FormPermohonanController;
+use App\Http\Controllers\Informasi\TataPermohonanController;
 
 
 Route::get('/', function () {
@@ -159,6 +162,9 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
         Route::resource('/notulen', NotulenController::class);
         Route::resource('/pengadaan', PengadaanController::class);
         Route::resource('/penghargaan', PenghargaanController::class);
+        Route::resource('/tatapermohonan', TataPermohonanController::class);
+        Route::resource('/tatakeberatan', TataKeberatanController::class);
+        Route::resource('/tatasengketa', TataSengketaController::class);
 
         Route::resource('/laporan', LaporanController::class);
         Route::get('/filelaporan/{laporan}', [FileLaporanController::class, 'index'])->name('filelaporan.index');

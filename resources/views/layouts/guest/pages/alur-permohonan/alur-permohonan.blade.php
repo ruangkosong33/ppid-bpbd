@@ -18,7 +18,7 @@
                     <div class="about-list-two">
                         <ul class="list-wrap">
                             <li><i class="fas fa-arrow-right"></i>1. Pengajuan Informasi</li> 
-                            <p>Mengajukan Informasi Publik secara langsung atau melalui surat/fax/email/telepon.</p>
+                            <p>Mengajukan Informasi Publik secara langsung atau melalui surat/web/fax/email/telepon.</p>
                             <li><i class="fas fa-arrow-right"></i>2. Mengisi Formulir</li>
                             <p>Mengisi formulir permohonan dengan menunjukkan identitas diri kepada petugas, menyebutkan informasi yang dibutuhkan serta alasan pengajuan.</p>
                             <li><i class="fas fa-arrow-right"></i>3. Bukti</li>
@@ -35,3 +35,4 @@
     </div>
 </section>
 <!-- about-area-end -->
+
