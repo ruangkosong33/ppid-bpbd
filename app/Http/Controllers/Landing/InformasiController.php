@@ -8,8 +8,11 @@ use App\Models\Notulen;
 use App\Models\Anggaran;
 use App\Models\Definisi;
 use App\Models\Pengadaan;
+use App\Models\Tatasengketa;
 use Illuminate\Http\Request;
 use App\Models\Formpengajuan;
+use App\Models\Tatakeberatan;
+use App\Models\Tatapermohonan;
 use App\Http\Controllers\Controller;
 
 class InformasiController extends Controller
@@ -54,6 +57,27 @@ class InformasiController extends Controller
         $notulens=Notulen::orderBy('id', 'DESC')->paginate(10);
 
         return view('layouts.guest.pages.notulen.index-notulen', ['notulens'=>$notulens]);
+    }
+
+    public function tatapermohonans()
+    {
+        $tatapermohonans=Tatapermohonan::orderBy('id')->get();
+
+        return view('layouts.guest.pages.tata-cara.index-permohonan', ['tatapermohonans'=>$tatapermohonans]);
+    }
+
+    public function tatakeberatans()
+    {
+        $tatakeberatans=Tatakeberatan::orderBy('id')->get();
+
+        return view('layouts.guest.pages.tata-cara.index-keberatan', ['tatakeberatans'=>$tatakeberatans]);
+    }
+
+    public function tatasengketas()
+    {
+        $tatasengketas=Tatasengketa::orderBy('id')->get();
+
+        return view('layouts.guest.pages.tata-cata.index-sengketa', ['tatasengketa'=>$tatasengketas]);
     }
 
     public function detailNotulens($slug)

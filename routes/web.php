@@ -89,6 +89,9 @@ Route::get('/anggaran-kegiatan', [InformasiController::class, 'anggarans'])->nam
 Route::get('/anggaran-kegiatan/{slug}', [InformasiController::class, 'detailAnggarans'])->name('detail.anggaran');
 Route::get('/definisi-informasi', [InformasiController::class, 'definisis'])->name('definisi');
 Route::get('/notulen', [InformasiController::class, 'notulens'])->name('notulen');
+Route::get('tata-cara-permohonan-informasi', [InformasiController::class , 'tatapermohonans'])->name('tata.permohonan');
+Route::get('tata-cara-pengajuan-keberatan', [InformasiController::class , 'tatalkeberatans'])->name('tata.keberatan');
+Route::get('tata-cara-pengajuan-sengketa', [InformasiController::class , 'tatasengketas'])->name('tata.sengketa');
 Route::get('/notulen/{slug}', [InformasiController::class, 'detailNotulens'])->name('detail.notulen');
 Route::get('/informasi-serta-merta', [InformasiController::class, 'sertamerta'])->name('sertamerta.index');
 Route::get('/informasi-serta-merta/{slug}', [InformasiController::class, 'sertamertaDetail'])->name('sertamerta.detail');

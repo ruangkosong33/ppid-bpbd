@@ -33,9 +33,9 @@
                         </li>
                         <li>
                             <ul class="mega-sub-menu">
-                                <li><a href="index-3.html">Tata Cara Permohonan <br> Informasi</a></li>
-                                <li><a href="index-3.html">Tata Cara Pengajuan <br> Keberatan Informasi</a></li>
-                                <li><a href="index-3.html">Tata Cara Sengketa <br> Informasi</a></li>
+                                <li><a href="{{route('tata.permohonan')}}">Tata Cara Permohonan <br> Informasi</a></li>
+                                <li><a href="{{route('tata.keberatan')}}">Tata Cara Pengajuan <br> Keberatan Informasi</a></li>
+                                <li><a href="{{route('tata.sengketa')}}">Tata Cara Sengketa <br> Informasi</a></li>
                                 <li><a href="index-3.html">Laporan Tahunan</a></li>
                                 <li><a href="index-3.html">Survey Layanan</a></li>
                                 <li><a href="{{route('notulen')}}">Notulen</a></li>

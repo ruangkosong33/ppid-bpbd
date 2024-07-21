@@ -114,6 +114,9 @@
             {{request()->is('admin/formpengajuan*') ? 'menu-open' : ''}}
             {{request()->is('admin/notulen*') ? 'menu-open' : ''}}
             {{request()->is('admin/pengadaan*') ? 'menu-open' : ''}}
+            {{request()->is('admin/tatakeberatan*') ? 'menu-open' : ''}}
+            {{request()->is('admin/tatasengketa*') ? 'menu-open' : ''}}
+            {{request()->is('admin/tatapermohonan*') ? 'menu-open' : ''}}
                                                                                     ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-folder-open"></i>
@@ -175,6 +178,30 @@
                   <a href="{{route('formpengajuan.index')}}" class="nav-link {{request()->is('admin/formpengajuan*') ? 'active' : ''}}">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Form Pengajuan</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('tatapermohonan.index')}}" class="nav-link {{request()->is('admin/tatapermohonan*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Tata Permohonan</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('tatakeberatan.index')}}" class="nav-link {{request()->is('admin/tatakeberatan*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Tata Pengajuan</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('tatasengketa.index')}}" class="nav-link {{request()->is('admin/tatasengketa*') ? 'active' : ''}}">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Tata Sengketa</p>
                   </a>
                 </li>
             </ul>
@@ -326,7 +353,7 @@
             {{request()->is('admin/video*') ? 'menu-open' : ''}}
             {{request()->is('admin/partner*') ? 'menu-open' : ''}}
             {{request()->is('admin/penghargaan*') ? 'menu-open' : ''}}
-                                                                        ">
+                                                                            ">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-video"></i>
                 <p>
