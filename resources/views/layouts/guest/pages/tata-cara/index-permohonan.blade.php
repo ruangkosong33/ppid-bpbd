@@ -2,14 +2,14 @@
 
 @section('content')
 
-    @include('components.breadcrumb', ['title' => $definisis->title])
+    @include('components.breadcrumb', ['title' => 'Tata Cara Permohonan Informasi'])
 
     <!-- Details -->
     <section class="project-details-area pt-50 pb-120">
         <div class="container">
 
             <div class="section-title-two text-center mb-50">
-                <span class="sub-title">{{$definisis->title}}</span>
+                <span class="sub-title">{{$tatapermohonans->title}}</span>
             </div>
 
             <div class="row">
@@ -17,7 +17,7 @@
                     <div class="project-details-wrap">
                         <div class="project-details-content">
                             {{-- <h2 class="title">Business Planing & Solution</h2> --}}
-                            <p>{!!$definisis->body!!}</p>                     
+                            <p>{!!$tatapermohonans->body!!}</p>                     
                         </div>
                     </div>
                 </div>

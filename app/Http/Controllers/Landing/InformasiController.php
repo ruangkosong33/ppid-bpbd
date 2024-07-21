@@ -77,7 +77,7 @@ class InformasiController extends Controller
     {
         $tatasengketas=Tatasengketa::orderBy('id')->get();
 
-        return view('layouts.guest.pages.tata-cata.index-sengketa', ['tatasengketa'=>$tatasengketas]);
+        return view('layouts.guest.pages.tata-cara.index-sengketa', ['tatasengketas'=>$tatasengketas]);
     }
 
     public function detailNotulens($slug)
