@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             ProfilSeeder::class,
             KatdipSeeder::class,
             SettingSeeder::class,
+            TataSeeder::class,
         ]);
     }
 }
