@@ -1,11 +1,16 @@
 @extends('layouts.guest.master.f-master')
 
-@section('content')
-    @include('components.breadcrumb', ['title' => $sertamertas->title])
+@section('title', $sertamertas->title)
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{ route('beranda') }}">Beranda</a></li>
+    <li class="breadcrumb-item">Informasi Publik</li>
+    <li class="breadcrumb-item"><a href="{{ route('sertamerta.index') }}">Kategori Serta Merta</a></li>
+@endsection
 
+@section('content')
     <section class="project-details-area pt-50 pb-120">
         <div class="container">
-
             <div class="section-title-two text-center mb-50">
                 <span class="sub-title">File DIP Serta Merta</span>
             </div>
@@ -17,18 +22,15 @@
                             <div class="service-detials-step-1">
                                 <div class="row g-5 mt--30 mb--40">
                                     <div class="col-lg-12">
-
                                         <div class="service-details-card">
                                             <div class="details">
                                                 <h6 class="title">Judul File</h6>
-                                                    <p class="disc">{{$sertamertas->title}}</p><br>
+                                                <p class="disc">{{ $sertamertas->title }}</p><br>
                                                 {{-- <h6 class="title">Tanggal Di Tetapkan</h6>
-                                                    <p class="disc">{{ date('d-m-Y', strtotime($item->date)) }}</p><br> --}}
+                                                <p class="disc">{{ date('d-m-Y', strtotime($item->date)) }}</p><br> --}}
                                             </div>
                                         </div>
-
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -43,13 +45,14 @@
                                     <button onclick="loadGoogleDocsPDF()" style="color: blue; margin-top: 5px; border: 2px solid orange; padding: 10px 20px; border-radius: 20px;">Dapat Lihat Dengan Google Docs</button>
                                     <br>
                                     <a class="btn btn-three" style="margin-top: 15px;" href="{{ asset('storage/file-dip/' . $sertamertas->file) }}">Download File</a>
-                                </div>                 
+                                </div>
                             @else
-                                Tidak ada File
+                                <p>Tidak ada File</p>
                             @endif
                         </div>
-
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 @endsection

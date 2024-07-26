@@ -74,9 +74,15 @@
     
 @endpush
 
-@section('content')
+@section('title', 'Kategori Serta Merta')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Informasi Publik</li>
+    <li class="breadcrumb-item active" aria-current="page">Kategori Serta Merta</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => 'Kategori Serta Merta'])
+@section('content')
 
     <section class="project-details-area pt-50 pb-120">
         <div class="container">
@@ -114,7 +120,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        {{-- {{ $keputusans->links() }} --}}
+                        {{ $sertamerta->links() }}
                     </div>
 
                 </div>

@@ -1,5 +1,7 @@
 @extends('layouts.admin.master.b-master')
 
+
+@include('components.breadcrumb')
 @section('title', 'Data Agenda Kegiatan')
 @section('breadcrumb')
     @parent

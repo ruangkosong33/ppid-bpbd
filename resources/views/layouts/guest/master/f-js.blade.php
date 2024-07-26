@@ -56,6 +56,6 @@
 <!-- End Widget -->
 
 @stack('script_vendor')
-@vite('resources/js/app-guest.js')
+{{-- @vite('resources/js/app-guest.js') --}}
 
 <!-- END JS -->

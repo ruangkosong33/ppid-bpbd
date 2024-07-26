@@ -25,6 +25,12 @@
         @include('layouts.guest.master.f-header')
         <!-- header-area-end -->
 
+        <!-- breadcrumb-area -->
+        @if (!request()->routeIs('beranda'))
+            @include('components.breadcrumb')
+        @endif
+        <!-- breadcrumb-area-end -->
+
         <!-- main-area -->
         <main class="fix">
             @yield('content')
