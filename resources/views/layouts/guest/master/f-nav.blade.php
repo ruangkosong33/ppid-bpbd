@@ -51,7 +51,7 @@
                                 <li><a href="{{route('waktu')}}">Waktu & Layanan</a></li>
                                 <li><a href="{{route('standar')}}">Standar Biaya</a></li>
                                 <li><a href="{{route('sarana')}}">Sarana & Prasarana</a></li>
-                                <li><a href="index-3.html">Produk Hukum</a></li>
+                                <li><a href="{{route('hukum')}}">Produk Hukum</a></li>
                             </ul>
                         </li>
                         <li>

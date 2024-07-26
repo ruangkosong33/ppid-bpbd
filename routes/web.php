@@ -107,6 +107,8 @@ Route::get('/form-permohonan-informasi-publik', [InformasiController::class, 're
 Route::get('/form-permohonan-informasi-publik', [InformasiController::class, 'formPermohonans'])->name('form.permohonan');
 Route::get('/pengadaan', [InformasiController::class, 'pengadaans'])->name('pengadaan');
 Route::get('/pengadaan/{slug}', [InformasiController::class, 'detailPengadaans'])->name('detail.pengadaan');
+Route::get('/produk-hukum', [LayananController::class, 'hukums'])->name('hukum');
+Route::get('/produk-hukum/{slug}', [LayananController::class, 'detailHukums'])->name('detail.hukum');
 
 
 //--END FRONTEND--//

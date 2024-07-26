@@ -61,21 +61,21 @@ class InformasiController extends Controller
 
     public function tatapermohonans()
     {
-        $tatapermohonans=Tatapermohonan::orderBy('id')->get();
+        $tatapermohonans=Tatapermohonan::first();
 
         return view('layouts.guest.pages.tata-cara.index-permohonan', ['tatapermohonans'=>$tatapermohonans]);
     }
 
     public function tatakeberatans()
     {
-        $tatakeberatans=Tatakeberatan::orderBy('id')->get();
+        $tatakeberatans=Tatakeberatan::first();
 
         return view('layouts.guest.pages.tata-cara.index-keberatan', ['tatakeberatans'=>$tatakeberatans]);
     }
 
     public function tatasengketas()
     {
-        $tatasengketas=Tatasengketa::orderBy('id')->get();
+        $tatasengketas=Tatasengketa::first();
 
         return view('layouts.guest.pages.tata-cara.index-sengketa', ['tatasengketas'=>$tatasengketas]);
     }
