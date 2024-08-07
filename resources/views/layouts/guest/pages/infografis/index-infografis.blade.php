@@ -1,8 +1,14 @@
 @extends('layouts.guest.master.f-master')
 
-@section('content')
+@section('title', 'Semua Berita Infografis')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Layanan</li>
+    <li class="breadcrumb-item active" aria-current="page">Berita Infografis</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => 'Semua Berita Infografis'])
+@section('content')
 
     <!-- InfoGrafis -->
     <section class="services-area-two services-bg-two">

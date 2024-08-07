@@ -4,9 +4,15 @@
     use Illuminate\Support\Str;
 @endphp
 
-@section('content')
+@section('title', 'Semua Berita Utama')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Berita</li>
+    <li class="breadcrumb-item active" aria-current="page">Semua Berita Utama</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => 'Semua Berita'])
+@section('content')
 
     <!-- blog-area -->
     <section class="blog-area pt-50 pb-120">

@@ -1,7 +1,15 @@
 @extends('layouts.guest.master.f-master')
 
+@section('title', 'Detail Pengadaan Barang & Jasa')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Informasi Publik</li>
+    <li class="breadcrumb-item"><a href="{{route('pengadaans')}}">Semua Pengadaan Barang & Jasa</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail Pengadaan Barang & Jasa</li>
+@endsection
+
 @section('content')
-    @include('components.breadcrumb', ['title' => $detailPengadaans->title])
 
     <!-- Post Detail -->
     <section class="blog-details-area pt-120 pb-120">

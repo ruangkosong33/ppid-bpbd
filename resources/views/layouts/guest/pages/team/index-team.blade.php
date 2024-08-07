@@ -1,8 +1,15 @@
 @extends('layouts.guest.master.f-master')
 
-@section('content')
+@section('title', 'Tim PPID BPBD')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Profil</li>
+    <li class="breadcrumb-item active" aria-current="page">Tim PPID BPBD</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => 'TIM PPID'])
+
+@section('content')
 
     <br><br>
     <!-- team-area -->

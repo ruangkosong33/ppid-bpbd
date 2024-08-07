@@ -1,8 +1,14 @@
 @extends('layouts.guest.master.f-master') 
 
-@section('content')
+@section('title', 'Waktu & Layanan')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Layanan</li>
+    <li class="breadcrumb-item active" aria-current="page">Waktu & Layanan</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => $waktus->title])
+@section('content')
 
     <section class="inner-contact-area pt-50 pb-120">
         <div class="container">

@@ -1,8 +1,14 @@
-@extends('layouts.guest.master.f-master') 
+@extends('layouts.guest.master.f-master')
+
+@section('title', 'Standar Pelayanan')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Layanan</li>
+    <li class="breadcrumb-item active" aria-current="page">{{$standars->title}}</li>
+@endsection
 
 @section('content')
-
-    @include('components.breadcrumb', ['title' => $standars->title])
 
     <!-- Details -->
     <section class="project-details-area pt-50 pb-120">

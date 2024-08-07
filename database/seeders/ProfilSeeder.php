@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Hak;
 use App\Models\Etik;
 use App\Models\Visi;
 use App\Models\Dasar;
@@ -66,6 +67,11 @@ class ProfilSeeder extends Seeder
 
         Waktu::create([
             'title'=>'Waktu & Layanan',
+            'body'=>$faker->text,
+        ]);
+
+        Hak::create([
+            'title'=>'Hak Atas Informasi',
             'body'=>$faker->text,
         ]);
     }
