@@ -1,7 +1,15 @@
 @extends('layouts.guest.master.f-master')
 
+@section('title', 'Detail Notulen')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Informasi Publik</li>
+    <li class="breadcrumb-item"><a href="{{route('notulens')}}">Semua Notulen </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail Notulen</li>
+@endsection
+
 @section('content')
-    @include('components.breadcrumb', ['title' => $detailNotulens->title])
 
     <section class="project-details-area pt-50 pb-120">
         <div class="container">
