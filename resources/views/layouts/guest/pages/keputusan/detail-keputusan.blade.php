@@ -1,13 +1,21 @@
 @extends('layouts.guest.master.f-master')
 
+@section('title', 'Detail Surat Keputusan')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Profil</li>
+    <li class="breadcrumb-item"><a href="{{route('keputusan')}}">Surat Keputusan</a></li>
+    <li class="breadcrumb-item active" aria-current="page">File Surat Keputusan</li>
+@endsection
+
 @section('content')
-    @include('components.breadcrumb', ['title' => 'File Surat Keputusan'])
 
     <section class="project-details-area pt-50 pb-120">
         <div class="container">
 
             <div class="section-title-two text-center mb-50">
-                <span class="sub-title">File Surat Keputusan PPID</span>
+                <span class="sub-title">{{$item->title}}</span>
             </div>
 
             <div class="rts-service-details-area rts-section-gap">

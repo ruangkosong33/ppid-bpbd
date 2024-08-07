@@ -74,9 +74,15 @@
     
 @endpush
 
-@section('content')
+@section('title', 'Surat Keputusan')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Profil</li>
+    <li class="breadcrumb-item active" aria-current="page">Surat Keputusan</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => 'Surat Keputusan'])
+@section('content')
 
     <section class="project-details-area pt-50 pb-120">
         <div class="container">

@@ -1,8 +1,14 @@
 @extends('layouts.guest.master.f-master') 
 
-@section('content')
+@section('title', 'Struktur Organisasi')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Profil</li>
+    <li class="breadcrumb-item active" aria-current="page">{{ $strukturs->title }}</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => $strukturs->title])
+@section('content')
 
     <!-- Details -->
     <section class="project-details-area pt-50 pb-120">
@@ -27,8 +33,6 @@
                     </div>
                 </div>
             </div>
-
-           
 
         </div>
     </section>
