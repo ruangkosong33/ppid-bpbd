@@ -1,13 +1,21 @@
 @extends('layouts.guest.master.f-master')
 
+@section('title', 'Detail DIP File Kategori Setiap Saat')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Informasi Publik</li>
+    <li class="breadcrumb-item"><a href="{{route('setiapsaat')}}">Kategori Setiap Saat</a></li>
+    <li class="breadcrumb-item active" aria-current="page">File DIP Kategori Setiap Saat</li>
+@endsection
+
 @section('content')
-    @include('components.breadcrumb', ['title' => $setiapsaats->title])
 
     <section class="project-details-area pt-50 pb-120">
         <div class="container">
 
             <div class="section-title-two text-center mb-50">
-                <span class="sub-title">File DIP Setiap Saat</span>
+                <span class="sub-title">{{$setiapsaats->title}}</span>
             </div>
 
             <div class="rts-service-details-area rts-section-gap">

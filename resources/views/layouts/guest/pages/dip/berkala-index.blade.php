@@ -74,9 +74,15 @@
     
 @endpush
 
-@section('content')
+@section('title', 'DIP Kategori Informasi Berkala')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Informasi Publik</li>
+    <li class="breadcrumb-item active" aria-current="page">Kategori Berkala</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => 'Kategori Berkala'])
+@section('content')
 
     <section class="project-details-area pt-50 pb-120">
         <div class="container">

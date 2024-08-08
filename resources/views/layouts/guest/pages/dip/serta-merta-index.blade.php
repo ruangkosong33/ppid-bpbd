@@ -74,7 +74,7 @@
     
 @endpush
 
-@section('title', 'Kategori Serta Merta')
+@section('title', 'DIP Kategori Informasi Serta Merta')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>

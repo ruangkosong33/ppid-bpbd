@@ -1,18 +1,19 @@
 @extends('layouts.guest.master.f-master')
 
-@section('title', $sertamertas->title)
+@section('title', 'Detail DIP File Kategori Serta Merta')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item"><a href="{{ route('beranda') }}">Beranda</a></li>
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
     <li class="breadcrumb-item">Informasi Publik</li>
-    <li class="breadcrumb-item"><a href="{{ route('sertamerta.index') }}">Kategori Serta Merta</a></li>
+    <li class="breadcrumb-item"><a href="{{route('sertamerta')}}">Kategori Serta Merta</a></li>
+    <li class="breadcrumb-item active" aria-current="page">File DIP Kategori Serta Merta</li>
 @endsection
 
 @section('content')
     <section class="project-details-area pt-50 pb-120">
         <div class="container">
             <div class="section-title-two text-center mb-50">
-                <span class="sub-title">File DIP Serta Merta</span>
+                <span class="sub-title">{{$sertamertas->title}}</span>
             </div>
 
             <div class="rts-service-details-area rts-section-gap">

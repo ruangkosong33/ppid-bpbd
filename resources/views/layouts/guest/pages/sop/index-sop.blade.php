@@ -74,9 +74,15 @@
     
 @endpush
 
-@section('content')
+@section('title', 'Standar Operasional Prosedur')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Layanan</li>
+    <li class="breadcrumb-item active" aria-current="page">Standar Operasional Prosedur</li>
+@endsection
 
-    @include('components.breadcrumb', ['title' => 'Standar Operasional Prosedur'])
+@section('content')
 
     <section class="project-details-area pt-50 pb-120">
         <div class="container">

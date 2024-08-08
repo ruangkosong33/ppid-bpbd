@@ -562,7 +562,7 @@ label {
 	font-size: 16px;
 	font-weight: 500;
 	text-transform: capitalize;
-	color: var(--tg-secondary-color);
+	color: #6d3200;
 	padding: 40px 15px;
 	display: block;
 	line-height: 1;
@@ -671,7 +671,7 @@ label {
 	line-height: 1.4;
     font-size: 16px;
 	font-weight: 500;
-	color: var(--tg-secondary-color);
+	color: #6d5201;
 	text-transform: capitalize;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -1836,7 +1836,7 @@ label {
     margin-bottom: 0;
 }
 .breadcrumb-content .breadcrumb-item {
-    color: var(--tg-primary-color);
+    color: var(--tg-orange);
     font-weight: 500;
     font-size: 14px;
     text-transform: capitalize;
@@ -1845,7 +1845,7 @@ label {
     color: #9FA9BE;
 }
 .breadcrumb-content .breadcrumb-item a:hover {
-    color: var(--tg-primary-color);
+    color: var(--tg-orange);
 }
 .breadcrumb-content .breadcrumb-item+.breadcrumb-item::before {
     padding-right: 10px;
@@ -8548,7 +8548,7 @@ label {
     color: var(--tg-white);
 }
 .menu-area-two .menu-wrap {
-    border-bottom: 1px solid rgba(255 255 255 / 30%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .menu-area-two .navbar-wrap ul {
     margin: 0 auto;

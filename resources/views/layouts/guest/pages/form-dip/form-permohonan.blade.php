@@ -1,8 +1,14 @@
 @extends('layouts.guest.master.f-master')
 
-@section('content')
+@section('title', 'Formulir Permohonan Informasi')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
+    <li class="breadcrumb-item">Profil</li>
+    <li class="breadcrumb-item active" aria-current="page">Formulir Permohonan Informasi</li>
+@endsection
 
-@include('components.breadcrumb', ['title' => 'Formulir Permohonan Informasi'])
+@section('content')
 
 <div class="container">
     <div class="row justify-content-center">
@@ -10,7 +16,7 @@
             <div class="services-widget">
                 <h3 class="sw-title">Silahkan Lengkapi Identitas Anda Dengan Benar & Sesuai</h3>
                 <div class="services-widget-form">
-                    <form action="{{route('form.pengajuan')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('form.permohonan')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
                         <div class="row">
